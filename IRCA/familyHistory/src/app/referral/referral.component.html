@@ -1,0 +1,41 @@
+<div class="row">
+   <div class="col s12">
+       <div class="card">
+           <div class="card-content white-text">
+               <div class="row">
+                   
+                   <div class="col s6">
+<div class="row1">
+    <h4>Referral-medical as well as other forms</h4>
+    <div class="cols5">
+    <form #referralForm="ngForm" (ngSubmit)="onSubmit(referralForm)">
+    <input type="hidden" name="_id" #id_="ngModel" [(ngModel)]="referralService.selectedReferral._id">
+    <table border="1px solid black">
+     <tr>
+        <td>Date and details of visit</td>
+        <td><input type="text" size="30" name="dateanddetails" #dateanddetails="ngModel" [(ngModel)]="referralService.selectedReferral.dateanddetails"></td>
+     </tr>
+     <tr>
+        <td>Action taken</td>
+        <td><input type="text" size="30" name="actiontaken" #actiontaken="ngModel" [(ngModel)]="referralService.selectedReferral.actiontaken"></td>
+     </tr>
+     <tr>
+        <td>Referral to</td>
+        <td><input type="text" size="30" name="referredto" #referredto="ngModel" [(ngModel)]="referralService.selectedReferral.referredto"></td>
+     </tr>
+     <tr>
+        <td>If referred name of organisation</td>
+        <td><input type="text" size="30" name="organisation" #organisation="ngModel" [(ngModel)]="referralService.selectedReferral.organisation"></td>
+     </tr>
+    </table>
+    <div class="row6">
+        <div class="input-field col s12">
+          <button class="btn btn-custom right" type="button" (click)="resetForm(referralForm)">Reset</button>
+          <button class="btn btn-custom right" type="submit" [disabled]="!referralForm.valid">Submit</button>
+        </div>
+      </div>
+    </form>
+    </div>
+
+</div>
+                   </div></div></div></div></div>

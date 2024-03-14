@@ -1,0 +1,89 @@
+<div class="row">
+   <div class="col s12">
+       <div class="card">
+           <div class="card-content white-text">
+               <div class="row">
+                   <div class="col s6">
+<div class="row1">
+    <h4>Individual Councelling Notes</h4>
+    <div class="cols5">
+    <form #individualForm="ngForm" (ngSubmit)="onSubmit(individualForm)">
+    <input type="hidden" name="_id" #id_="ngModel" [(ngModel)]="individualService.selectedIndividual._id">
+    <table border="1px solid black">
+     <tr>
+        <th>Session No</th>
+        <th>Date</th>
+        <th>Issue dealt with</th>
+     </tr>
+     <tr>
+        <td>1</td>
+        <td><input type="text" size="30" name="date" #date="ngModel" [(ngModel)]="individualService.selectedIndividual.date"></td>
+        <td><input type="text" size="30" name="issues" #issues="ngModel" [(ngModel)]="individualService.selectedIndividual.issues"></td>
+     </tr>
+     <tr>
+        <td>2</td>
+        <td><input type="text" size="30" name="date1" #date1="ngModel" [(ngModel)]="individualService.selectedIndividual.date1"></td>
+        <td><input type="text" size="30" name="issues1" #issues1="ngModel" [(ngModel)]="individualService.selectedIndividual.issues1"></td>
+     </tr>
+     <tr>
+        <td>3</td>
+        <td><input type="text" size="30" name="date2" #date2="ngModel" [(ngModel)]="individualService.selectedIndividual.date2"></td>
+        <td><input type="text" size="30" name="issues2" #issues2="ngModel" [(ngModel)]="individualService.selectedIndividual.issues2"></td>
+     </tr>
+     <tr>
+        <td>4</td>
+        <td><input type="text" size="30" name="date3" #date3="ngModel" [(ngModel)]="individualService.selectedIndividual.date3"></td>
+        <td><input type="text" size="30" name="issues3" #issues3="ngModel" [(ngModel)]="individualService.selectedIndividual.issues3"></td>
+     </tr>
+     <tr>
+        <td>5</td>
+        <td><input type="text" size="30" name="date4" #date4="ngModel" [(ngModel)]="individualService.selectedIndividual.date4"></td>
+        <td><input type="text" size="30" name="issues4" #issues4="ngModel" [(ngModel)]="individualService.selectedIndividual.issues4"></td>
+     </tr>
+     <tr>
+        <td>6</td>
+        <td><input type="text" size="30" name="date5" #date5="ngModel" [(ngModel)]="individualService.selectedIndividual.date5"></td>
+        <td><input type="text" size="30" name="issues5" #issues5="ngModel" [(ngModel)]="individualService.selectedIndividual.issues5"></td>
+     </tr>
+     <tr>
+        <td>7</td>
+        <td><input type="text" size="30" name="date6" #date6="ngModel" [(ngModel)]="individualService.selectedIndividual.date6"></td>
+        <td><input type="text" size="30" name="issues6" #issues6="ngModel" [(ngModel)]="individualService.selectedIndividual.issues6"></td>
+     </tr>
+     <tr>
+        <td>8</td>
+        <td><input type="text" size="30" name="date7" #date7="ngModel" [(ngModel)]="individualService.selectedIndividual.date7"></td>
+        <td><input type="text" size="30" name="issues7" #issues7="ngModel" [(ngModel)]="individualService.selectedIndividual.issues7"></td>
+     </tr>
+     <tr>
+        <td>9</td>
+        <td><input type="text" size="30" name="date8" #date7="ngModel" [(ngModel)]="individualService.selectedIndividual.date8"></td>
+        <td><input type="text" size="30" name="issues8" #issues7="ngModel" [(ngModel)]="individualService.selectedIndividual.issues8"></td>
+     </tr>
+     <tr>
+        <td>10</td>
+        <td><input type="text" size="30" name="date9" #date9="ngModel" [(ngModel)]="individualService.selectedIndividual.date9"></td>
+        <td><input type="text" size="30" name="issues9" #issues9="ngModel" [(ngModel)]="individualService.selectedIndividual.issues9"></td>
+     </tr>
+     <tr>
+        <td>11</td>
+        <td><input type="text" size="30" name="date10" #date10="ngModel" [(ngModel)]="individualService.selectedIndividual.date10"></td>
+        <td><input type="text" size="30" name="issues10" #issues10="ngModel" [(ngModel)]="individualService.selectedIndividual.issues10"></td>
+     </tr>
+     <tr>
+        <td>12</td>
+        <td><input type="text" size="30" name="date11" #date11="ngModel" [(ngModel)]="individualService.selectedIndividual.date11"></td>
+        <td><input type="text" size="30" name="issues11" #issues11="ngModel" [(ngModel)]="individualService.selectedIndividual.issues11"></td>
+     </tr>
+    </table>
+    <div class="row6">
+        <div class="input-field col s12">
+          <button class="btn btn-custom right" type="button" (click)="resetForm(individualForm)">Reset</button>
+          <button class="btn btn-custom right" type="submit" [disabled]="!individualForm.valid">Submit</button>
+        </div>
+      </div>
+    </form>
+    </div>
+
+</div>
+                   </div></div></div></div></div>

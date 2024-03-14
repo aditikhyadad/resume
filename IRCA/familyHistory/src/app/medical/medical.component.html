@@ -1,0 +1,187 @@
+<div class="row1">
+    <h4>MEDICAL FORM</h4>
+    
+    
+    <div class="cols5">
+    <form #medicalForm="ngForm" (ngSubmit)="onSubmit(medicalForm)">
+       <input type="hidden" name="_id" #id_="ngModel" [(ngModel)]="medicalService.selectedMedical._id">
+        Reg_no:<input type="text" size="15" name="regno" #regno="ngModel" [(ngModel)]="medicalService.selectedMedical.regno">
+    Name:<input type="text" size="15" name="name1" #name1="ngModel" [(ngModel)]="medicalService.selectedMedical.name1">
+    Age:<input type="text" size="15" name="Ageofperson" #Ageofperson="ngModel" [(ngModel)]="medicalService.selectedMedical.Ageofperson">
+    Date of registration(yyyy-mm-dd):<input type="text" size="15" name="dateforregistration" #dateforregistration="ngModel" [(ngModel)]="medicalService.selectedMedical.dateforregistration">
+    <br>
+    <h4>Drinking/Drug History</h4>
+ 
+    <table border="1px solid black">
+        <tr>
+            <th>Drug</th>
+            <th>Age of first use</th>
+            <th>Years of use</th>
+            <th>Years of excessive use</th>
+            <th>Specific type of Drugs</th>
+            <th>Route of administration</th>
+            <th>Frequency of use in the last 30 days</th>
+            <th>Quantity used in the last 30 days</th>
+            <th>Past use if any</th>
+          </tr>
+     <tr>
+        
+        <td>
+            <select name="drugs" #drugs="ngModel" [(ngModel)]="medicalService.selectedMedical.drugs">
+                <option value="default">select</option>
+            <option value="Alcohol">Alcohol</option>
+            <option value="Tranquilizers">Tranquilizers</option>
+            <option value="Sedatives">Sedatives</option>
+            <option value="Tobacco">Tobacco</option>
+            <option value="Panmasala">Panmasala</option>
+               
+            </select>
+        </td>
+        <td><input type="text" size="30" name=" Age" #Age="ngModel" [(ngModel)]="medicalService.selectedMedical.Age"></td>
+        <td><input type="text" size="30" name="years" #years="ngModel" [(ngModel)]="medicalService.selectedMedical.years"></td>
+        <td><input type="text" size="30" name="excessive" #excessive="ngModel" [(ngModel)]="medicalService.selectedMedical.excessive"></td>
+        <td><input type="text" size="30" name="specifictype" #specifictype="ngModel" [(ngModel)]="medicalService.selectedMedical.specifictype"></td>
+        <td><input type="text" size="30" name="route" #route="ngModel" [(ngModel)]="medicalService.selectedMedical.route"></td>
+        <td><input type="text" size="30" name="frequency" #frequency="ngModel" [(ngModel)]="medicalService.selectedMedical.frequency"></td>
+        <td><input type="text" size="30" name="quantity" #quantity="ngModel" [(ngModel)]="medicalService.selectedMedical.quantity"></td>
+        <td><input type="text" size="30" name="pastuseifany" #pastuseifany="ngModel" [(ngModel)]="medicalService.selectedMedical.pastuseifany"></td>
+     </tr>
+     <tr>
+        <td>
+            <select name="drugs" #drugs="ngModel" [(ngModel)]="medicalService.selectedMedical.drugs1">
+                <option value="default">Select</option>
+                <option  value="Opium">Opium</option>
+                <option value="Heroin">Heroin</option>
+                <option value="Morphine">Morphine</option>
+                <option value="Codeine">Codeine</option>
+                <option value="Pentasozine">Pentasozine</option>
+                <option value="Buprenorphine">Buprenorphine</option>
+                
+            </select>
+        </td>
+        <td><input type="text" size="30" name=" Age1" #Age1="ngModel" [(ngModel)]="medicalService.selectedMedical.Age1"></td>
+        <td><input type="text" size="30" name="years1" #years1="ngModel" [(ngModel)]="medicalService.selectedMedical.years1"></td>
+        <td><input type="text" size="30" name="excessive1" #excessive1="ngModel" [(ngModel)]="medicalService.selectedMedical.excessive1"></td>
+        <td><input type="text" size="30" name="specifictype1" #specifictype1="ngModel" [(ngModel)]="medicalService.selectedMedical.specifictype1"></td>
+        <td><input type="text" size="30" name="route1" #route1="ngModel" [(ngModel)]="medicalService.selectedMedical.route1"></td>
+        <td><input type="text" size="30" name="frequency1" #frequency1="ngModel" [(ngModel)]="medicalService.selectedMedical.frequency1"></td>
+        <td><input type="text" size="30" name="quantity1" #quantity1="ngModel" [(ngModel)]="medicalService.selectedMedical.quantity1"></td>
+        <td><input type="text" size="30" name="pastuseifany1" #pastuseifany1="ngModel" [(ngModel)]="medicalService.selectedMedical.pastuseifany1"></td>
+     </tr>
+
+     <tr>
+        <td>
+            <select name="drugs2" #drugs2="ngModel" [(ngModel)]="medicalService.selectedMedical.drugs2">
+                <option value="default">select</option>
+                <option>Select</option>
+                <option value="Ganja">Ganja</option>
+                <option value="Bhang">Bhang</option>
+                
+            </select>
+        </td>
+        <td><input type="text" size="30" name=" Age2" #Age2="ngModel" [(ngModel)]="medicalService.selectedMedical.Age2"></td>
+        <td><input type="text" size="30" name="years2" #years2="ngModel" [(ngModel)]="medicalService.selectedMedical.years2"></td>
+        <td><input type="text" size="30" name="excessive2" #excessive2="ngModel" [(ngModel)]="medicalService.selectedMedical.excessive2"></td>
+        <td><input type="text" size="30" name="specifictype2" #specifictype2="ngModel" [(ngModel)]="medicalService.selectedMedical.specifictype2"></td>
+        <td><input type="text" size="30" name="route2" #route2="ngModel" [(ngModel)]="medicalService.selectedMedical.route2"></td>
+        <td><input type="text" size="30" name="frequency2" #frequency2="ngModel" [(ngModel)]="medicalService.selectedMedical.frequency2"></td>
+        <td><input type="text" size="30" name="quantity2" #quantity2="ngModel" [(ngModel)]="medicalService.selectedMedical.quantity2"></td>
+        <td><input type="text" size="30" name="pastuseifany2" #pastuseifany2="ngModel" [(ngModel)]="medicalService.selectedMedical.pastuseifany2"></td>
+     </tr>
+
+     <tr>
+        <td>
+            <select name="drugs3" #drugs3="ngModel" [(ngModel)]="medicalService.selectedMedical.drugs3">
+                <option value="default">select</option>
+                <option value="LSD">LSD</option>
+                <option value="PCP">PCP</option>
+                
+            </select>
+        </td>
+        <td><input type="text" size="30" name=" Age3" #Age3="ngModel" [(ngModel)]="medicalService.selectedMedical.Age3"></td>
+        <td><input type="text" size="30" name="years3" #years3="ngModel" [(ngModel)]="medicalService.selectedMedical.years3"></td>
+        <td><input type="text" size="30" name="excessive3" #excessive3="ngModel" [(ngModel)]="medicalService.selectedMedical.excessive3"></td>
+        <td><input type="text" size="30" name="specifictype3" #specifictype3="ngModel" [(ngModel)]="medicalService.selectedMedical.specifictype3"></td>
+        <td><input type="text" size="30" name="route3" #route3="ngModel" [(ngModel)]="medicalService.selectedMedical.route3"></td>
+        <td><input type="text" size="30" name="frequency3" #frequency3="ngModel" [(ngModel)]="medicalService.selectedMedical.frequency3"></td>
+        <td><input type="text" size="30" name="quantity3" #quantity3="ngModel" [(ngModel)]="medicalService.selectedMedical.quantity3"></td>
+        <td><input type="text" size="30" name="pastuseifany3" #pastuseifany3="ngModel" [(ngModel)]="medicalService.selectedMedical.pastuseifany3"></td>
+     </tr>
+
+     <tr>
+        <td>
+            <select name="drugs4" #drugs4="ngModel" [(ngModel)]="medicalService.selectedMedical.drugs4">
+                <option>Select</option>
+                <option>Select</option>
+                <option value="LSD">LSD</option>
+                <option value="PCP">PCP</option>
+                
+            </select>
+        </td>
+        <td><input type="text" size="30" name=" Age4" #Age4="ngModel" [(ngModel)]="medicalService.selectedMedical.Age4"></td>
+        <td><input type="text" size="30" name="years4" #years4="ngModel" [(ngModel)]="medicalService.selectedMedical.years4"></td>
+        <td><input type="text" size="30" name="excessive4" #excessive4="ngModel" [(ngModel)]="medicalService.selectedMedical.excessive4"></td>
+        <td><input type="text" size="30" name="specifictype4" #specifictype4="ngModel" [(ngModel)]="medicalService.selectedMedical.specifictype4"></td>
+        <td><input type="text" size="30" name="route4" #route4="ngModel" [(ngModel)]="medicalService.selectedMedical.route4"></td>
+        <td><input type="text" size="30" name="frequency4" #frequency4="ngModel" [(ngModel)]="medicalService.selectedMedical.frequency4"></td>
+        <td><input type="text" size="30" name="quantity4" #quantity4="ngModel" [(ngModel)]="medicalService.selectedMedical.quantity4"></td>
+        <td><input type="text" size="30" name="pastuseifany4" #pastuseifany4="ngModel" [(ngModel)]="medicalService.selectedMedical.pastuseifany4"></td>
+     </tr>
+
+     <tr>
+        <td>
+            <select name="drugs5" #drugs5="ngModel" [(ngModel)]="medicalService.selectedMedical.drugs5">
+                <option>Select</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Glue">Glue</option>
+                <option value="Whitener">Whitener</option>
+                <option value="Grease">Grease</option>
+                <option value="Thinner">Thinner</option>
+                <option value="NailPolish">NailPolish</option>
+               
+            </select>
+        </td>
+        <td><input type="text" size="30" name=" Age5" #Age5="ngModel" [(ngModel)]="medicalService.selectedMedical.Age5"></td>
+        <td><input type="text" size="30" name="years5" #years5="ngModel" [(ngModel)]="medicalService.selectedMedical.years5"></td>
+        <td><input type="text" size="30" name="excessive5" #excessive5="ngModel" [(ngModel)]="medicalService.selectedMedical.excessive5"></td>
+        <td><input type="text" size="30" name="specifictype5" #specifictype5="ngModel" [(ngModel)]="medicalService.selectedMedical.specifictype5"></td>
+        <td><input type="text" size="30" name="route5" #route5="ngModel" [(ngModel)]="medicalService.selectedMedical.route5"></td>
+        <td><input type="text" size="30" name="frequency5" #frequency5="ngModel" [(ngModel)]="medicalService.selectedMedical.frequency5"></td>
+        <td><input type="text" size="30" name="quantity5" #quantity5="ngModel" [(ngModel)]="medicalService.selectedMedical.quantity5"></td>
+        <td><input type="text" size="30" name="pastuseifany5" #pastuseifany5="ngModel" [(ngModel)]="medicalService.selectedMedical.pastuseifany5"></td>
+     </tr>
+
+     <tr>
+        <td>
+            <select name="drugs6" #drugs6="ngModel" [(ngModel)]="medicalService.selectedMedical.drugs6">
+                <option>Select</option>
+                <option value="Cough">Cough</option>
+                <option value="AntiHistemine">AntiHistemine</option>
+                <option value="AntiDepressant">AntiDepressant</option>
+                <option value="AntiPsychotic">AntiPsychotic</option>
+                <option value="Smoking">Smoking</option>
+                <option value="Chewing">Chewing</option>
+                
+            </select>
+        </td>
+        <td><input type="text" size="30" name=" Age6" #Age6="ngModel" [(ngModel)]="medicalService.selectedMedical.Age6"></td>
+        <td><input type="text" size="30" name="years6" #years6="ngModel" [(ngModel)]="medicalService.selectedMedical.years6"></td>
+        <td><input type="text" size="30" name="excessive6" #excessive6="ngModel" [(ngModel)]="medicalService.selectedMedical.excessive6"></td>
+        <td><input type="text" size="30" name="specifictype6" #specifictype6="ngModel" [(ngModel)]="medicalService.selectedMedical.specifictype6"></td>
+        <td><input type="text" size="30" name="route6" #route6="ngModel" [(ngModel)]="medicalService.selectedMedical.route6"></td>
+        <td><input type="text" size="30" name="frequency6" #frequency6="ngModel" [(ngModel)]="medicalService.selectedMedical.frequency6"></td>
+        <td><input type="text" size="30" name="quantity6" #quantity6="ngModel" [(ngModel)]="medicalService.selectedMedical.quantity6"></td>
+        <td><input type="text" size="30" name="pastuseifany6" #pastuseifany6="ngModel" [(ngModel)]="medicalService.selectedMedical.pastuseifany6"></td>
+     </tr>
+
+    </table>
+    <div class="row6">
+        <div class="input-field col s12">
+          <button class="btn btn-custom right" type="button" (click)="resetForm(medicalForm)">Reset</button>
+          <button class="btn btn-custom right" type="submit" [disabled]="!medicalForm.valid">Submit</button>
+        </div>
+      </div>
+    </form>
+    </div>
+
+</div>

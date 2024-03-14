@@ -1,0 +1,100 @@
+<!-- <nav>
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a routerLink="/family">Family History</a></li>
+        <li><a routerLink="/info">Basic Information</a></li>
+        <li><a routerLink="/treatment">Past Treatment History</a></li>
+        <li><a routerLink="/">Logout</a></li>
+      </ul>
+    </div>
+  </nav> -->
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content white-text">
+          <div class="row">
+            <h3>Legal History</h3>
+              <form #financeForm="ngForm" (ngSubmit)="onSubmit(financeForm)">
+                <div class="col s5">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="legalhistoryService.selectedLegalhistory._id">
+                <div class="row" id="rn">
+                  <div class="input-field col s12">
+                    <label for="saleofdrugs">Have you been arrested for sale of drug?<label class="red-text">*</label></label>
+                    <input type="number" id="saleofdrugs" name="saleofdrugs" #name="ngModel"
+                      [(ngModel)]="legalhistoryService.selectedLegalhistory.saleofdrugs" placeholder="Enter no of times" required  class="validate" min=0 > 
+  
+                  </div>
+                </div>
+                <div class="row" id="rn">
+                    <div class="input-field col s12">
+                      <label for="possessionofdrugs">Have you been arrested for possession of drug?<label class="red-text">*</label></label>
+                      <input type="number" id="possessionofdrugs" name="possessionofdrugs" #name="ngModel"
+                        [(ngModel)]="legalhistoryService.selectedLegalhistory.possessionofdrugs" placeholder="Enter no of times" required  class="validate" min=0 > 
+    
+                    </div>
+                  </div>
+                  <div class="row" id="rn">
+                    <div class="input-field col s12">
+                      <label for="arrestedfordrunkenbehaviour">Arrested for drunken/drug influenced behaviour<label class="red-text">*</label></label>
+                      <input type="number" id="arrestedfordrunkenbehaviour" name="arrestedfordrunkenbehaviour" #name="ngModel"
+                        [(ngModel)]="legalhistoryService.selectedLegalhistory.arrestedfordrunkenbehaviour" placeholder="Enter no of times" required  class="validate" min=0 > 
+    
+                    </div>
+                  </div>
+                  <div class="row" id="rn">
+                    <div class="input-field col s12">
+                      <label for="finedfordrunkendriving">Fined for drunken driving<label class="red-text">*</label></label>
+                      <input type="number" id="finedfordrunkendriving" name="finedfordrunkendriving" #name="ngModel"
+                        [(ngModel)]="legalhistoryService.selectedLegalhistory.finedfordrunkendriving" placeholder="Enter no of times" required  class="validate" min=0 > 
+    
+                    </div>
+                  </div>
+                  <div class="row" id="rn">
+                    <div class="input-field col s12">
+                      <label for="accindentunderinfluence">Had an accident (even minor) while driving under the influence of  alcohol/drugs<label class="red-text">*</label></label>
+                      <input type="number" id="accindentunderinfluence" name="accindentunderinfluence" #name="ngModel"
+                        [(ngModel)]="legalhistoryService.selectedLegalhistory.accindentunderinfluence" placeholder="Enter no of times" required  class="validate" min=0 > 
+    
+                    </div>
+                  </div>
+                  <div class="row" id="rn">
+                    <div class="input-field col s12">
+                      <label for="assault">Assault <label class="red-text">*</label></label>
+                      <input type="number" id="assault" name="assault" #name="ngModel"
+                        [(ngModel)]="legalhistoryService.selectedLegalhistory.assault" placeholder="Enter no of times" required  class="validate" min=0 > 
+    
+                    </div>
+                  </div>
+                  <div class="row" id="rn">
+                    <div class="input-field col s12">
+                      <label for="anyother">Anyother <label class="red-text">*</label></label>
+                      <input type="number" id="anyother" name="anyother" #name="ngModel"
+                        [(ngModel)]="legalhistoryService.selectedLegalhistory.anyother" placeholder="Enter no of times" required  class="validate" min=0 > 
+    
+                    </div>
+                  </div>
+                                 
+                  
+            </div>
+  
+  
+  
+  
+            <div class="row">
+              <div class="input-field col s12">
+                <button class="btn btn-custom right" type="button" (click)="resetForm(financeForm)">Reset</button>
+                <button class="btn btn-custom right" type="submit" [disabled]="!financeForm.valid">Submit</button>
+                          </div>
+            </div>
+            </form>
+            
+            
+            
+          </div>
+          
+            
+            
+        </div>
+      </div>
+    </div>
+  </div>    

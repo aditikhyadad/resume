@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    text-align: center;
+    font-weight: bold;
+}
+
+header p{
+    font-size: 50px;
+}
+
+
+.family-info {
+    margin: 30px;
+    padding:20px;
+    text-align: left;
+}
+ul li{
+    width: 25vw;
+
+}
+
+ul {
+    display: flex;
+    /* justify-content:space-between; */
+    list-style: none;
+    padding: 5px;
+    margin:30px;
+
+}
+
+table, th, td {
+    margin:30px;
+    padding:20px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 25px;
+    padding: 8px;
+    text-align: left;
+    font-size: large;
+}
+
+#print{
+    height: 30px;
+    text-align: center;
+    margin: 3px auto;
+    display: block;
+}
+
+@media print {
+    #print {
+        display: none;
+    }
+    h1{
+        font-size: 10px;
+    }
+    .break{
+        page-break-before: always;
+    }
+}
+
+body{
+    font-size: large;
+    color: black;
+}
+
+button{
+    width: 5vw;
+}
+
+#basicInfo{
+    width: 70%;
+}
+
+/* #basicTable{
+    width:100%;
+    max-width: 80vw;
+    box-sizing: border-box;
+} */
+table{
+    width: 80vw;
+}
+label{
+    font-size: 20px;
+    color: black;
+}
+.family-info{
+    font-size: 20px;
+    color: black;
+}
+#st{
+
+    display:flex;
+    flex-direction: row;
+    margin-left:-1px;
+    /* width: 10px; */
+    padding-right: 15px;
+    /* justify-content: space-between; */
+}
+#st div{
+    width: 30vw;
+}
+.break{
+    page-break-before: always;
+}
+
+#basic {
+    display: flex;
+    align-items: center;
+  }
+  
+  .number {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px; /* Adjust the spacing between the number and table */
+  }
+  

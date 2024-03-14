@@ -1,0 +1,184 @@
+<p>experience works!</p>
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <div class="col s5">
+                        <h3>Adjustment Patterns </h3>
+                        <form #patternForm="ngForm" (ngSubmit)="onSubmit(patternForm)">
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="patternService.selectedPattern._id">
+                            <table border="2">
+                                <thead>
+                                    <th>Relationship with family members</th>
+                                    <th>Parents</th>
+                                    <th>Siblings</th>
+                                    <th>Spouse</th>
+                                    <th>Children</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>No family(Dead)</td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="family[0].f1" #name="ngModel" [(ngModel)]="patternService.selectedPattern.family[0].f1">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                       
+                                        <label>
+                                            <input type="checkbox" name="family[0].f2" #name="ngModel" [(ngModel)]="patternService.selectedPattern.family[0].f2">
+                                            <span></span>
+                                        </label>
+                                    </td>
+
+                                    <td>
+                                        
+                                        <label>
+                                            <input type="checkbox" name="family[0].f3" #name="ngModel" [(ngModel)]="patternService.selectedPattern.family[0].f3">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="family[0].f4" #name="ngModel" [(ngModel)]="patternService.selectedPattern.family[0].f4">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Disowned by family/mutual rejection	</td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="disowned[0].d1" #name="ngModel" [(ngModel)]="patternService.selectedPattern.disowned[0].d1">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="disowned[0].d2" #name="ngModel" [(ngModel)]="patternService.selectedPattern.disowned[0].d2">
+                                            <span></span>
+                                        </label>
+                                    </td>
+
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="disowned[0].d3" #name="ngModel" [(ngModel)]="patternService.selectedPattern.disowned[0].d3">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="disowned[0].d4" #name="ngModel" [(ngModel)]="patternService.selectedPattern.disowned[0].d4">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Mixed of indifferent feelings</td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="mixed[0].m1" #name="ngModel" [(ngModel)]="patternService.selectedPattern.mixed[0].m1">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="mixed[0].m2" #name="ngModel" [(ngModel)]="patternService.selectedPattern.mixed[0].m2">
+                                            <span></span>
+                                        </label>
+                                    </td>
+
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="mixed[0].m3" #name="ngModel" [(ngModel)]="patternService.selectedPattern.mixed[0].m3">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="mixed[0].m4" #name="ngModel" [(ngModel)]="patternService.selectedPattern.mixed[0].m4">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>Usually friendly miner conflicts</td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="conflict[0].c1" #name="ngModel" [(ngModel)]="patternService.selectedPattern.conflict[0].c1">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="conflict[0].c2" #name="ngModel" [(ngModel)]="patternService.selectedPattern.conflict[0].c2">
+                                            <span></span>
+                                        </label>
+                                    </td>
+
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="conflict[0].c3" #name="ngModel" [(ngModel)]="patternService.selectedPattern.conflict[0].c3">
+                            
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="conflict[0].c4" #name="ngModel" [(ngModel)]="patternService.selectedPattern.conflict[0].c4">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                      
+
+
+                            
+                        <br>
+                        <button type="button" class="btn btn-custom right" (click)="resetForm()">Reset</button>
+                        <button type="submit" class="btn btn-custom right">Submit</button>
+                        <button type="button" class="btn btn-custom right" (click)="onEdit()">Edit</button>
+                        </form>
+                    </div>
+                    <br><br><br><br><br><br><br><br><br>
+
+                    <div class="col s6">
+                        <table class="responsive-table highlight">
+                            <thead>
+                                <tr>
+                                    <th>Situations</th>
+                                    <th>A</th>
+                                    <th>Present</th>
+                                    <th>C</th>
+                                    <th>D</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A-Poverty/severe debts of parents</td>
+                                    <td>
+                                        <p *ngIf="patternService.selectedPattern.family[0].f1">Yes</p>
+                                        <p *ngIf="!patternService.selectedPattern.family[0].f1">No</p>
+                                    </td>
+                                </tr>
+                               
+                               
+                            </tbody>
+                        </table>
+                    
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

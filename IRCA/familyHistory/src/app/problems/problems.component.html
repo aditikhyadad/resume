@@ -1,0 +1,272 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <h5>Has there been anyone in your family who has suffered from any of these problems?</h5>
+                    <div class="col s6">
+                        <form #problemsForm="ngForm" (ngSubmit)="onSubmit(problemsForm)">
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="problemsService.selectedProblems._id">
+                          
+                            <table border="2">
+                                <tr>
+                                    <th>Problems</th>
+                                    <th>Relationship (Parents/Siblings/Wife/Children)</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Yes</td>
+                                    <td>Relationship</td>
+                                    <td>No</td>
+                                    <td>Don't know</td>
+                                </tr>
+                                <tr>
+                                    <td>Major Depression</td>
+                                     <td>
+                                        
+                                        <label>
+                                            <input type="checkbox" name="d2" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.d2">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td><select type="text" name="depression" #name="ngModel"
+                                            [(ngModel)]="problemsService.selectedProblems.depression">
+                                            <option value="" disabled selected>Select Relationship</option>
+                                            <option value="mother">Mother</option>
+                                            <option value="father">Father</option>
+                                            <option value="brother">Brother</option>
+                                            <option value="sister">sister</option>
+                                            <option value="wife">wife</option>
+                                            <option value="son">son</option>
+                                            <option value="daughter">daughter</option> 
+                                            </select>
+                                        </td>
+                                        <td>
+                                        
+                                            <label>
+                                                <input type="checkbox" name="d3" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.d3">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                        
+                                            <label>
+                                                <input type="checkbox" name="d4" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.d4">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td>Suicide/Attempted Suicide</td>
+                                    <td>
+                                        
+                                        <label>
+                                            <input type="checkbox" name="s2" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.s2">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td><select type="text" name="suicide" #name="ngModel"
+                                            [(ngModel)]="problemsService.selectedProblems.suicide">
+                                            <option value="" disabled selected>Select Relationship</option>
+                                            <option value="mother">Mother</option>
+                                            <option value="father">Father</option>
+                                            <option value="brother">Brother</option>
+                                            <option value="sister">sister</option>
+                                            <option value="wife">wife</option>
+                                            <option value="son">son</option>
+                                            <option value="daughter">daughter</option>
+                                        </select></td>
+                                        <td>
+                                        
+                                            <label>
+                                                <input type="checkbox" name="s3" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.s3">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                        
+                                            <label>
+                                                <input type="checkbox" name="s4" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.s4">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td>Psychiatric Illness</td>
+                                    <td>
+                                        
+                                        <label>
+                                            <input type="checkbox" name="p2" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.p2">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td><select type="text" name="psychiatric" #name="ngModel"
+                                            [(ngModel)]="problemsService.selectedProblems.psychiatric">
+                                            <option value="" disabled selected>Select Relationship</option>
+                                            <option value="mother">Mother</option>
+                                            <option value="father">Father</option>
+                                            <option value="brother">Brother</option>
+                                            <option value="sister">sister</option>
+                                            <option value="wife">wife</option>
+                                            <option value="son">son</option>
+                                            <option value="daughter">daughter</option>
+                                        </select></td>
+                                        <td>
+                                        
+                                            <label>
+                                                <input type="checkbox" name="p3" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.p3">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                        
+                                            <label>
+                                                <input type="checkbox" name="p4" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.p4">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td>Alcohol Dependence</td>
+                                    <td>
+                                        
+                                        <label>
+                                            <input type="checkbox" name="a2" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.a2">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td><select type="text" name="alcohol" #name="ngModel"
+                                            [(ngModel)]="problemsService.selectedProblems.alcohol">
+                                            <option value="" disabled selected>Select Relationship</option>
+                                            <option value="mother">Mother</option>
+                                            <option value="father">Father</option>
+                                            <option value="brother">Brother</option>
+                                            <option value="sister">sister</option>
+                                            <option value="wife">wife</option>
+                                            <option value="son">son</option>
+                                            <option value="daughter">daughter</option>
+                                        </select></td>
+                                        <td>
+                                        
+                                            <label>
+                                                <input type="checkbox" name="a3" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.a3">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                        
+                                            <label>
+                                                <input type="checkbox" name="a4" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.a4">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Drug Dependence</td>
+                                    <td>
+                                        
+                                        <label>
+                                            <input type="checkbox" name="dr2" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.dr2">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td><select type="text" name="drug" #name="ngModel"
+                                            [(ngModel)]="problemsService.selectedProblems.drug">
+                                            <option value="" disabled selected>Select Relationship</option>
+                                            <option value="mother">Mother</option>
+                                            <option value="father">Father</option>
+                                            <option value="brother">Brother</option>
+                                            <option value="sister">sister</option>
+                                            <option value="wife">wife</option>
+                                            <option value="son">son</option>
+                                            <option value="daughter">daughter</option>
+                                        </select></td>
+                                        <td>
+                                        
+                                            <label>
+                                                <input type="checkbox" name="dr3" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.dr3">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                        
+                                            <label>
+                                                <input type="checkbox" name="dr4" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.dr4">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                </tr>
+                            </table>
+                           
+            
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button class="btn btn-custom right" type="button" (click)="resetForm(problemsForm)">Reset</button>
+                                    <button class="btn btn-custom right" type="submit" >Submit</button>
+                                    <button class="btn btn-custom right" type="button" (click)="onEdit(problemsService.problems[0])">Edit</button>
+                                </div>
+                            </div>
+                          
+                        </form>
+                    </div>
+                    <div class="col s7">
+                        <table class="responsive-table highlight">
+                            <thead>
+                                <tr>
+                                    <!-- <th>depression</th>
+                                    <th>suicide</th>
+                                    <th>psychiatric</th>
+                                    <th>alcohol</th>
+                                    <th>drug</th> -->
+                                    <th>Problems</th>
+                                    <th>Parents/siblings/wife/children</th>
+                                    
+                    
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>Yes</td>
+                                <td>Relationship</td>
+                                <td>No</td>
+                                <td>Don't know</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                        
+                                    <label>
+                                        <input type="checkbox" name="d2" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.d2">
+                                        <span></span>
+                                    </label>
+                                    
+                                </td>
+                                <td>{{problemsService.selectedProblems.depression}}</td>
+                                <td>
+                                        
+                                    <label>
+                                        <input type="checkbox" name="family[0].f3" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.d3">
+                                        <span></span>
+                                    </label>
+                                    
+                                </td>
+                                <td>
+                                        
+                                    <label>
+                                        <input type="checkbox" name="family[0].f3" #name="ngModel" [(ngModel)]="problemsService.selectedProblems.d4">
+                                        <span></span>
+                                    </label>
+                                    
+                                </td>
+                            </tr>
+                                
+                               
+                            
+                        </table>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>

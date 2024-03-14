@@ -1,0 +1,88 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <h3>Occupational Damage</h3>
+                    <div class="col s6">
+<form [formGroup]="occupationForm1" (ngSubmit)="onSubmit()">
+
+<table>
+    <tr>
+        <td>Absentism</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td>Warning/ Memos</td>
+        <td>
+            <label>
+                <input type="checkbox" formControlName="checkbox1" />
+                <span></span>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>Suspension Order</td>
+        <td>
+            <label>
+                <input type="checkbox" formControlName="checkbox2" />
+                <span></span>
+            </label>
+        </td>
+    </tr>   
+    <tr>
+        <td>Dismissal Order</td>
+        <td>
+            <label>
+                <input type="checkbox" formControlName="checkbox3" />
+                <span></span>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>Transfer Order</td>
+        <td>
+            <label>
+                <input type="checkbox" formControlName="checkbox4" />
+                <span></span>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>Accidents on the job</td>
+        <td>
+            <label>
+                <input type="checkbox" formControlName="checkbox5" />
+                <span></span>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>Attend work under the influence of alcohol /drugs</td>
+        <td>
+            <label>
+                <input type="checkbox" formControlName="checkbox6" />
+                <span></span>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>Unauthorised absent</td>
+        <td>
+            <label>
+                <input type="checkbox" formControlName="checkbox7" />
+                <span></span>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>If yes for how long</td>
+        <td><input type="text" formControlName="time"></td>
+    </tr>
+</table>
+<button type="submit" class="btn btn-custom right">Submit</button>
+<button type="button" class="btn btn-custom right" (click)="resetForm()">Reset</button>
+
+
+</form>
+</div></div></div></div></div></div>

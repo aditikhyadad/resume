@@ -1,0 +1,178 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+<div class="container">
+    <h3>Leisure time activities</h3>
+    <form [formGroup]="areForm" (ngSubmit)="onSubmit()">
+
+        <table border="1">
+            <thead>
+                <th>Are you a</th>
+                <th>yes</th>
+                <th>No</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Believer</td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox7" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox8" />
+                            <span></span>
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Non Believer</td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox9" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox10" />
+                            <span></span>
+                        </label>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>Indiffrent</td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox11" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox12" />
+                            <span></span>
+                        </label>
+                    </td>
+                    </tr>
+            </tbody>
+
+        </table>
+        <br>
+        <table border="1">
+            <thead>
+                <th>Do you</th>
+                <th>Always</th>
+                <th>Sometimes</th>
+                <th>Never</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pray at home</td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox13" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox14" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox15" />
+                            <span></span>
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Visit Temple regularly</td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox16" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox17" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox18" />
+                            <span></span>
+                        </label>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>Go on piligrimages</td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox19" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox20" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox21" />
+                            <span></span>
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Celebrate festivals</td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox22" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox23" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" formControlName="checkbox24" />
+                            <span></span>
+                        </label>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <div class="print-layout">
+            <button type="button" class="btn btn-custom right" (click)="resetForm()">Reset</button>
+        <button type="submit" class="btn btn-custom right">Submit</button>
+
+        <br>
+     <!--  <button id="btn-print" class="btn btn-success btn-lg" (click)="print()">Print & Generate PDF</button>--> 
+        </div>
+    </form>
+</div>
+                </div></div></div></div></div>
