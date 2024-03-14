@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <img src="./logo.png" alt="Logo" class="logo">
+        <div class="card">
+            
+            <form action="#">
+                <h1><b>Login Form</b></h1>
+                <div class="form-group">
+                    
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter the email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter the password">
+                </div>
+
+                <div class="remember-forgot">
+                    <label>
+                        <input type="checkbox">Remember Me
+                    </label>
+                    <a href="./password_recovery.html">Forgot Password</a>
+                </div>
+                
+                <div class="register-link">
+                    <p class="donthvacc">Dont have an account? 
+                        <a href="./registration.html">Register</a>
+                    </p>
+                </div>
+            
+                <div class="text-center">
+                    <button type="button" onclick="saveData()" class="btn btn-primary" id="save_btn">Submit</button>
+                </div>
+            </form>            
+        </div>
+    </div>
+</body>
+<script>
+
+    //new
+    function saveData() {
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        let user_record = JSON.parse(localStorage.getItem("users")) || [];
+
+        if (user_record.some((v) => v.email === email && v.password === password)) {
+            alert("Login Successful");
+
+            
+        } 
+        else {
+            alert("Login Failed!");  
+        }
+    }
+
+    function saveData()
+    {
+        // alert("Successfully saved your data")
+        let name, email, password;
+        email=document.getElementById("email").value;
+        password=document.getElementById("password").value;
+
+        if (email.trim() === "" || password.trim() === "") {
+            alert("Please enter both email and password. Blank submission is not allowed.");
+            return; 
+        }
+        let user_record=new Array();
+        user_record=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+        if(user_record.some((v)=>{
+            return v.email==email && v.password==password;
+
+        })){
+            alert("Login Sucessful")
+            let current_user = user_record.find((v) => v.email === email && v.password === password);
+
+            localStorage.setItem("name", current_user.name);
+            localStorage.setItem("email", current_user.email);
+
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+
+            window.location.href = "sidebar.html";
+
+        }
+        else{
+            alert("Login Failed!");
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+        }        
+    }
+</script>
+</html>
