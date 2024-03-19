@@ -1,0 +1,43 @@
+<header><p>Integrated Rehabiliation Center</p></header>
+<!-- <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+      </ul>
+    </div>
+  </nav> -->
+  <img class="responsive-img" src="assets/OIP.jpeg">
+  
+  <div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+
+<form [formGroup]="registration" >
+    <h1>Login</h1>
+    <div class="form-group">
+      <label >ID</label>
+      <input formControlName="id" type="text" class="form-control">
+      <div *ngIf="registration.controls['id'].invalid && registration.controls['id'].touched">First name is required</div>
+    </div>
+  
+    <div class="form-group">
+      <label >Password</label>
+      <input type="password" class="form-control" formControlName="pass">
+    </div>
+  
+    <button type="submit" (click)="onSub()">Log in</button>
+  </form>
+                </div></div></div></div></div>
+
+  <!-- <form (ngSubmit)="onSub()">
+    <label for="fname">ID</label>
+    <input type="text" [(ngModel)]="id" name="namee">
+    <label for="id">Password</label>
+    <input type="password" [(ngModel)]="pass" name="pass">
+    <button type="submit">Submit</button>
+  </form>  -->

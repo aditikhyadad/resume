@@ -1,0 +1,114 @@
+<!-- <nav>
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a routerLink="/family">Family History</a></li>
+        <li><a routerLink="/info">Basic Information</a></li>
+        <li><a routerLink="/treatment">Past Treatment History</a></li>
+        <li><a routerLink="/">Logout</a></li>
+      </ul>
+    </div>
+  </nav> -->
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content white-text">
+          <div class="row">
+            <h3>Financial History</h3>
+              <form #financeForm="ngForm" (ngSubmit)="onSubmit(financeForm)">
+                <div class="col s5">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="finhistoryService.selectedFinancial._id">
+                <div class="row" id="rn">
+                  <div class="input-field col s12">
+                    <label for="family_friends">Money borrowed from family and friends <label class="red-text">*</label></label>
+                    <input type="number" id="family_friends" name="family_friends" #name="ngModel"
+                      [(ngModel)]="finhistoryService.selectedFinancial.family_friends" placeholder="Enter amount" required  class="validate" min=0 > 
+  
+                  </div>
+                </div>
+                <div class="row" id="rn">
+                    <div class="input-field col s12">
+                      <label for="banks">Loans from banks <label class="red-text">*</label></label>
+                      <input type="number" id="banks" name="banks" #name="ngModel"
+                        [(ngModel)]="finhistoryService.selectedFinancial.banks" placeholder="Enter amount" required  class="validate" min=0 > 
+                    </div>
+                  </div>
+                  
+                  <div class="row" id="rn">
+                    <div class="input-field col s12">
+                      <label for="workplace">Loans from place of work <label class="red-text">*</label></label>
+                      <input type="number" id="workplace" name="workplace" #name="ngModel"
+                        [(ngModel)]="finhistoryService.selectedFinancial.workplace" placeholder="Enter amount" required  class="validate" min=0 > 
+    
+                    </div>
+                  </div>
+                  <div class="row" id="rn">
+                    <div class="input-field col s12">
+                      <label for="lenders">Money borrowed from money lenders <label class="red-text">*</label></label>
+                      <input type="number" id="lenders" name="lenders" #name="ngModel"
+                        [(ngModel)]="finhistoryService.selectedFinancial.lenders" placeholder="Enter amount" required  class="validate" min=0 > 
+    
+                    </div>
+                  </div>
+                  <div class="row" id="rn">
+                    <div class="input-field col s12">
+                      <label for="pawnshops">Money for redeeming articles from pawn shops <label class="red-text">*</label></label>
+                      <input type="number" id="pawnshops" name="pawnshops" #name="ngModel"
+                        [(ngModel)]="finhistoryService.selectedFinancial.pawnshops" placeholder="Enter amount" required  class="validate" min=0 > 
+    
+                    </div>
+                  </div>
+                  <div class="row" id="rn">
+                    <div class="input-field col s12">
+                      <label for="othershops">Outstanding debts at various shops None <label class="red-text">*</label></label>
+                      <input type="number" id="othershops" name="othershops" #name="ngModel"
+                        [(ngModel)]="finhistoryService.selectedFinancial.othershops" placeholder="Enter amount" required  class="validate" min=0 > 
+    
+                    </div>
+                  </div>
+
+                  <h5>Financial damages as perceived by counsellor:</h5>
+                  <div class="row" id="rn">
+                    <div class="input-field col s12">
+                      <label for="mild">Mild: <label class="red-text">*</label></label>
+                      <input type="text" id="mild" name="mild" #name="ngModel"
+                        [(ngModel)]="finhistoryService.selectedFinancial.mild" placeholder="" required  class="validate "> 
+    
+                    </div>
+                  </div>
+                  <div class="row" id="rn">
+                    <div class="input-field col s12">
+                      <label for="moderate">Moderate: <label class="red-text">*</label></label>
+                      <input type="text" id="moderate" name="moderate" #name="ngModel"
+                        [(ngModel)]="finhistoryService.selectedFinancial.moderate" placeholder="" required  class="validate"  > 
+    
+                    </div>
+                  </div>
+                  <div class="row" id="rn">
+                    <div class="input-field col s12">
+                      <label for="severe">Severe: <label class="red-text">*</label></label>
+                      <input type="text" id="severe" name="severe" #name="ngModel"
+                        [(ngModel)]="finhistoryService.selectedFinancial.severe" placeholder="" required  class="validate" > 
+    
+                    </div>
+                  </div>
+            </div>
+  
+  
+  
+  
+            <div class="row">
+              <div class="input-field col s12">
+                <button class="btn btn-custom right" type="button" (click)="resetForm(financeForm)">Reset</button>
+                <button class="btn btn-custom right" type="submit" [disabled]="!financeForm.valid">Submit</button>
+                          </div>
+            </div>
+            </form>
+           
+          </div>
+          
+              
+            
+        </div>
+      </div>
+    </div>
+  </div>    

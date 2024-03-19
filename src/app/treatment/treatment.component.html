@@ -1,0 +1,104 @@
+<div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content white-text">
+          <div class="row">
+            <h3>Prior Treatment for Addiction:</h3>
+            <div class="col s5">
+              <form #treatmentForm="ngForm" (ngSubmit)="onSubmit(treatmentForm)">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="treatmentService.selectedTreatment._id">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="date" name="year" #name="ngModel" [(ngModel)]="treatmentService.selectedTreatment.year" placeholder="Enter Year" required>
+                    <label>Year :
+                      <label class="red-text">*</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="place" #name="ngModel" [(ngModel)]="treatmentService.selectedTreatment.place" placeholder="Enter place of treatment">
+                    <label>Place :</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="number" name="period" #name="ngModel" [(ngModel)]="treatmentService.selectedTreatment.period" placeholder="Enter period">
+                    <label>period :</label>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                      <input type="number" name="sobriety" #name="ngModel" [(ngModel)]="treatmentService.selectedTreatment.sobriety" required>
+                      <label for="sobriety">sobriety Period:</label>
+                    </div>
+                  </div>
+                <div class="row">
+                <div class="input-field col s12">
+                    <select name="reason" #name="ngModel" [(ngModel)]="treatmentService.selectedTreatment.reason" placeholder="Enter Reason for sobriety" required>
+                    <option value="Health and Well-being">Health and Well-being</option>
+                                <option value="To achive Emotional Stability">To achive Emotional Stability</option>
+                                <option value="Focus on Career and Education">Focus on Career and Education</option>
+                                <option value="Family responsibilities">Family responsibilities</option>
+                                <option value="Legal Consequences">Legal Consequences</option>
+                                <option value="others">Others</option>
+                                </select>
+                    <label>Reason for sobriety:
+                    </label>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                      <input type="text" name="relapse" #name="ngModel" [(ngModel)]="treatmentService.selectedTreatment.relapse" placeholder="Enter Reason for Relapse" required>
+                      <label>Reason for Relapse :
+                      </label>
+                    </div>
+                  </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <button class="btn btn-custom right" type="button" (click)="resetForm(treatmentForm)">Reset</button>
+                    <button class="btn btn-custom right" type="submit" >Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col s7">
+                <table class="responsive-table highlight">
+                    <thead>
+                      <tr>
+                        <th>Year</th>
+                        <th>place</th>
+                        <th>period</th>
+                        <th>sobriety</th>
+                        <th>Reason for sobriety</th>
+                        <th>Reason for relapse</th>
+                      </tr>
+                    </thead>
+                    <tr *ngFor="let treat of treatmentService.Treatment">
+                      <td>{{treat.year}}</td>
+                      <td>{{treat.place}}</td>
+                      <td>{{treat.period}}</td>
+                      <td>{{treat.sobriety}}</td>
+                      <td>{{treat.reason}}</td>
+                      <td>{{treat.relapse}}</td>
+                      <td>
+                          <a class="action-btn" (click)="onEdit(treat)">
+                            <i class="material-icons">edit</i>
+                          </a>
+                          <a class="action-btn" (click)="onDelete(treat._id,treatmentForm)">
+                            <i class="material-icons">delete</i>
+                          </a>
+                        </td>
+                    </tr>
+                  </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+
+
+

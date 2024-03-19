@@ -1,0 +1,54 @@
+header{
+    height: 10vh;
+    background-color: rgb(5, 57, 92);
+    color: white;
+    float: left;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    /* font-size: 100px;
+    font-weight: bolder; */
+}
+header p{
+    font-size: 40px;
+    font-weight: bolder;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(5, 57, 92);
+    color: white;
+}
+img{
+    width: 95vw;
+    margin: 2vh 2vw;
+    height: 80vh;
+}
+*{
+    margin: 0;padding: 0;
+    
+}
+
+.class{
+    width: 80vw;
+}
+form{
+    width: 50vw;
+    /* background-image: url('../assets/OIP.jpeg');
+    background-size: cover;  */
+}
+.row{
+    width: 70vw;
+    margin: 0 5vw;
+    height: 50vh;
+}
+label{
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+button{
+    background-color: rgb(28, 110, 28);
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}

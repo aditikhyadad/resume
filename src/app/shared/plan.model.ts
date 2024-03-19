@@ -1,0 +1,66 @@
+export class Plan {
+   _id: string;
+   sa: string;
+   tf:string;
+   sa1: string;
+   tf1:string;
+   sa2: string;
+   tf2:string;
+   sa3: string;
+   tf3:string;
+   sa4: string;
+   tf4:string;
+   sa5: string;
+   tf5:string;
+   sa6: string;
+   tf6:string;
+   sa7: string;
+   tf7:string;
+   sa8: string;
+   tf8:string;
+   dropout:string;
+   date:string;
+   lackofmotivation:string;
+   lackoffamilysupport:string;
+   poverty:string;
+   legalproblem:string;
+   unabletocope:string;
+   inadequatefacilities:string;
+   anyother:string;
+   days:string;
+   months:string;
+   reasons:string;
+   constructor() {
+    this._id = '';
+    this.sa = '';
+    this.tf = '';
+    this.sa1 = '';
+    this.tf1 = '';
+    this.sa2 = '';
+    this.tf2 = '';
+    this.sa3 = '';
+    this.tf3 = '';
+    this.sa4 = '';
+    this.tf4 = '';
+    this.sa5 = '';
+    this.tf5 = '';
+    this.sa6 = '';
+    this.tf6 = '';
+    this.sa7 = '';
+    this.tf7 = '';
+    this.sa8 = '';
+    this.tf8 = '';
+    this.dropout='';
+    this.date='',
+    this.lackofmotivation='';
+    this.lackoffamilysupport='';
+    this.poverty='';
+    this.legalproblem='';
+    this.unabletocope='';
+    this.inadequatefacilities='';
+    this.anyother='';
+    this.days='';
+    this.months='';
+    this.reasons='';
+}
+}

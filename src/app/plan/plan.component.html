@@ -1,0 +1,161 @@
+<div class="row1">
+                <div class="cols5">
+                <form #planForm="ngForm" (ngSubmit)="onSubmit(planForm)">
+                <input type="hidden" name="_id" #id_="ngModel" [(ngModel)]="planService.selectedPlan._id">
+                <h4>Treatment Plan</h4>
+                <table border="1px solid black">
+                    <tr>
+                        <th>Goals-Short-term And Long-term</th>
+                        <th>Specific activites to be undertaken</th>
+                        <th>Time frame</th>
+                    </tr>
+                    <tr>
+                        <td>Abstaining from alcohol and drugs</td>
+                        <td><input type="text" name="sa" #sa="ngModel" [(ngModel)]="planService.selectedPlan.sa"></td>
+                        <td><input type="text" name="tf" #tf="ngModel" [(ngModel)]="planService.selectedPlan.tf"></td>
+                    </tr>
+                    <tr>
+                        <td>Getting back to a routine life</td>
+                        <td><input type="text" name="sa1" #sa1="ngModel" [(ngModel)]="planService.selectedPlan.sa1"></td>
+                        <td><input type="text" name="tf1" #tf1="ngModel" [(ngModel)]="planService.selectedPlan.tf1"></td>
+                    </tr>
+                    <tr>
+                        <td>Improvement in work life</td>
+                        <td><input type="text" name="sa2" #sa2="ngModel" [(ngModel)]="planService.selectedPlan.sa2"></td>
+                        <td><input type="text" name="tf2" #tf2="ngModel" [(ngModel)]="planService.selectedPlan.tf2"></td>
+                    </tr>
+                    <tr>
+                        <td>Managing financed</td>
+                        <td><input type="text" name="sa3" #sa3="ngModel" [(ngModel)]="planService.selectedPlan.sa3"></td>
+                        <td><input type="text" name="tf3" #tf3="ngModel" [(ngModel)]="planService.selectedPlan.tf3"></td>
+                    </tr>
+                    <tr>
+                        <td>Dealing with defects of character</td>
+                        <td><input type="text" name="sa4" #sa4="ngModel" [(ngModel)]="planService.selectedPlan.sa4"></td>
+                        <td><input type="text" name="tf4" #tf4="ngModel" [(ngModel)]="planService.selectedPlan.tf4"></td>
+                    </tr>
+                    <tr>
+                        <td>Improving relationship with family</td>
+                        <td><input type="text" name="sa5" #sa5="ngModel" [(ngModel)]="planService.selectedPlan.sa5"></td>
+                        <td><input type="text" name="tf5" #tf5="ngModel" [(ngModel)]="planService.selectedPlan.tf5"></td>
+                    </tr>
+                    <tr>
+                        <td>Involvement in health recreational activities</td>
+                        <td><input type="text" name="sa6" #sa6="ngModel" [(ngModel)]="planService.selectedPlan.sa6"></td>
+                        <td><input type="text" name="tf6" #tf6="ngModel" [(ngModel)]="planService.selectedPlan.tf6"></td>
+                    </tr>
+                    <tr>
+                        <td>Follow-up measures</td>
+                        <td><input type="text" name="sa7" #sa7="ngModel" [(ngModel)]="planService.selectedPlan.sa7"></td>
+                        <td><input type="text" name="tf7" #tf7="ngModel" [(ngModel)]="planService.selectedPlan.tf7"></td>
+                    </tr>
+                    <tr>
+                        <td>Dealing with replaces if any</td>
+                        <td><input type="text" name="sa8" #sa8="ngModel" [(ngModel)]="planService.selectedPlan.sa8"></td>
+                        <td><input type="text" name="tf8" #tf8="ngModel" [(ngModel)]="planService.selectedPlan.tf8"></td>
+                    </tr>
+                    
+                </table>
+                <h4>In case of dropout or extension of stay</h4>
+                <table border="1px solid black">
+                    <tr>
+                        <th colspan="2">
+                            A. In case of Drop Out:
+                            <select name="dropout" #dropout="ngModel" [(ngModel)]="planService.selectedPlan.dropout">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            </select>
+                            if yes date:
+                            <input type="date" name="date" #date="ngModel" [(ngModel)]="planService.selectedPlan.date">
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Reasons for drop out(if yes please specify)</td>
+                        <td>Yes/No</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Lack of motivation</td>
+                        <td>
+                            <select name="lackofmotivation" #lackofmotivation="ngModel" [(ngModel)]="planService.selectedPlan.lackofmotivation">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Lack of family support</td>
+                        <td>
+                            <select name="lackoffamilysupport" #lackoffamilysupport="ngModel" [(ngModel)]="planService.selectedPlan.lackoffamilysupport">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Poverty,hence not able to stay</td>
+                        <td>
+                            <select name="poverty" #poverty="ngModel" [(ngModel)]="planService.selectedPlan.poverty">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Legal problem</td>
+                        <td>
+                            <select name="legalproblem" #legalproblem="ngModel" [(ngModel)]="planService.selectedPlan.legalproblem">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Unable to cope with tratment</td>
+                        <td>
+                            <select name="unabletocope" #unabletocope="ngModel" [(ngModel)]="planService.selectedPlan.unabletocope">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Inadequate facilities</td>
+                        <td>
+                            <select name="inadequatefacilities" #inadequatefacilities="ngModel" [(ngModel)]="planService.selectedPlan.inadequatefacilities">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Any other</td>
+                        <td>
+                            <select name="anyother" #anyother="ngModel" [(ngModel)]="planService.selectedPlan.anyother">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>B. In case of extension,</td>
+                        <td>
+                           Days:<input type="string" name="days" #days="ngModel" [(ngModel)]="planService.selectedPlan.days">
+                           Months:<input type="string" name="months" #months="ngModel" [(ngModel)]="planService.selectedPlan.months">
+                        </td>
+                    </tr>
+                    <tr>
+                        Reasons for extension
+                        <input type="text" size="30" name="reasons" #reasons="ngModel" [(ngModel)]="planService.selectedPlan.reasons">
+                    </tr>
+                </table>
+                <div class="row6">
+                    <div class="input-field col s12">
+                      <button class="btn btn-custom right" type="button" (click)="resetForm(planForm)" >Reset</button>
+                      <button class="btn btn-custom right" type="submit" [disabled]="!planForm.valid" >Submit</button>
+                    </div>
+                  </div>
+                </form>
+                </div>
+                
+</div>

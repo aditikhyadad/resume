@@ -1,0 +1,69 @@
+<div class="row">
+   <div class="col s12">
+       <div class="card">
+           <div class="card-content white-text">
+               <div class="row">
+                   <div class="col s6">
+<div class="row1">
+    <h4>Family Councelling Notes</h4>
+    <div class="cols5">
+    <form #counsellorForm="ngForm" (ngSubmit)="onSubmit(counsellorForm)">
+    <input type="hidden" name="_id" #id_="ngModel" [(ngModel)]="counsellorService.selectedCounsellor._id">
+    <table border="1px solid black">
+     <tr>
+        <th>Session No</th>
+        <th>Date</th>
+        <th>Issue dealt with</th>
+     </tr>
+     <tr>
+        <td>1</td>
+        <td><input type="text" size="30" name="date" #date="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.date"></td>
+        <td><input type="text" size="30" name="issues" #issues="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.issues"></td>
+     </tr>
+     <tr>
+        <td>2</td>
+        <td><input type="text" size="30" name="date1" #date1="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.date1"></td>
+        <td><input type="text" size="30" name="issues1" #issues1="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.issues1"></td>
+     </tr>
+     <tr>
+        <td>3</td>
+        <td><input type="text" size="30" name="date2" #date2="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.date2"></td>
+        <td><input type="text" size="30" name="issues2" #issues2="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.issues2"></td>
+     </tr>
+     <tr>
+        <td>4</td>
+        <td><input type="text" size="30" name="date3" #date3="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.date3"></td>
+        <td><input type="text" size="30" name="issues3" #issues3="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.issues3"></td>
+     </tr>
+     <tr>
+        <td>5</td>
+        <td><input type="text" size="30" name="date4" #date4="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.date4"></td>
+        <td><input type="text" size="30" name="issues4" #issues4="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.issues4"></td>
+     </tr>
+     <tr>
+        <td>6</td>
+        <td><input type="text" size="30" name="date5" #date5="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.date5"></td>
+        <td><input type="text" size="30" name="issues5" #issues5="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.issues5"></td>
+     </tr>
+     <tr>
+        <td>7</td>
+        <td><input type="text" size="30" name="date6" #date6="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.date6"></td>
+        <td><input type="text" size="30" name="issues6" #issues6="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.issues6"></td>
+     </tr>
+     <tr>
+        <td>8</td>
+        <td><input type="text" size="30" name="date7" #date7="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.date7"></td>
+        <td><input type="text" size="30" name="issues7" #issues7="ngModel" [(ngModel)]="counsellorService.selectedCounsellor.issues7"></td>
+     </tr>
+    </table>
+    <div class="row6">
+        <div class="input-field col s12">
+          <button class="btn btn-custom right" type="button" (click)="resetForm(counsellorForm)">Reset</button>
+          <button class="btn btn-custom right" type="submit" [disabled]="!counsellorForm.valid">Submit</button>
+        </div>
+      </div>
+    </form>
+    </div>
+
+</div>
+</div></div></div></div></div></div>

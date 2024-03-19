@@ -1,0 +1,480 @@
+<nav>
+  <div class="nav-wrapper">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a routerLink="/family">Family History</a></li>
+      <li><a routerLink="/info">Basic Information</a></li>
+      <li><a routerLink="/treatment">Past Treatment History</a></li>
+      <li><a routerLink="/">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content white-text">
+        <div class="row">
+          <h3>Basic Information</h3>
+            <form #patientForm="ngForm" (ngSubmit)="onSubmit(patientForm)">
+              <div class="col s5">
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="patientService.selectedPatient._id">
+              <div class="row" id="rn">
+                <div class="input-field col s12">
+                  <label for="registrationno">Registration No: <label class="red-text">*</label></label>
+                  <input type="number" id="registrationno" name="registrationno" #name="ngModel"
+                    [(ngModel)]="patientService.selectedPatient.registrationno" placeholder="Enter registration no" required  class="validate" min=0 > 
+
+                </div>
+              </div>
+              <div class="row" id="dor">
+                <div class="input-field col s12">
+                  <label for="dateofregistration">Date of Registration:</label>
+                  <input type="date" id="dateofregistration" name="dateofregistration" #name="ngModel"
+                    [(ngModel)]="patientService.selectedPatient.dateofregistration" required [min]="getCurrentDate() | date:'yyyy-MM-dd'">
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" #name="ngModel"
+                    [(ngModel)]="patientService.selectedPatient.name" required  class="validate" minlength="2" pattern="^[a-zA-Z]+$">
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                      <div *ngIf="name.errors ">Enter valid name.</div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <label for="address">Address:</label>
+                  <input type="text" id="address" name="address" #name="ngModel"
+                    [(ngModel)]="patientService.selectedPatient.address" required class="validate" minlength="20">
+                </div>
+              </div>
+              <div id="sameLine">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" #name="ngModel"
+                      [(ngModel)]="patientService.selectedPatient.state" required class="validate" minlength="1" pattern="^[a-zA-Z]+$">
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label for="district">District:</label>
+                    <input type="text" id="district" name="district" #name="ngModel"
+                      [(ngModel)]="patientService.selectedPatient.district" required class="validate" minlength="1" pattern="^[a-zA-Z]+$">
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label for="taluk">Taluk:</label>
+                    <input type="text" id="taluk" name="taluk" #name="ngModel"
+                      [(ngModel)]="patientService.selectedPatient.taluk" required class="validate" minlength="1" pattern="^[a-zA-Z]+$">
+
+                  </div>
+                </div>
+
+              </div>
+              <div id="ht">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label for="homephone">Home Phone:</label>
+                    <input type="number" id="homephone" name="homephone" #name="ngModel"
+                      [(ngModel)]="patientService.selectedPatient.homephone" required class="validate" min=6000000000 max="9999999999">
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label for="telephone">Telephone:</label>
+                    <input type="number" id="telephone" name="telephone" #name="ngModel"
+                      [(ngModel)]="patientService.selectedPatient.telephone" required class="validate" min=6000000000 max="9999999999">
+
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <label for="sex" [class.active]="patientService.selectedPatient.sex">Sex:</label>
+                  <select id="sex" name="sex" #name="ngModel" placeholder="select" [(ngModel)]="patientService.selectedPatient.sex" required class="validate">
+                    <option value="" disabled selected>Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <label for="age">Age:</label>
+                  <input type="number" id="age" name="age" #name="ngModel"
+                    [(ngModel)]="patientService.selectedPatient.age" required class="validate" min="0">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <label for="dateofbirth">Date of Birth:</label>
+                  <input type="date" id="dateofbirth" name="dateofbirth" #name="ngModel"
+                    [(ngModel)]="patientService.selectedPatient.dateofbirth" required [max]="getCurrentDate() | date:'yyyy-MM-dd'">
+                </div>
+              </div>
+
+
+          </div>
+
+          <div class="col s5">
+            
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="religion">Religion:</label>
+                <input type="text" id="religion" name="religion" #name="ngModel"
+                  [(ngModel)]="patientService.selectedPatient.religion" required class="validate" minlength="1" pattern="^[a-zA-Z]+$">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="community">Community:</label>
+                <input type="text" id="community" name="community" #name="ngModel"
+                  [(ngModel)]="patientService.selectedPatient.community" required class="validate" minlength="1" pattern="^[a-zA-Z]+$">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="educationqualification">Educational Qualification:</label>
+                <input type="text" id="educationqualification" name="educationqualification" #name="ngModel"
+                  [(ngModel)]="patientService.selectedPatient.educationqualification" class="validate" minlength="1" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+
+                <label for="occupation">Occupation:</label>
+                <input type="text" id="occupation" name="occupation" #name="ngModel"
+                  [(ngModel)]="patientService.selectedPatient.occupation" class="validate" minlength="1" required>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="income">Income:</label>
+                <input type="text" id="income" name="income" #name="ngModel"
+                  [(ngModel)]="patientService.selectedPatient.income" class="validate" min=500 required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="maritalstatus" [class.active]="patientService.selectedPatient.maritalstatus">Marital Status:</label>
+                <select id="maritalstatus" name="maritalstatus" #name="ngModel"
+                  [(ngModel)]="patientService.selectedPatient.maritalstatus" required class="validate">
+                  <option value="" disabled selected>Select</option>
+                  <option value="married">Married</option>
+                  <option value="unmarried">Unmarried</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="livingarrangements" [class.active]="patientService.selectedPatient.livingarrangements">Living arrangements:</label>
+
+                <select id="livingarrangements" name="livingarrangements" #name="ngModel"
+                  [(ngModel)]="patientService.selectedPatient.livingarrangements" required class="validate">
+                  <option value="family">Living with family</option>
+                  <option value="friends">Living with friends or distant relatives</option>
+                  <option value="alone">Lives alone</option>
+                  <option value="street">On the street</option>
+
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="nameoffamilymem">Name of family member/Specify:</label>
+                <input type="text" id="nameoffamilymem" name="nameoffamilymem" #name="ngModel"
+                  [(ngModel)]="patientService.selectedPatient.nameoffamilymem">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="nameofsupperson">Name of Support person:</label>
+                <input type="text" id="nameofsupperson" name="nameofsupperson" #name="ngModel"
+                  [(ngModel)]="patientService.selectedPatient.nameofsupperson"  required class="validate" minlength="2" pattern="^[a-zA-Z]+$" >
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="suppersonaddress">Address - Accompanied the person:</label>
+                <input type="text" id="suppersonaddress" name="suppersonaddress" #name="ngModel"
+                  [(ngModel)]="patientService.selectedPatient.suppersonaddress"  class="validate"  required class="validate" minlength="20" >
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="suppersonteleno">Telephone No of support person:</label>
+                <input type="number" id="suppersonteleno" name="suppersonteleno" #name="ngModel"
+                  [(ngModel)]="patientService.selectedPatient.suppersonteleno" class="validate" min=6000000000 max="9999999999" required>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="referral" [class.active]="patientService.selectedPatient.referral">Referral:</label>
+                <select id="referral" name="referral" #name="ngModel"
+                  [(ngModel)]="patientService.selectedPatient.referral" required class="validate">
+                  <option value="" disabled selected>Select</option>
+                  <option value="Self">Self</option>
+                  <option value="Recovered addict">Recovered addict</option>
+                  <option value="Friends">Friends</option>
+                  <option value="Employer">Employer</option>
+                  <option value="Family">Family</option>
+                  <option value="Media">Media</option>
+                  <option value="Social worker">Social worker</option>
+                  <option value="Through awareness programme">Through awareness programme</option>
+                  <option value="Physicians">Physicians</option>
+                  <option value="Any other">Any other</option>
+
+                </select>
+              </div>
+            </div>
+
+
+          </div>
+
+
+
+
+          <div class="row">
+            <div class="input-field col s12">
+              <button class="btn btn-custom right" type="button" (click)="resetForm(patientForm)">Reset</button>
+              <button class="btn btn-custom right" type="submit" [disabled]="!patientForm.valid" >Submit</button>
+                        </div>
+          </div>
+          </form>
+<!--
+          <div id="text1">
+           <div>
+            <label>Registration No:   </label><span id="rn">{{patientService.Patient[patientService.Patient.length-1].registrationno}}</span>
+            </div>
+            <div>
+            <label>Date of Registration:   </label><span id="rn">{{patientService.Patient[patientService.Patient.length-1].dateofregistration | date:'shortDate'}}</span>
+
+            </div>
+            <div>
+              <label>Name:   </label><span id="rn">{{patientService.Patient[patientService.Patient.length-1].name}}</span>
+  
+              </div>
+              <div>
+                <label>Address:   </label><span id="rn">{{patientService.Patient[patientService.Patient.length-1].address}}</span>
+    
+                </div>
+
+                <div id="st">
+                  <div>
+                    <label>State:   </label><span id="rn">{{patientService.Patient[patientService.Patient.length-1].state}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  </div>
+                  <div>
+                    <label>District:   </label><span id="rn">{{patientService.Patient[patientService.Patient.length-1].district}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  </div>
+                  <div>
+                    <label>Taluk:   </label><span id="rn">{{patientService.Patient[patientService.Patient.length-1].taluk}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  </div>
+                </div>
+                <div id="st">
+                  <div>
+                    <label>Home Phone:   </label><span id="rn">{{patientService.Patient[patientService.Patient.length-1].homephone}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  </div>
+                  <div>
+                    <label>Telephone:   </label><span id="rn">{{patientService.Patient[patientService.Patient.length-1].telephone}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  </div>
+                </div>
+                <div id="siblingTable">
+                  <table class="responsive-table highlight">
+                      <thead>
+                          <tr>
+                              <th>Sex</th>
+                              <th>Age</th>
+                              <th>Date of Birth</th>
+                              <th>Religion</th>
+                              <th>Community</th>
+
+                          </tr>
+                      </thead>
+                      <tr >
+                          <td>{{ patientService.Patient[patientService.Patient.length-1].sex}}</td>
+                          <td>{{ patientService.Patient[patientService.Patient.length-1].age}}</td>
+                          <td>{{ patientService.Patient[patientService.Patient.length-1].dateofbirth}}</td>
+                          <td>{{ patientService.Patient[patientService.Patient.length-1].religion}}</td>
+                          <td>{{ patientService.Patient[patientService.Patient.length-1].community}}</td>
+
+  
+                      </tr>
+                  </table>
+              </div>
+
+              <div id="siblingTable">
+                <table class="responsive-table highlight">
+                  <tr >
+                    <td>Educational Qualification</td>
+                    <td>{{patientService.Patient[patientService.Patient.length-1].educationqualification}}</td>
+                  </tr>
+                </table>
+            </div>
+            <div id="siblingTable">
+              <table class="responsive-table highlight">
+                  <thead>
+                      <tr>
+                          <th>Occupation</th>
+                          <th>Income</th>
+                          <th>Marital Status</th>
+                          
+
+                      </tr>
+                  </thead>
+                  <tr >
+                      <td>{{ patientService.Patient[patientService.Patient.length-1].occupation}}</td>
+                      <td>{{ patientService.Patient[patientService.Patient.length-1].income}}</td>
+                      <td>{{ patientService.Patient[patientService.Patient.length-1].maritalstatus}}</td>
+                      
+
+
+                  </tr>
+              </table>
+          </div>
+          <div id="siblingTable">
+            <h6>Living Arrangements:</h6>
+            <table class="responsive-table highlight">
+              <tr >
+                <td style="width: 50%;">Living with family</td>
+                <td style="width: 50%;">
+                <span *ngIf="patientService.Patient[patientService.Patient.length - 1].livingarrangements === 'family'">&#10004;</span>
+              </td>
+              </tr>
+              <tr >
+                <td>Living with friends or distant relatives</td>
+                <td>
+                  <span *ngIf="patientService.Patient[patientService.Patient.length - 1].livingarrangements === 'friends'">&#10004;</span>
+                </td>             
+               </tr>
+              <tr >
+                <td>Lives alone</td>
+                <td>
+                  <span *ngIf="patientService.Patient[patientService.Patient.length - 1].livingarrangements === 'alone'">&#10004;</span>
+                </td>              
+              </tr>
+              <tr >
+                <td>On the street</td>
+                <td>
+                  <span *ngIf="patientService.Patient[patientService.Patient.length - 1].livingarrangements === 'street'">&#10004;</span>
+                </td>              
+              </tr>
+            </table>
+        </div>
+        <div id="siblingTable">
+          <table class="responsive-table highlight">
+            <tr >
+              <td>Name of Family Member/Specify</td>
+              <td>{{patientService.Patient[patientService.Patient.length-1].nameoffamilymem}}</td>
+            </tr>
+            <tr >
+              <td>Name of Support Person</td>
+              <td>{{patientService.Patient[patientService.Patient.length-1].nameofsupperson}}</td>
+            </tr>
+            <tr >
+              <td>Address - Accompanied the Person</td>
+              <td>{{patientService.Patient[patientService.Patient.length-1].suppersonaddress}}</td>
+            </tr>
+            <tr >
+              <td>Telephone No of Support Person</td>
+              <td>{{patientService.Patient[patientService.Patient.length-1].suppersonteleno}}</td>
+            </tr>
+          </table>
+      </div>
+      <div id="siblingTable">
+        <h6>Living Arrangements:</h6>
+        <table class="responsive-table highlight">
+          <tr >
+            <td style="width: 25%;">Self</td>
+            <td style="width: 25%;">
+            <span *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Self'">&#10004;</span>
+          </td>
+          <td style="width: 30%;">Recovered Addict</td>
+          <td style="width: 20%;">
+          <span *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Recovered addict'">&#10004;</span>
+        </td>
+          </tr>
+          <tr >
+            <td>Friends</td>
+            <td>
+            <span *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Friends'">&#10004;</span>
+          </td>
+          <td>Employer</td>
+          <td>
+          <span *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Employer'">&#10004;</span>
+        </td>
+          </tr>
+          <tr >
+            <td>Family</td>
+            <td>
+            <span *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Family'">&#10004;</span>
+          </td>
+          <td>Media</td>
+          <td>
+          <span *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Media'">&#10004;</span>
+        </td>
+          </tr>
+          <tr >
+            <td>Social Worker</td>
+            <td>
+            <span *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Social worker'">&#10004;</span>
+          </td>
+          <td>Through awareness programme</td>
+          <td>
+          <span *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Through awareness programme'">&#10004;</span>
+        </td>
+          </tr>
+          <tr >
+            <td>Physicians</td>
+            <td>
+            <span *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Physicians'">&#10004;</span>
+          </td>
+          <td>Anyother</td>
+          <td>
+          <span *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Any other'">&#10004;</span>
+        </td>
+          </tr>
+
+         
+        </table>
+    </div>
+
+
+          </div>
+-->
+
+        </div>
+       
+            <div class="col s7">
+             
+            </div>
+      </div>
+    </div>
+  </div>
+</div>    
