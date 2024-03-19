@@ -1,0 +1,396 @@
+body, h1, h2, h3, h4, a{
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    text-align:center;
+    
+}
+
+h1{
+    margin-top:25px;
+    margin-bottom:25px;
+}
+
+h2,h3,h4{
+    margin:5px;
+    font-family:'Times New Roman', Times, serif;
+    color:white;
+}
+
+b{
+    height: 200px;
+    font-family:'Times New Roman', Times, serif;
+    color:#007bff;
+    font-weight:900;
+    text-align:center;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('./final2.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh; 
+    background-color: white;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    padding: 5px 2px 2px 2px;
+    width: 250px;
+    height:700;
+    background-color: white;
+    padding-top: 20px;
+    height: 180vh;
+    color: white;
+    display: none; 
+    opacity:70%;
+    padding: 20px;
+    margin: 20px;
+    margin-right:0px;
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+}
+
+.sidebar a {
+    margin-top:4px;
+    padding: 5px 2px 2px 2px;
+    text-decoration: none;
+    color: #007bff;
+    display: block;
+    font-family:'Times New Roman', Times, serif;
+    color:black;
+    font-size: 18px;
+    font-weight:900;
+    text-align:center;
+    
+}
+
+.sidebar a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.card {
+
+    height: 190vh;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    flex: 1;
+    position: relative;  
+    background-color: rgba(0,0,0, 0.5); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+}
+
+
+#user-face {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 20px auto 10px auto; 
+    margin-bottom:40px;
+    display: block;
+    background-color: #007bff;
+    padding: 5px;
+}
+
+#sidebar-toggle {
+    margin:40px;
+    font-size: 30px;
+    cursor: pointer;
+    top:20px;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    color: #007bff;  
+    z-index: 2;
+}
+
+#sidebar-toggle:hover{
+    color: white;
+} 
+
+
+button {
+    
+    background-color: #f44336;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #d32f2f;
+}
+.hexa-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.hexagon {
+    width: 100px;
+    height: 57.74px;
+    background-color: #007bff;
+    font-weight:bold;
+    font-family:'Times New Roman', Times, serif;
+    position: relative;
+    margin: 0 5px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.hexagon:before,
+.hexagon:after {
+    content: '';
+    width: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    position: absolute;
+}
+
+.hexagon:before {
+    top: -28.87px;
+    border-bottom: 28.87px solid #007bff;
+}
+
+.hexagon:after {
+    bottom: -28.87px;
+    border-top: 28.87px solid #007bff;
+}
+
+.hexagon-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ----------semester---------- */
+p{
+    color:#007bff;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a {
+    display: block;
+    padding: 8px;
+    margin:-2px;
+    border: 2px solid #ddd;
+    border-radius: 18px;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    a {
+        display: inline-block;
+        width: 100%; /* Make links full width on smaller screens */
+        box-sizing: border-box; /* Include padding and border in the total width */
+    }
+}
+.sem-heading{
+    color:white;
+}
+
+.semester-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    align-items: flex-start; 
+    text-align: center;
+    margin-top: 0px;
+
+}
+
+.semester {
+    flex: 0 0 calc(33.33% - 30px);
+    display: inline-block;
+    vertical-align: top; 
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+    margin: 10px 10px 10px 10px;
+    width: 100%;
+    max-width: calc(20% - 30px);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+}
+
+.blankSelect{
+    visibility: hidden;
+}
+
+.blankSub{
+    visibility: hidden;
+}
+
+@media (max-width: 768px) {
+    .semester {
+        flex: 0 0 calc(20% - 30px);
+        margin-bottom: 10px;
+    }
+}
+
+
+.logo {
+    padding:20px;
+    position: absolute;
+    top: -40px;
+    right: 20px;
+    width: 200px; 
+    align-items: top;
+}
+
+/* Search bar */
+.search-container {
+
+    
+    display: flex;
+    margin-top: -30px;
+    justify-content: flex-end;
+}
+
+#searchInput {
+    margin-top:20px;
+    padding: 10px;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+.search-button {
+    margin-top:20px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.search-results {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+}
+  
+.matching-subject {
+    background-color: white;
+    border: 1px solid white;
+    padding: 5px;
+    margin: 5px 0;
+  }
+  
+@media only screen and (min-width: 769px) {
+    .cardmob{
+        display:none;
+    }
+}
+
+/* Making it mobile compatible */
+.cardmob {
+
+    height: 470vh;
+    padding: 20px;
+    margin: 20px;
+    top:20px;
+    border-radius: 20px;
+    flex: 1;
+    position: relative;  
+    background-color: rgba(0,0,0, 0.5); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+}
+
+.logomob{
+    top:-px;
+    width:75%;
+    margin-top:-75px;
+    margin-bottom:-100px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    b{
+        height:5px;
+    }
+    .logo{
+        display:none;
+    }
+    .container {
+        display: flex;
+        flex-direction: column-reverse; 
+    }
+    .card {
+
+        display:none; 
+    }
+
+    #sidebar {
+        display: none;
+      }
+      
+
+    .sidebar {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 78%;
+        height:88%;
+        background-color: white;
+        opacity:100%;
+        z-index: 2;
+    }
+
+    #sidebar-toggle {
+        margin:14px;
+        font-size: 30px;
+        cursor: pointer;
+        top:20px;
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        color: #007bff;  
+        z-index: 2;
+    }
+    
+    #sidebar-toggle:hover{
+        color: red;
+    } 
+    
+    .cardmob {
+        margin-top: 0; 
+    }
+
+    .semester {
+        display: none;
+    }
+}

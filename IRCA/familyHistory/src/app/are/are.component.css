@@ -1,0 +1,11 @@
+/* Your regular styles for the component go here */
+
+/* Styles for print layout */
+@media print {
+    /* Hide the submit and print buttons */
+    .print-layout .btn ,
+    .print-layout .btn{
+      display: none;
+    }
+  }
+  

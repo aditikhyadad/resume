@@ -1,0 +1,889 @@
+<h1>GROUP THERAPY RECORD FORM - WEEKLY</h1>
+
+<form (ngSubmit)="onSubmit()">
+  <div class="patient1">
+    <label for="name1">Name of Patient: </label>
+    <input type="text" name="name1" [(ngModel)]="name1" />
+
+    <label for="counsellor1">Counselor: </label>
+    <input type="text" name="counsellor1" [(ngModel)]="counsellor1" />
+
+    <label for="group1">Group:</label>
+    <input type="number" name="group1" size="5" [(ngModel)]="group1" />
+    <hr />
+
+    WEEK 1:
+    <label for="attendance1">Attendance</label>
+
+    <label for="date1">Date: </label>
+    <input type="date" name="date1" [(ngModel)]="date1" />
+
+    <label for="to1">To: </label>
+    <input type="date" name="to1" [(ngModel)]="to1" />
+
+    <label for="therapy1">Name of therapist:</label>
+    <input type="text" name="therapy1" [(ngModel)]="therapy1" />
+
+    <table>
+      <tr>
+        <th>Issue</th>
+        <th>Code</th>
+      </tr>
+      <tr>
+        <td>Focus on Topic</td>
+        <td>
+          <select [(ngModel)]="focus1" name="focus1">
+            <option value="Shares in a relevent manner">a</option>
+            <option value="Shares releevently most of the times">b</option>
+            <option value="Shares releveent only sometimes">c</option>
+            <option value="Irrelevent sharing">d</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Feeling level sharing</td>
+        <td>
+          <select [(ngModel)]="feeling1" name="feeling1">
+            <option value="Shares with a lot of feeling always">a</option>
+            <option value="Shares with feelings most of the times">b</option>
+            <option value="Shares with feelings sometimes">c</option>
+            <option value="Shares with no feelings">d</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Openness with which issues were addressed</td>
+        <td>
+          <select [(ngModel)]="issues1" name="issues1">
+            <option value="Shared on his own initiatives">a</option>
+            <option value="Shared openly with intervention">b</option>
+            <option value="Shared only briefly despite intervention">c</option>
+            <option value="Displayed a lot of reluctance to share">d</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Involvement with other group member's sharing</td>
+        <td>
+          <select [(ngModel)]="involvement1" name="involvement1">
+            <option value="Listens and participates actively">a</option>
+            <option value="Listens but participates only sometimes">b</option>
+            <option value="Shows little interest and participation">c</option>
+            <option value="No involvement">d</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Any undesirable behavior</td>
+        <td>
+          <input
+            type="text"
+            name="undesirableBehavior1"
+            [(ngModel)]="undesirableBehavior1"
+          />
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <br /><br />
+
+  <div class="patient2">
+    <label for="name2">Name of Patient: </label>
+    <input type="text" name="name2" [(ngModel)]="name2" />
+
+    <label for="counsellor2">Counsellor: </label>
+    <input type="text" name="counsellor2" [(ngModel)]="counsellor2" />
+
+    <label for="group2">Group:</label>
+    <input type="number" name="group2" size="5" [(ngModel)]="group2" />
+    <hr />
+
+    WEEK 2:
+    <label for="attendance2">Attendance</label>
+    <label for="date2">Date: </label>
+    <input type="date" name="date2" [(ngModel)]="date2" />
+
+    <label for="to2">To: </label>
+    <input type="date" name="to2" [(ngModel)]="to2" />
+
+    <label for="therapy2">Name of therapist:</label>
+    <input type="text" name="therapy2" [(ngModel)]="therapy2" />
+
+    <table>
+      <tr>
+        <th>Issue</th>
+        <th>Code</th>
+      </tr>
+      <tr>
+        <td>Focus on Topic</td>
+        <td>
+          <select [(ngModel)]="focus2" name="focus2">
+            <option value="Shares in a relevent manner">a</option>
+            <option value="Shares releevently most of the times">b</option>
+            <option value="Shares releveent only sometimes">c</option>
+            <option value="Irrelevent sharing">d</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Feeling level sharing</td>
+        <td>
+          <select [(ngModel)]="feeling2" name="feeling2">
+            <option value="Shares with a lot of feeling always">a</option>
+            <option value="Shares with feelings most of the times">b</option>
+            <option value="Shares with feelings sometimes">c</option>
+            <option value="Shares with no feelings">d</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Openness with which issues were addressed</td>
+        <td>
+          <select [(ngModel)]="issues2" name="issues2">
+            <option value="Shared on his own initiatives">a</option>
+            <option value="Shared openly with intervention">b</option>
+            <option value="Shared only briefly despite intervention">c</option>
+            <option value="Displayed a lot of reluctance to share">d</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Involvement with other group member's sharing</td>
+        <td>
+          <select [(ngModel)]="involvement2" name="involvement2">
+            <option value="Listens and participates actively">a</option>
+            <option value="Listens but participates only sometimes">b</option>
+            <option value="Shows little interest and participation">c</option>
+            <option value="No involvement">d</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Any undesirable behavior</td>
+        <td>
+          <input
+            type="text"
+            name="undesirableBehavior2"
+            [(ngModel)]="undesirableBehavior2"
+          />
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br /><br />
+
+  <div class="patient3">
+    <label for="name3">Name of Patient: </label>
+    <input type="text" name="name3" [(ngModel)]="name3" />
+
+    <label for="counsellor3">Counsellor: </label>
+    <input type="text" name="counsellor3" [(ngModel)]="counsellor3" />
+
+    <label for="group3">Group:</label>
+    <input type="number" name="group3" size="5" [(ngModel)]="group3" />
+    <hr />
+
+    WEEK 3:
+    <label for="attendance3">Attendance</label>
+    <label for="date3">Date: </label>
+    <input type="date" name="date3" [(ngModel)]="date3" />
+
+    <label for="to3">To: </label>
+    <input type="date" name="to3" [(ngModel)]="to3" />
+
+    <label for="therapy3">Name of therapist:</label>
+    <input type="text" name="therapy3" [(ngModel)]="therapy3" />
+
+    <table>
+      <tr>
+        <th>Issue</th>
+        <th>Code</th>
+      </tr>
+      <tr>
+        <td>Focus on Topic</td>
+        <td>
+          <select [(ngModel)]="focus3" name="focus3">
+            <option value="Shares in a relevent manner">a</option>
+            <option value="Shares releevently most of the times">b</option>
+            <option value="Shares releveent only sometimes">c</option>
+            <option value="Irrelevent sharing">d</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Feeling level sharing</td>
+        <td>
+          <select [(ngModel)]="feeling3" name="feeling3">
+            <option value="Shares with a lot of feeling always">a</option>
+            <option value="Shares with feelings most of the times">b</option>
+            <option value="Shares with feelings sometimes">c</option>
+            <option value="Shares with no feelings">d</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Openness with which issues were addressed</td>
+        <td>
+          <select [(ngModel)]="issues3" name="issues3">
+            <option value="Shared on his own initiatives">a</option>
+            <option value="Shared openly with intervention">b</option>
+            <option value="Shared only briefly despite intervention">c</option>
+            <option value="Displayed a lot of reluctance to share">d</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Involvement with other group member's sharing</td>
+        <td>
+          <select [(ngModel)]="involvement3" name="involvement3">
+            <option value="Listens and participates actively">a</option>
+            <option value="Listens but participates only sometimes">b</option>
+            <option value="Shows little interest and participation">c</option>
+            <option value="No involvement">d</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Any undesirable behavior</td>
+        <td>
+          <input
+            type="text"
+            name="undesirableBehavior3"
+            [(ngModel)]="undesirableBehavior3"
+          />
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br /><br />
+
+  <div class="patient4">
+    <label for="name4">Name of Patient: </label>
+    <input type="text" name="name4" [(ngModel)]="name4" />
+
+    <label for="counsellor4">Counsellor: </label>
+    <input type="text" name="counsellor4" [(ngModel)]="counsellor4" />
+
+    <label for="group4">Group:</label>
+    <input type="number" name="group4" size="5" [(ngModel)]="group4" />
+    <hr />
+
+    WEEK 4:
+    <label for="attendance4">Attendance</label>
+    <label for="date4">Date: </label>
+    <input type="date" name="date4" [(ngModel)]="date4" />
+
+    <label for="to4">To: </label>
+    <input type="date" name="to4" [(ngModel)]="to4" />
+
+    <label for="therapy4">Name of therapist:</label>
+    <input type="text" name="therapy4" [(ngModel)]="therapy4" />
+
+    <table>
+      <tr>
+        <th>Issue</th>
+        <th>Code</th>
+      </tr>
+      <tr>
+        <td>Focus on Topic</td>
+        <td>
+          <select [(ngModel)]="focus4" name="focus4">
+            <option value="Shares in a relevent manner">a</option>
+            <option value="Shares releevently most of the times">b</option>
+            <option value="Shares releveent only sometimes">c</option>
+            <option value="Irrelevent sharing">d</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Feeling level sharing</td>
+        <td>
+          <select [(ngModel)]="feeling4" name="feeling4">
+            <option value="Shares with a lot of feeling always">a</option>
+            <option value="Shares with feelings most of the times">b</option>
+            <option value="Shares with feelings sometimes">c</option>
+            <option value="Shares with no feelings">d</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Openness with which issues were addressed</td>
+        <td>
+          <select [(ngModel)]="issues4" name="issues4">
+            <option value="Shared on his own initiatives">a</option>
+            <option value="Shared openly with intervention">b</option>
+            <option value="Shared only briefly despite intervention">c</option>
+            <option value="Displayed a lot of reluctance to share">d</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Involvement with other group member's sharing</td>
+        <td>
+          <select [(ngModel)]="involvement4" name="involvement4">
+            <option value="Listens and participates actively">a</option>
+            <option value="Listens but participates only sometimes">b</option>
+            <option value="Shows little interest and participation">c</option>
+            <option value="No involvement">d</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Any undesirable behavior</td>
+        <td>
+          <input
+            type="text"
+            name="undesirableBehavior4"
+            [(ngModel)]="undesirableBehavior4"
+          />
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <br /><br />
+
+  <h1>Groupt Therapy - Key</h1>
+
+  <strong>1. Focus on Topic</strong>
+  <p>a. Shares in a relevant manner</p>
+  <p>b. Shares relevantly most of the times</p>
+  <p>c. Shares relevant only sometimes</p>
+  <p>d. Irrelevant sharing</p>
+
+  <strong>2. Feeling level of sharing</strong>
+  <p>a. Share with a lot of feelings always</p>
+  <p>b. Shares with feelings most of the times</p>
+  <p>c. Shares with feelings sometimes</p>
+  <p>d. Shares with no feelings</p>
+
+  <strong>3. Openness with which issues were addressed</strong>
+  <p>a. Shared on his initiative</p>
+  <p>b. Shared openly with intervention</p>
+  <p>c. Shared only briefly despite intervention</p>
+  <p>d. Displayed a lot of reluctance to share</p>
+
+  <strong>4. Involvement with other group member's sharing</strong>
+  <p>a. Listens and participates actively</p>
+  <p>b. Listens but participates only sometimes</p>
+  <p>c. Shows little interest and participation</p>
+  <p>d. No involvement</p>
+
+  <strong
+    >5. Any undersirable behaviour noticed like sleeping, forming of sub groups,
+    sarcasm, etc., Please describe (no codes given)</strong
+  >
+
+  <p><strong>(These questions refer to the past 12 months)</strong></p>
+  <table>
+    <tr>
+      <td>1</td>
+      <td>
+        Have you used drugs other than those required for medical reasons?
+      </td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="medicalReasons"
+          id="medicalReasonsYes"
+          [(ngModel)]="medicalReasons"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="medicalReasons"
+          id="medicalReasonsNo"
+          [(ngModel)]="medicalReasons"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Have you abused prescription drugs?</td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="abusedPrescription"
+          id="abusedPrescriptionYes"
+          [(ngModel)]="abusedPrescription"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="abusedPrescription"
+          id="abusedPrescriptionNo"
+          [(ngModel)]="abusedPrescription"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Can you get through the week without using drugs?</td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="getThroughWeek"
+          id="getThroughWeekYes"
+          [(ngModel)]="getThroughWeek"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="getThroughWeek"
+          id="getThroughWeekNo"
+          [(ngModel)]="getThroughWeek"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Are you always able to stop using drugs when you want to?</td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="stopUsingDrugs"
+          id="stopUsingDrugsYes"
+          [(ngModel)]="stopUsingDrugs"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="stopUsingDrugs"
+          id="stopUsingDrugsNo"
+          [(ngModel)]="stopUsingDrugs"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Have you had "Blackouts" or "Flashbacks" as a result of drug use?</td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="blackouts"
+          id="blackoutsYes"
+          [(ngModel)]="blackouts"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="blackouts"
+          id="blackoutsNo"
+          [(ngModel)]="blackouts"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Do you ever feel bad or guilty about your drug use?</td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="feelGuilty"
+          id="feelGuiltyYes"
+          [(ngModel)]="feelGuilty"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="feelGuilty"
+          id="feelGuiltyNo"
+          [(ngModel)]="feelGuilty"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Does your spouse ever complain about your involvement with drugs?</td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="complain"
+          id="complainYes"
+          [(ngModel)]="complain"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="complain"
+          id="complainNo"
+          [(ngModel)]="complain"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>
+        Has drug abuse created problems between you and your spouse or your
+        parents?
+      </td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="problems"
+          id="problemsYes"
+          [(ngModel)]="problems"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="problems"
+          id="problemsNo"
+          [(ngModel)]="problems"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Have you lost friends because of your use of drugs?</td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="lostFriends"
+          id="lostFriendsYes"
+          [(ngModel)]="lostFriends"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="lostFriends"
+          id="lostFriendsNo"
+          [(ngModel)]="lostFriends"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Have you neglected your family because of your use of drugs?</td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="neglectFamily"
+          id="neglectFamilyYes"
+          [(ngModel)]="neglectFamily"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="neglectFamily"
+          id="neglectFamilyNo"
+          [(ngModel)]="neglectFamily"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Have you been in trouble at work because of your use of drugs?</td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="troubleAtWork"
+          id="troubleAtWorkYes"
+          [(ngModel)]="troubleAtWork"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="troubleAtWork"
+          id="troubleAtWorkNo"
+          [(ngModel)]="troubleAtWork"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Have you lost a job because of drug abuse?</td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="lostJob"
+          id="lostJobYes"
+          [(ngModel)]="lostJob"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="lostJob"
+          id="lostJobNo"
+          [(ngModel)]="lostJob"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Have you gotten into fights when under the influence of drugs?</td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="fightsUnderInfluence"
+          id="fightsUnderInfluenceYes"
+          [(ngModel)]="fightsUnderInfluence"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="fightsUnderInfluence"
+          id="fightsUnderInfluenceNo"
+          [(ngModel)]="fightsUnderInfluence"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Have you engaged in illegal activities in order to obtain drugs?</td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="illegalActivities"
+          id="illegalActivitiesYes"
+          [(ngModel)]="illegalActivities"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="illegalActivities"
+          id="illegalActivitiesNo"
+          [(ngModel)]="illegalActivities"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Have you been arrested for possession of illegal drugs?</td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="arrested"
+          id="arrestedYes"
+          [(ngModel)]="arrested"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="arrested"
+          id="arrestedNo"
+          [(ngModel)]="arrested"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>
+        Have you ever experienced withdrawal symptoms (felt sick) when you
+        stopped taking drugs?
+      </td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="withdrawalSymptoms"
+          id="withdrawalSymptomsYes"
+          [(ngModel)]="withdrawalSymptoms"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="withdrawalSymptoms"
+          id="withdrawalSymptomsNo"
+          [(ngModel)]="withdrawalSymptoms"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>
+        Have you had medical problems as a result of your drug use (e.g. memory
+        loss, hepatitis, convulsions, bleeding, etc.)?
+      </td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="medicalProblems"
+          id="medicalProblemsYes"
+          [(ngModel)]="medicalProblems"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="medicalProblems"
+          id="medicalProblemsNo"
+          [(ngModel)]="medicalProblems"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>Have you gone to anyone for help for a drug problem?</td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="helpForProblem"
+          id="helpForProblemYes"
+          [(ngModel)]="helpForProblem"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="helpForProblem"
+          id="helpForProblemNo"
+          [(ngModel)]="helpForProblem"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>
+        Have you been involved in a treatment program especially related to drug
+        use?
+      </td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="treatmentProgram"
+          id="treatmentProgramYes"
+          [(ngModel)]="treatmentProgram"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="treatmentProgram"
+          id="treatmentProgramNo"
+          [(ngModel)]="treatmentProgram"
+          value="no"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>Do you abuse more than one drug at a time?</td>
+      <td>Yes</td>
+      <td>
+        <input
+          type="radio"
+          name="abuseMultipleDrugs"
+          id="abuseMultipleDrugsYes"
+          [(ngModel)]="abuseMultipleDrugs"
+          value="yes"
+        />
+      </td>
+      <td>No</td>
+      <td>
+        <input
+          type="radio"
+          name="abuseMultipleDrugs"
+          id="abuseMultipleDrugsNo"
+          [(ngModel)]="abuseMultipleDrugs"
+          value="no"
+        />
+      </td>
+    </tr>
+  </table>
+
+  <button type="submit">Submit</button>
+</form>

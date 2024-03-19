@@ -1,0 +1,133 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+<div class="container">
+    <h3>Leisure time activities</h3>
+    <form [formGroup]="activityForm" (ngSubmit)="onSubmit()">
+
+        <table border="1">
+            <thead>
+                <th>Activities</th>
+                <th>Before Addiction</th>
+                <th>Last One Year</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td >Playing games, Physical exercises</td>
+                    <td>
+                        <label >
+                            <input name="games" type="checkbox" formControlName="checkbox1" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label >
+                            <input name="games" type="checkbox" formControlName="checkbox2" />
+                            <span></span>
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Going to movies, dramas</td>
+                    <td>
+                        <label>
+                            <input name="movies" type="checkbox" formControlName="checkbox3" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input name="movies" type="checkbox" formControlName="checkbox4" />
+                            <span></span>
+                        </label>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>Watching TV / Video, listening to music</td>
+                    <td>
+                        <label>
+                            <input name="read" type="checkbox" formControlName="checkbox5" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input name="read" type="checkbox" formControlName="checkbox6" />
+                            <span></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                <td>Reading</td>
+                    <td>
+                        <label>
+                            <input name="read" type="checkbox" formControlName="checkbox25" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input name="read" type="checkbox" formControlName="checkbox26" />
+                            <span></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                <td>Visiting relatives / friends</td>
+                    <td>
+                        <label>
+                            <input name="read" type="checkbox" formControlName="checkbox27" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input name="read" type="checkbox" formControlName="checkbox28" />
+                            <span></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                <td>Other Hobbies / talents</td>
+                    <td>
+                        <label>
+                            <input name="read" type="checkbox" formControlName="checkbox29" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input name="read" type="checkbox" formControlName="checkbox30" />
+                            <span></span>
+                        </label>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <br>
+        <div class="print-layout">
+            <!-- Your component content goes here -->
+          
+            <!-- Buttons to hide when printing -->
+            <button type="button" class="btn btn-custom right" (click)="resetForm()">Reset</button>
+            <button type="submit" class="btn btn-custom right">Submit</button>
+
+            <br>
+           <!-- <button id="btn-print" class="btn btn-success btn-lg" (click)="print()">Print & Generate PDF</button>-->
+          </div>
+    </form>
+    
+</div>
+                </div></div></div></div></div>
+
+
+
+
+

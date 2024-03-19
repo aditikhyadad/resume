@@ -1,0 +1,186 @@
+function searchSubjects() {
+    var input, filter, semesters, subjects, a, i, txtValue;
+input = document.getElementById("searchInput");
+filter = input.value.toUpperCase();
+semesters = document.querySelectorAll(".semester");
+
+semesters.forEach(function (semester) {
+subjects = semester.querySelectorAll("a");
+var found = false;
+
+subjects.forEach(function (subject) {
+a = subject;
+txtValue = a.textContent || a.innerText;
+
+if (txtValue.toUpperCase().indexOf(filter) > -1) {
+    found = true;
+}
+});
+
+// Set the display property based on whether any matching subject was found
+semester.style.display = found ? "block" : "none";
+
+// Center the subject box when search results are displayed
+if (found) {
+semester.style.margin = "auto";
+semester.style.width = "60%"; // Adjust the width as needed
+} else {
+// Reset styles when no matching subjects are found
+semester.style.margin = "";
+semester.style.width = "";
+
+// Show all subjects when no match is found
+subjects.forEach(function (subject) {
+    subject.style.display = "block";
+});
+}
+});}
+
+
+
+
+function searchSubjects() {
+    // Get the input element and its value
+    var input = document.getElementById('searchInput');
+    var filter = input.value.toUpperCase();
+  
+    // Get all semester elements
+    var semesters = document.querySelectorAll('.semester');
+  
+    // Create a new opaque block element
+    var block = document.createElement('div');
+    block.classList.add('search-results');
+    block.style.backgroundColor = '#fff'; // Specify the solid background color
+  
+    // Track if any matching subjects are found
+    var matchingSubjectsFound = false;
+  
+    // Iterate through each semester
+    semesters.forEach(function (semester) {
+      // Get all subject links within the semester
+      var subjects = semester.querySelectorAll('a');
+      var found = false; // Track if any matching subjects are found in this semester
+  
+      // Iterate through each subject link
+      subjects.forEach(function (subject) {
+        // Extract the subject text content
+        var subjectText = subject.textContent || subject.innerText;
+  
+        // Check if the subject text contains the search filter
+        if (subjectText.toUpperCase().indexOf(filter) > -1) {
+          subject.style.display = 'block'; // Unhide the matching subject
+          found = true; // Indicate that a matching subject was found in this semester
+          matchingSubjectsFound = true; // Indicate that a matching subject was found overall
+  
+          // Append the matching subject to the block
+          block.appendChild(subject);
+        }
+      });
+  
+      // Reset the semester styles
+      semester.style.display = 'none';
+      semester.style.margin = '';
+      semester.style.width = '';
+  
+      // Update the 'found' flag for the semester
+      found = found || matchingSubjectsFound;
+  
+      // Update the block position if any matching subjects were found
+      if (found) {
+        block.style.position = 'absolute';
+        block.style.left = '50%';
+        block.style.top = '50%';
+        block.style.transform = 'translate(-50%, -50%)';
+        block.style.width = '50%';
+      }
+    });
+  
+    // Check if there are any matching subjects
+    if (matchingSubjectsFound) {
+      // Display the block with matching subjects if any were found
+      document.body.appendChild(block);
+    } else {
+      // Remove the block if no results are found
+      if (block.parentNode) {
+        block.parentNode.removeChild(block);
+      }
+    }
+  }
+
+
+
+  function searchSubjects() {
+    // Get the input element and its value
+    var input = document.getElementById('searchInput');
+    var filter = input.value.toUpperCase();
+  
+    // Get all semester elements
+    var semesters = document.querySelectorAll('.semester');
+  
+    // Create a new opaque block element
+    var block = document.createElement('div');
+    block.classList.add('search-results');
+    block.style.border = '1px solid #ccc'; // Add a border to the block
+    block.style.padding = '20px'; // Add padding to the block
+  
+    // Track if any matching subjects are found
+    var matchingSubjectsFound = false;
+  
+    // Iterate through each semester
+    semesters.forEach(function (semester) {
+      // Get all subject links within the semester
+      var subjects = semester.querySelectorAll('a');
+      var found = false; // Track if any matching subjects are found in this semester
+  
+      // Iterate through each subject link
+      subjects.forEach(function (subject) {
+        // Extract the subject text content
+        var subjectText = subject.textContent || subject.innerText;
+  
+        // Check if the subject text contains the search filter
+        if (subjectText.toUpperCase().indexOf(filter) > -1) {
+          subject.style.display = 'block'; // Unhide the matching subject
+  
+          // Apply styles to the matching subject
+          subject.style.backgroundColor = 'black'; // Add a light gray background
+          subject.style.border = '1px solid #ccc'; // Add a border to the subject
+          subject.style.padding = '5px'; // Add padding to the subject
+          subject.style.margin = '5px 0'; // Add some margin to the subject
+  
+          found = true; // Indicate that a matching subject was found in this semester
+          matchingSubjectsFound = true; // Indicate that a matching subject was found overall
+  
+          // Append the matching subject to the block
+          block.appendChild(subject);
+        }
+      });
+  
+      // Reset the semester styles
+      semester.style.display = 'none';
+      semester.style.margin = '';
+      semester.style.width = '';
+  
+      // Update the 'found' flag for the semester
+      found = found || matchingSubjectsFound;
+  
+      // Update the block position if any matching subjects were found
+      if (found) {
+        block.style.position = 'absolute';
+        block.style.left = '50%';
+        block.style.top = '50%';
+        block.style.transform = 'translate(-50%, -50%)';
+        block.style.width = '50%';
+      }
+    });
+  
+    // Check if there are any matching subjects
+    if (matchingSubjectsFound) {
+      // Display the block with matching subjects if any were found
+      document.body.appendChild(block);
+    } else {
+      // Remove the block if no results are found
+      if (block.parentNode) {
+        block.parentNode.removeChild(block);
+      }
+    }
+  }

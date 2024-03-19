@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign up / Login Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<form>
+        <input type="text" name="username" id="username" required placeholder="Enter your username">
+        <input type="password" name="" id="password"  required placeholder="******" required>
+        <button>Login</button>
+    </form>
+  
+</body>
+<script>
+    let form=document.getElementById("form")
+    form.addEventListener("submit",(e)=>
+    {
+        let username=document.getElementById("username").value;
+        let password=document.getElementById("password").value;
+        //local storage
+        localstorage.setItem("username",username);
+        localstorage.setItem("password",password);
+        alert("Your details are saved to the localstorage");
+    
+    })
+</script>
+
+</html>
