@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4b1d9c3e.css",
+    "main.js": "/static/js/main.2d8b6de5.js",
+    "static/media/IRCA.png": "/static/media/IRCA.389fbdf9f3cec0632ae5.png",
+    "static/media/Minor_Proj.png": "/static/media/Minor_Proj.0d77fb6a1472f9f115da.png",
+    "static/media/ML.png": "/static/media/ML.9fd41aecbcedefeeab24.png",
+    "static/media/Mini_Proj.png": "/static/media/Mini_Proj.dd4de0aa35abaf2fd245.png",
+    "static/media/Imgportfolio.png": "/static/media/Imgportfolio.bfeab270b51928dc76dc.png",
+    "static/media/react.png": "/static/media/react.0cf951a69d8e58f83f9d.png",
+    "static/media/node.png": "/static/media/node.952a9ea986dcfa5229ad.png",
+    "static/media/c.png": "/static/media/c.ccf82eed40ec39ff570c.png",
+    "static/media/SearchEngine.png": "/static/media/SearchEngine.8c10f3ab68477e4bedb6.png",
+    "static/media/mongo.png": "/static/media/mongo.2a1528ddc31d4ce8518d.png",
+    "static/media/python.png": "/static/media/python.07a98139a3638f2a224b.png",
+    "static/media/c++.png": "/static/media/c++.24a8f93854ab092f17a7.png",
+    "static/media/background.png": "/static/media/background.da4724ecdcdc4b987817.png",
+    "static/media/java.png": "/static/media/java.b7a2f6415cec10cee413.png",
+    "static/media/html.png": "/static/media/html.2ba4fabc69a89a8f71e6.png",
+    "static/media/css.png": "/static/media/css.69a82c2d9e45c933a9cb.png",
+    "static/media/sql.png": "/static/media/sql.aec5412b1d55c8c88d37.png",
+    "static/media/Background2.png": "/static/media/Background2.5948e45cc97587bed963.png",
+    "static/media/javascript.png": "/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
+    "index.html": "/index.html",
+    "main.4b1d9c3e.css.map": "/static/css/main.4b1d9c3e.css.map",
+    "main.2d8b6de5.js.map": "/static/js/main.2d8b6de5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b1d9c3e.css",
+    "static/js/main.2d8b6de5.js"
+  ]
+}
