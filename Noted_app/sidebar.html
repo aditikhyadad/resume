@@ -1,0 +1,115 @@
+<!-- sidebar + profile page + home page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-cse.css">
+    <title>Profile</title>
+</head>
+<body>
+    <div class="container">
+        <img src="./logo.png" alt="Logo" class="logo">
+        <div class="sidebar" id="sidebar">
+            <img src="user_face.jpg" alt="User Face" id="user-face">
+            <a href="#" onclick="goToHome()">Home</a>
+            <a href="#" onclick="logOut()">Logout</a>
+            <a href="#" onclick="toggleTheme()">Toggle Theme</a>
+            <a href="#" onclick="addNewNotes()">Add New Notes</a>
+            <a href="#" onclick="showDisclaimer()">Disclaimer</a>
+        </div>
+        <div class="card">
+            <h1><b>Profile Page</b></h1>
+            <h2>Welcome</h2>
+            <h4>Name:
+                <script>
+                    document.write(localStorage.getItem("name"));
+                </script>
+            </h4>
+            <h4>
+                Your email is:
+                <script>
+                    document.write(localStorage.getItem("email"));
+                </script>
+            </h4>
+            <div class="hexa-container">
+                <div class="hexagon" onclick="goToPage('ec')">
+                    <div class="hexagon-content">EC</div>
+                </div>
+                <div class="hexagon" onclick="goToPage('cse')">
+                    <div class="hexagon-content">CSE</div>
+                </div>
+                <div class="hexagon" onclick="goToPage('eee')">
+                    <div class="hexagon-content">EEE</div>
+                </div>
+            </div>
+            <div id="sidebar-toggle" onclick="openSidebar()">&#9776;</div>
+        </div>
+    </div>
+
+    <div class="cardmob">
+        <h1><b>Profile Page</b></h1>
+        <h2>Welcome</h2>
+        <h4>Name:
+            <script>
+                document.write(localStorage.getItem("name"));
+            </script>
+        </h4>
+        <h4>
+            Your email is:
+            <script>
+                document.write(localStorage.getItem("email"));
+            </script>
+        </h4>
+        <div class="hexa-container">
+            <div class="hexagon" onclick="goToPage('ec')">
+                <div class="hexagon-content">EC</div>
+            </div>
+            <div class="hexagon" onclick="goToPage('cse')">
+                <div class="hexagon-content">CSE</div>
+            </div>
+            <div class="hexagon" onclick="goToPage('eee')">
+                <div class="hexagon-content">EEE</div>
+            </div>
+        </div>
+        <div id="sidebar-toggle" onclick="openSidebar()">&#9776;</div>
+    </div>
+
+    
+
+    <script>
+        function logOut() {
+            localStorage.removeItem("name");
+            localStorage.removeItem("email");
+            localStorage.removeItem("password");
+            window.location.href = "index.html";
+        }
+
+        function goToHome() {
+            window.location.href = "sidebar.html";
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle("dark-theme");
+        }
+
+        function addNewNotes() {
+            alert("Feature under development");
+        }
+
+        function showDisclaimer() {
+            alert("Disclaimer: No copying.");
+        }
+
+        function openSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.style.display = (sidebar.style.display === "none" || sidebar.style.display === "") ? "block" : "none";
+        }
+
+        function goToPage(subject) {
+            window.location.href = subject + ".html";
+        }
+        
+    </script>
+</body>
+</html>

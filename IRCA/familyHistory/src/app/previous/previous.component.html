@@ -1,0 +1,636 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <div class="col s6">
+                        <form #previousForm="ngForm" (ngSubmit)="onSubmit(previousForm)">
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="previousService.selectedPrevious._id">
+                            <div style="display: flex; align-items: center; color: black;">
+                              <label>Last drink/Drugs taken</label>
+                              <input type="text" size="40" name="datebox" #issues="ngModel" [(ngModel)]="previousService.selectedPrevious.datebox" />
+                              <label>days ago</label>
+                          </div>
+                          <h5>Withdrawal Symptoms experienced with patient stopped drugs/Alcohol:</h5>
+                          <br>
+                            <table class="checkbox-table" border="2">
+                              <tr>
+                                <td>Sweating</td>
+                                <td class="checkbox-cell">
+                                  <label>
+                                    <input type="checkbox" name="Sweatingw" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Sweatingw">
+                                    <span>
+                                    </span>
+                                  </label>
+                                </td>
+                              </tr>
+                               
+                              <tr>
+                                <td>Palpitation or feeling ofone's own heartbeat with HR more than 100bpm</td>
+                                <td class="checkbox-cell">
+                                  <label>
+                                    <input type="checkbox" name="Palpitationw" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Palpitationw">
+                                    <span>
+        
+                                    </span>
+                                  </label>
+                                </td>
+                              </tr>
+  
+                              <tr>
+                                <td>Tremors</td>
+                                <td class="checkbox-cell">
+                                  <label>
+                                    <input type="checkbox" name="Tremorsw" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Tremorsw">
+                                    <span>
+        
+                                    </span>
+                                  </label>
+                                </td>
+                              </tr>
+  
+                              <tr>
+                                <td>Insomnia</td>
+                                <td class="checkbox-cell">
+                                  <label>
+                                    <input type="checkbox" name="Insomniaw" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Insomniaw">
+                                    <span>
+        
+                                    </span>
+                                  </label>
+                                </td>
+                              </tr>
+                          <tr>
+                            <td>Fits</td>
+                            <td class="checkbox-cell">
+                              <label>
+                                <input type="checkbox" name="Fitsw" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Fitsw">
+                                <span>
+    
+                                </span>
+                              </label>
+                            </td>
+                          </tr>
+                            <tr>
+                              <td>Nausea</td>
+                              <td class="checkbox-cell">
+                                <label>
+                                  <input type="checkbox" name="Nauseaw" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Nauseaw">
+                                  <span></span>
+                                </label>
+                              </td>
+                            </tr>
+  
+                            <tr>
+                              <td>Aches</td>
+                              <td class="checkbox-cell">
+                                <label>
+                                  <input type="checkbox" name="Achesw" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Achesw">
+                                  <span></span>
+                                </label>
+                              </td>
+                            </tr>
+  
+                            <tr>
+                              <td>Anxiety</td>
+                              <td class="checkbox-cell">
+                                <label>
+                                  <input type="checkbox" name="Anxietyw" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Anxietyw">
+                                  <span></span>
+                                </label>
+                              </td>
+                            </tr>
+  
+                            <tr>
+                              <td>Transient visual and tactile</td>
+                              <td class="checkbox-cell">
+                                <label>
+                                  <input type="checkbox" name="Transientw" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Transientw">
+                                  <span></span>
+                                </label>
+                              </td>
+                            </tr>
+  
+                            <tr>
+                              <td>Auditory hallucinations or illusions</td>
+                              <td class="checkbox-cell">
+                                <label>
+                                  <input type="checkbox" name="Auditoryw" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Auditoryw">
+                                  <span></span>
+                                </label>
+                              </td>
+                            </tr>
+  
+                          </table>
+                        
+                          <h5>History of other medical problems in the past:</h5>
+                          <br>
+                          <table class="checkbox-table" border="2">
+                            <tr>
+                              <td>Haematemesis</td>
+                              <td class="checkbox-cell">
+                                <label>
+                                  <input type="checkbox" name="Haematemesisha" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Haematemesisha">
+                                  <span>
+                                  </span>
+                                </label>
+                              </td>
+                            </tr>
+                             
+                            <tr>
+                              <td>Jaundice</td>
+                              <td class="checkbox-cell">
+                                <label>
+                                  <input type="checkbox" name="Jaundiceha" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Jaundiceha">
+                                  <span>
+      
+                                  </span>
+                                </label>
+                              </td>
+                            </tr>
+  
+                            <tr>
+                              <td>Head Injury</td>
+                              <td class="checkbox-cell">
+                                <label>
+                                  <input type="checkbox" name="Headha" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Headha">
+                                  <span>
+      
+                                  </span>
+                                </label>
+                              </td>
+                            </tr>
+  
+                            <tr>
+                              <td>Seizure</td>
+                              <td class="checkbox-cell">
+                                <label>
+                                  <input type="checkbox" name="Seizureha" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Seizureha">
+                                  <span>
+      
+                                  </span>
+                                </label>
+                              </td>
+                            </tr>
+                        <tr>
+                          <td>Abscesses</td>
+                          <td class="checkbox-cell">
+                            <label>
+                              <input type="checkbox" name="Abscessesha" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Abscessesha">
+                              <span>
+  
+                              </span>
+                            </label>
+                          </td>
+                        </tr>
+                          <tr>
+                            <td>Bleeding piles</td>
+                            <td class="checkbox-cell">
+                              <label>
+                                <input type="checkbox" name="Bleedingha" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Bleedingha">
+                                <span></span>
+                              </label>
+                            </td>
+                          </tr>
+  
+                          <tr>
+                            <td>Skin Problems</td>
+                            <td class="checkbox-cell">
+                              <label>
+                                <input type="checkbox" name="Skinha" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Skinha">
+                                <span></span>
+                              </label>
+                            </td>
+                          </tr>
+  
+                          <tr>
+                            <td>Nerve</td>
+                            <td class="checkbox-cell">
+                              <label>
+                                <input type="checkbox" name="Nerveha" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Nerveha">
+                                <span></span>
+                              </label>
+                            </td>
+                          </tr>
+  
+                          <tr>
+                            <td>Any</td>
+                            <td class="checkbox-cell">
+                              <label>
+                                <input type="checkbox" name="Anyha" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Anyha">
+                                <span></span>
+                              </label>
+                            </td>
+                          </tr>
+  
+                          <tr>
+                            <td>None</td>
+                            <td class="checkbox-cell" >
+                              <label>
+                                <input type="checkbox" name="Noneha" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Noneha">
+                                <span></span>
+                              </label>
+                            </td>
+                          </tr>
+                        </table>
+                        <h5>History of other medical problems in the present:</h5>
+                        <br>
+                        <table class="checkbox-table" border="2">
+                          <tr>
+                            <td>Haematemesis</td>
+                            <td class="checkbox-cell">
+                              <label>
+                                <input type="checkbox" name="Haematemesishr" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Haematemesishr">
+                                <span>
+                                </span>
+                              </label>
+                            </td>
+                          </tr>
+                           
+                          <tr>
+                            <td>Jaundice</td>
+                            <td class="checkbox-cell">
+                              <label>
+                                <input type="checkbox" name="Jaundicehr" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Jaundicehr">
+                                <span>
+    
+                                </span>
+                              </label>
+                            </td>
+                          </tr>
+  
+                          <tr>
+                            <td>Head Injury</td>
+                            <td class="checkbox-cell">
+                              <label>
+                                <input type="checkbox" name="Headhr" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Headhr">
+                                <span>
+    
+                                </span>
+                              </label>
+                            </td>
+                          </tr>
+  
+                          <tr>
+                            <td>Seizure</td>
+                            <td class="checkbox-cell">
+                              <label>
+                                <input type="checkbox" name="Seizurehr" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Seizurehr">
+                                <span>
+    
+                                </span>
+                              </label>
+                            </td>
+                          </tr>
+                      <tr>
+                        <td>Abscesses</td>
+                        <td class="checkbox-cell">
+                          <label>
+                            <input type="checkbox" name="Abscesseshr" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Abscesseshr">
+                            <span>
+  
+                            </span>
+                          </label>
+                        </td>
+                      </tr>
+                        <tr>
+                          <td>Bleeding piles</td>
+                          <td class="checkbox-cell">
+                            <label>
+                              <input type="checkbox" name="Bleedinghr" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Bleedinghr">
+                              <span></span>
+                            </label>
+                          </td>
+                        </tr>
+  
+                        <tr>
+                          <td>Skin Problems</td>
+                          <td class="checkbox-cell">
+                            <label>
+                              <input type="checkbox" name="Skinhr" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Skinhr">
+                              <span></span>
+                            </label>
+                          </td>
+                        </tr>
+  
+                        <tr>
+                          <td>Nerve</td>
+                          <td class="checkbox-cell">
+                            <label>
+                              <input type="checkbox" name="Nervehr" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Nervehr">
+                              <span></span>
+                            </label>
+                          </td>
+                        </tr>
+  
+                        <tr>
+                          <td>Any</td>
+                          <td class="checkbox-cell">
+                            <label>
+                              <input type="checkbox" name="Anyhr" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Anyhr">
+                              <span></span>
+                            </label>
+                          </td>
+                        </tr>
+                         <br>
+                        <div>
+                          <label>Other</label>
+                          <input type="text" size="40" name="othersbox" #issues="ngModel" [(ngModel)]="previousService.selectedPrevious.othersbox" />
+                         </div>
+                      </table>
+                      <h5>Chronic Health Problems:</h5>
+                      <br>
+                      <table class="checkbox-table" border="2">
+                        <tr>
+                          <td>Diabetes</td>
+                          <td class="checkbox-cell">
+                            <label>
+                              <input type="checkbox" name="Diabetesc" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Diabetesc">
+                              <span>
+                              </span>
+                            </label>
+                          </td>
+                        </tr>
+                         
+                        <tr>
+                          <td>Liver disorders</td>
+                          <td class="checkbox-cell">
+                            <label>
+                              <input type="checkbox" name="Liverc" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Liverc">
+                              <span>
+                              </span>
+                            </label>
+                          </td>
+                        </tr>
+                      
+                        <tr>
+                          <td>Epilepsy</td>
+                          <td class="checkbox-cell">
+                            <label>
+                              <input type="checkbox" name="Epilepsyc" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Epilepsyc">
+                              <span>
+                              </span>
+                            </label>
+                          </td>
+                        </tr>
+                      
+                        <tr>
+                          <td>Cardiac problems</td>
+                          <td class="checkbox-cell">
+                            <label>
+                              <input type="checkbox" name="Cardiacc" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Cardiacc">
+                              <span>
+                              </span>
+                            </label>
+                          </td>
+                        </tr>
+
+                      <tr>
+                      <td>Infections</td>
+                      <td class="checkbox-cell">
+                        <label>
+                          <input type="checkbox" name="Infectionsc" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Infectionsc">
+                          <span>
+                      
+                          </span>
+                        </label>
+                      </td>
+                      </tr>
+                      <tr>
+                        <td>Pulmonary TB</td>
+                        <td class="checkbox-cell">
+                          <label>
+                            <input type="checkbox" name="Pulmonaryc" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Pulmonaryc">
+                            <span></span>
+                          </label>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td>Chronic bronchitis</td>
+                        <td class="checkbox-cell">
+                          <label>
+                            <input type="checkbox" name="Chronic_bc" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Chronic_bc">
+                            <span></span>
+                          </label>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td>Chronic Asthma</td>
+                        <td class="checkbox-cell">
+                          <label>
+                            <input type="checkbox" name="Chronic_ac" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Chronic_ac">
+                            <span></span>
+                          </label>
+                        </td>
+                      </tr>
+                      
+                      </table>
+  
+                      <h5>Other Past Psychiatric complications:</h5>
+                      <br>
+                      <table class="checkbox-table" border="2">
+                        <tr>
+                          <td>Seizure during withdrawal</td>
+                          <td class="checkbox-cell">
+                            <label>
+                              <input type="checkbox" name="Seizureoa" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Seizureoa">
+                              <span>
+                              </span>
+                            </label>
+                          </td>
+                        </tr>
+                         
+                        <tr>
+                          <td>Depressionoa</td>
+                          <td class="checkbox-cell">
+                            <label>
+                              <input type="checkbox" name="Depressionoa" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Depressionoa">
+                              <span>
+  
+                              </span>
+                            </label>
+                          </td>
+                        </tr>
+  
+                        <tr>
+                          <td>Suicidal ideation/ attemps</td>
+                          <td class="checkbox-cell">
+                            <label>
+                              <input type="checkbox" name="Suicidaloa" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Suicidaloa">
+                              <span>
+                              </span>
+                            </label>
+                          </td>
+                        </tr>
+  
+                        <tr>
+                          <td>Confusion</td>
+                          <td class="checkbox-cell">
+                            <label>
+                              <input type="checkbox" name="Confusionoa" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Confusionoa">
+                              <span>
+                              </span>
+                            </label>
+                          </td>
+                        </tr>
+                    <tr>
+                      <td>Aggressive outbursts</td>
+                      <td class="checkbox-cell">
+                        <label>
+                          <input type="checkbox" name="Aggressiveoa" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Aggressiveoa">
+                          <span>
+                          </span>
+                        </label>
+                      </td>
+                    </tr>
+                      <tr>
+                        <td>Hallucinationoa</td>
+                        <td class="checkbox-cell">
+                          <label>
+                            <input type="checkbox" name="Hallucinationoa" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Hallucinationoa">
+                            <span></span>
+                          </label>
+                        </td>
+                      </tr>
+  
+                      <tr>
+                        <td>Paranoia</td>
+                        <td class="checkbox-cell">
+                          <label>
+                            <input type="checkbox" name="Paranoiaoa" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Paranoiaoa">
+                            <span></span>
+                          </label>
+                        </td>
+                      </tr>
+  
+                      <tr>
+                        <td>None</td>
+                        <td class="checkbox-cell">
+                          <label>
+                            <input type="checkbox" name="Noneoa" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Noneoa">
+                            <span></span>
+                          </label>
+                        </td>
+                      </tr>
+  
+                    </table>
+                    <h5>Other Info:</h5>
+                    <br>
+                    <table class="checkbox-table" border="2">
+                      <tr>
+                        <td>Seizure during withdrawal</td>
+                        <td class="checkbox-cell">
+                          <label>
+                            <input type="checkbox" name="Seizureor" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Seizureor">
+                            <span>
+                            </span>
+                          </label>
+                        </td>
+                      </tr>
+                       
+                      <tr>
+                        <td>Depression</td>
+                        <td class="checkbox-cell">
+                          <label>
+                            <input type="checkbox" name="Depressionor" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Depressionor">
+                            <span>
+  
+                            </span>
+                          </label>
+                        </td>
+                      </tr>
+  
+                      <tr>
+                        <td>Suicidal ideation/ attemps</td>
+                        <td class="checkbox-cell">
+                          <label>
+                            <input type="checkbox" name="Suicidalor" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Suicidalor">
+                            <span>
+  
+                            </span>
+                          </label>
+                        </td>
+                      </tr>
+  
+                      <tr>
+                        <td>Confusion</td>
+                        <td class="checkbox-cell">
+                          <label>
+                            <input type="checkbox" name="Confusionor" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Confusionor">
+                            <span>
+  
+                            </span>
+                          </label>
+                        </td>
+                      </tr>
+  
+                  
+                  <tr>
+                    <td>Aggressive outbursts</td>
+                    <td class="checkbox-cell">
+                      <label>
+                        <input type="checkbox" name="Aggressiveor" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Aggressiveor">
+                        <span>
+  
+                        </span>
+                      </label>
+                    </td>
+                  </tr>
+                    <tr>
+                      <td>Hallucination</td>
+                      <td class="checkbox-cell">
+                        <label>
+                          <input type="checkbox" name="Hallucinationor" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Hallucinationor">
+                          <span></span>
+                        </label>
+                      </td>
+                    </tr>
+  
+                    <tr>
+                      <td>Paranoia</td>
+                      <td class="checkbox-cell">
+                        <label>
+                          <input type="checkbox" name="Paranoiaor" #name="ngModel" [(ngModel)]="previousService.selectedPrevious.Paranoiaor">
+                          <span></span>
+                        </label>
+                      </td>
+                    </tr>
+  
+                  </table>
+                  <table class="checkbox-table">
+                    <div>
+                      <label>History of previous head injuries,if any </label>
+                      <input type="text" class="othersbox" size="40" name="Hist_of_prev_head" #issues="ngModel" [(ngModel)]="previousService.selectedPrevious.Hist_of_prev_head" />
+                     </div> 
+  
+                     <div>
+                     <label>Knowlege of allergy to specific drugs.(if known)</label>
+                      <input type="text" class="othersbox" size="40" name="Knowledge" #issues="ngModel" [(ngModel)]="previousService.selectedPrevious.Knowledge" />
+                     </div>
+  
+                     <h5>Family history of alcoholism /drug abuse/psychiatric illness:</h5>
+                     <div>
+                     <label>If any specify(who and which type of drug) </label>
+                      <input type="text" class="othersbox" size="40" name="Type_of_drug" #issues="ngModel" [(ngModel)]="previousService.selectedPrevious.Type_of_drug" />
+                     </div>
+                     <div>
+                      <label>If any psychiatric illness in family(mention who)</label>
+                       <input type="text" class="othersbox" size="40" name="Mention_who" #issues="ngModel" [(ngModel)]="previousService.selectedPrevious.Mention_who" />
+                      </div>
+                     
+                  </table>
+                  <div class="row6">
+                    <div class="input-field col s12">
+                      <button class="btn btn-custom right" type="button" (click)="resetForm(previousForm)">Reset</button>
+                      <button class="btn btn-custom right" type="submit" [disabled]="!previousForm.valid">Submit</button>
+                    </div>
+                  </div>
+                   </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

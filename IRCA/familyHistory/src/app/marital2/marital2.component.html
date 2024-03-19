@@ -1,0 +1,157 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <h3>Marital History</h3>
+                    <div class="col s6">
+<form #marital2Form="ngForm" (ngSubmit)="onSubmit(marital2Form)">
+    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="marital2Service.selectedMarital2._id">
+
+        <table>
+            <thead>
+                <th></th>
+                <th></th>
+            </thead>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.name" placeholder=""></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><input type="number" name="age" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.age" placeholder=""></td>
+            </tr>
+            <tr>
+                <td>Religion/Community</td>
+                <td><input type="text" name="religion" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.religion" placeholder=""></td>
+            </tr>
+            <tr>
+                <td>Education</td>
+                <td><input type="text" name="education" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.education" placeholder=""></td>
+            </tr>
+            <tr>
+                <td>Occupation</td>
+                <td><input type="text" name="occupation" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.occupation" placeholder=""></td>
+            </tr>
+            <tr>
+                <td>Income per month</td>
+                <td><input type="text" name="income" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.income" placeholder=""></td>
+            </tr>
+        </table>
+
+        <!-- <button class="btn btn-custom right" type="submit">Submit</button> -->
+        <h5>Other details about spouse (history of addiction in her family. Her addiction history if any, 
+            any other significant event in her life and attitude towards addiction) </h5>
+
+        <table>
+            <thead>
+                <th></th>
+                <th></th>
+            </thead>
+            <tr>
+                <td>
+                    B . Number of years of marriage :
+                </td>
+                <td> <input type="text" name="no_years" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.no_years" placeholder=""></td>
+            </tr>
+            <tr>
+                <td>
+                
+                C . ls this marriage arranged by choice ? 
+                    if by choice, accepted by family (present status) 
+                
+                </td>
+                <td><input type="text" name="choice" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.choice" placeholder=""></td>
+            </tr>
+            <tr>
+                <td>D . Details regarding preveious or subsequent marriages if any</td>
+                <td>
+                    <input type="text" name="previous_mar" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.previous_mar" placeholder="">
+                
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+               
+                E . Have you been separated from your spouse due to your addiction?
+                If yes, period of longest separation 
+                </td>
+                <td> 
+                    <label>
+                        <input type="checkbox"  name="separated1" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.separated1"  />
+                        <span></span>
+                    </label>
+                    <input type="number" name="separated2" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.separated2">
+
+                </td>
+            </tr>
+            <tr>
+                <td>F . Is Patient suspicious of wife ?</td>
+                <td>
+                    <label>
+                        <input type="checkbox"  name="wife" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.wife"  />
+                        <span></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>G . Any instance of family violence ? If yes, give details</td>
+                <td>
+                    <label>
+                    <input type="checkbox"  name="violence" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.violence"  />
+                        <span></span>
+                        </label>
+                </td>
+            </tr>
+            <tr>
+                <td>a . Physical violence directed towards family members</td>
+                <td>
+                    <label>
+                    <input type="checkbox"  name="violence1" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.violence1"  />
+                        <span></span>
+                        </label>
+                </td>
+            </tr>
+            <tr>
+                <td> b . Verbally abusive</td>
+                <td>
+                    <label>
+                    <input type="checkbox"  name="violence2" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.violence2"  />
+                        <span></span>
+                        </label>
+                </td>
+            </tr>
+            <tr>
+                <td>c . Violent incidents with neighbours and outsiders</td>
+                <td>
+                    <label>
+                    <input type="checkbox"  name="violence3" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.violence3"  />
+                        <span></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>d . Breaking articles at home</td>
+                <td>
+                    <label>
+                    <input type="checkbox"  name="violence4" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.violence4"  />
+                        <span></span>
+                    </label>
+                </td>
+            </tr>
+            <tr rowspan="2">
+                <td>H . Details regarding No. of children</td>
+                <td>Male : <input type="number" name="child_m" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.child_m" >
+               <td>Female : <input type="number" name="child_f" #name="ngModel" [(ngModel)]="marital2Service.selectedMarital2.child_f" ></td>
+                
+            </tr>
+
+            <button class="btn btn-custom right" type="button" (click)="resetForm(marital2Form)">Reset</button>
+            <button class="btn btn-custom right" type="submit">Submit</button>
+        </table>
+        
+   
+
+  </form>
+</div></div></div></div></div></div>

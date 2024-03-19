@@ -1,0 +1,388 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <h3>Family History-Details regarding parents and siblings</h3>
+                    <div class="col s6">
+                        <form #detailsForm="ngForm" (ngSubmit)="onSubmit(detailsForm)">
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="detailsService.selectedDetails._id">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="fname" #name="ngModel" [(ngModel)]="detailsService.selectedDetails.fname" placeholder="Enter father's name" required>
+                                    <label>Father's Name:
+                                        <label class="red-text">*</label>
+                                    </label>
+                                    <div *ngIf="detailsForm.submitted && detailsForm.controls['fname'].hasError('required')" class="error-message">
+                                        Father's Name is required
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                  <input type="number" name="fage" #name="ngModel" [(ngModel)]="detailsService.selectedDetails.fage" placeholder="Enter fathers age">
+                                  <label>Fathers age :</label>
+                                  <div *ngIf="detailsForm.submitted && detailsForm.controls['fage'].hasError('required')" class="error-message">
+                                    Father's Name is required
+                                </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                    <select  name="foccupation" #name="ngModel" [(ngModel)]="detailsService.selectedDetails.foccupation" placeholder="Enter fathers occupation">
+                                        <option value="default" selected="">Select Occupation</option>
+                              <option value="Teacher">Teacher</option>
+                              <option value="Doctor">Doctor</option>
+                              <option value="Entreprenur">Entreprenur</option>
+                              <option value="Engineer">Engineer</option>
+                              <option value="NotW">Unemployed</option>
+                              <option value="Other">Other</option>
+                              </select>                                  <label>fathers occupation :</label>
+                                  <div *ngIf="detailsForm.submitted && detailsForm.controls['foccupation'].hasError('required')" class="error-message">
+                                    Father's Name is required
+                                </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                  <div class="input-field col s12">
+                                    <input type="number" name="fincome" #name="ngModel" [(ngModel)]="detailsService.selectedDetails.fincome" required>
+                                    <label for="fincome">Fathers Income</label>
+                                    <div *ngIf="detailsForm.submitted && detailsForm.controls['fincome'].hasError('required')" class="error-message">
+                                        Father's Name is required
+                                    </div>
+                                  </div>
+                              </div>
+
+                            <div class="row">
+                                <span>In case of Parents Death:</span>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <select name="fdReason" #name="ngModel" [(ngModel)]="detailsService.selectedDetails.fdReason" placeholder="Enter Reason for death" >
+                                        <option value="default" selected="">Select Reason</option>
+                                        <option value="Heart Attack">Heart Attack</option>
+                                        <option value="Cancer">Cancer</option>
+                                        <option value="Accident">Accident</option>
+                                        <option value="Cardiac Arrest">Cardiac Arrest</option>
+                                        <option value="Others">Others</option>
+                                        </select>
+                                        <label>Reason for Father's Death:
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="number" name="fdAge" #name="ngModel" [(ngModel)]="detailsService.selectedDetails.fdAge" placeholder="Enter Age at father's death">
+                                    <label>Age at death:
+                                    </label>
+                                </div>
+                            </div>
+
+                    <div class="col s6">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="mname" #name="ngModel" [(ngModel)]="detailsService.selectedDetails.mname" placeholder="Enter mother's name" required>
+                                    <label>Mother's Name:
+                                        <label class="red-text">*</label>
+                                    </label>
+                                    <div *ngIf="detailsForm.submitted && detailsForm.controls['mname'].hasError('required')" class="error-message">
+                                        Father's Name is required
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                  <input type="number" name="mage" #name="ngModel" [(ngModel)]="detailsService.selectedDetails.mage" placeholder="Enter mothers age">
+                                  <label>Mothers age :</label>
+                                  <div *ngIf="detailsForm.submitted && detailsForm.controls['mage'].hasError('required')" class="error-message">
+                                    Father's Name is required
+                                </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <select name="moccupation" #name="ngModel" [(ngModel)]="detailsService.selectedDetails.moccupation" placeholder="Enter Mothers occupation">
+                                        <option value="Select" selected="">Select Occupation</option>
+                                        <option value="Teacher">Teacher</option>
+                                        <option value="Doctor">Doctor</option>
+                                        <option value="Entreprenur">Entreprenur</option>
+                                        <option value="Engineer">Engineer</option>
+                                        <option value="Other">Other</option>
+                                        <option value="NotW">HomeMaker</option>
+                                        </select>                                  <label>Mothers occupation :</label>
+                                  <div *ngIf="detailsForm.submitted && detailsForm.controls['moccupation'].hasError('required')" class="error-message">
+                                    Father's Name is required
+                                </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                <input type="number" name="mincome" #name="ngModel" [(ngModel)]="detailsService.selectedDetails.mincome" required>
+                                <label for="mincome">Mothers Income</label>
+                                <div *ngIf="detailsForm.submitted && detailsForm.controls['mincome'].hasError('required')" class="error-message">
+                                    Father's Name is required
+                                </div>
+                                </div>
+                            </div>
+            
+
+                            <div class="row">
+                                <span>In case of Parents Death:</span>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <select name="mdReason" #name="ngModel" [(ngModel)]="detailsService.selectedDetails.mdReason" placeholder="Enter Reason for death">
+                                        <option value="default" selected="">Select Reason</option>
+                                        <option value="Heart Attack">Heart Attack</option>
+                                        <option value="Cancer">Cancer</option>
+                                        <option value="Accident">Accident</option>
+                                        <option value="Cardiac Arrest">Cardiac Arrest</option>
+                                        <option value="Others">Others</option>      
+                                        </select>                              
+                                        <label>Reason for Mother's Death:</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="number" name="mdAge" #name="ngModel" [(ngModel)]="detailsService.selectedDetails.mdAge" placeholder="Enter Age at mother's death">
+                                    <label>Age at death:
+                                    </label>
+                                </div>
+                            </div>
+                        
+                    </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button class="btn btn-custom right" type="button" (click)="resetForm(detailsForm)">Reset</button>
+                        <button class="btn btn-custom right" type="submit" [disabled]="!detailsForm.valid">Submit</button>
+                        <button class="btn btn-custom right" type="button" (click)="onEdit(detailsService.details[0])">Edit</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <h3>Family History-Details regarding parents and siblings</h3>
+                    <div class="col s6">
+                        <form #detailsForm="ngForm" (ngSubmit)="onSubmit(detailsForm)">
+                            <input type="hidden" name="_id" #_id="ngModel"
+                                [(ngModel)]="detailsService.selectedDetails._id">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="fname" #name="ngModel"
+                                        [(ngModel)]="detailsService.selectedDetails.fname"
+                                        placeholder="Enter father's name" required>
+                                    <label>Father's Name:
+                                        <label class="red-text">*</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="number" name="fage" #name="ngModel"
+                                        [(ngModel)]="detailsService.selectedDetails.fage"
+                                        placeholder="Enter fathers age">
+                                    <label>Fathers age :</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <select name="foccupation" #name="ngModel"
+                                        [(ngModel)]="detailsService.selectedDetails.foccupation"
+                                        placeholder="Enter fathers occupation">
+                                        <option value="default" selected="" disabled>Select Occupation</option>
+                                        <option value="Teacher">Teacher</option>
+                                        <option value="Doctor">Doctor</option>
+                                        <option value="Entreprenur">Entreprenur</option>
+                                        <option value="Engineer">Engineer</option>
+                                        <option value="Other">Other</option>
+                                        <option value="NotW">Unemployed</option>
+                                    </select>
+                                    <label>fathers occupation :</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <select name="fincome" #name="ngModel"
+                                        [(ngModel)]="detailsService.selectedDetails.fincome" required>
+                                        <option value="sal0" selected="">Select income</option>
+                                        <option value="sal1">Less than 1 Lakhs</option>
+                                        <option value="sal2">1-5 Lakhs</option>
+                                        <option value="sal3">5-20 Lakhs</option>
+                                        <option value="sal4">More than 20 Lakhs</option>
+                                        <option value="sal5">No income</option>
+                                    </select>
+                                    <label for="fincome">Fathers Income</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <h5>In case of Parents Death:</h5>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <select  name="fdReason" #name="ngModel"
+                                        [(ngModel)]="detailsService.selectedDetails.fdReason"
+                                        placeholder="Enter Reason for death" required>
+                                        <option value="default" disabled selected="">Select Reason</option>
+                                        <option value="Heart Attack">Heart Attack</option>
+                                        <option value="Cancer">Cancer</option>
+                                        <option value="Accident">Accident</option>
+                                        <option value="Cardiac Arrest">Cardiac Arrest</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                    <label>Reason for Father's Death:
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="number" name="fdAge" #name="ngModel"
+                                        [(ngModel)]="detailsService.selectedDetails.fdAge"
+                                        placeholder="Enter Age at father's death" required>
+                                    <label>Age at death:
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="col s6">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="text" name="mname" #name="ngModel"
+                                            [(ngModel)]="detailsService.selectedDetails.mname"
+                                            placeholder="Enter mother's name" required>
+                                        <label>Mother's Name:
+                                            <label class="red-text">*</label>
+                                        </label>
+                                    </div>
+                                </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="number" name="mage" #name="ngModel"
+                                        [(ngModel)]="detailsService.selectedDetails.mage"
+                                        placeholder="Enter mothers age">
+                                    <label>Mothers age :</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <select name="moccupation" #name="ngModel"
+                                        [(ngModel)]="detailsService.selectedDetails.moccupation"
+                                        placeholder="Enter Mothers occupation">
+                                        <option value="default" selected="">Select Occupation</option>
+                                        <option value="Teacher">Teacher</option>
+                                        <option value="Doctor">Doctor</option>
+                                        <option value="Entreprenur">Entreprenur</option>
+                                        <option value="Engineer">Engineer</option>
+                                        <option value="Other">Other</option>
+                                        <option value="NotW">Unemployed</option>
+                                    </select>
+                                    <label>mother's occupation :</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <select name="mincome" #name="ngModel"
+                                        [(ngModel)]="detailsService.selectedDetails.mincome" required>
+                                        <option value="sal0" selected="">Select income</option>
+                                        <option value="sal1">Less than 1 Lakhs</option>
+                                        <option value="sal2">1-5 Lakhs</option>
+                                        <option value="sal3">5-20 Lakhs</option>
+                                        <option value="sal4">More than 20 Lakhs</option>
+                                        <option value="sal5">No income</option>
+                                    </select>
+                                    <label for="mincome">Mothers Income</label>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <h5>In case of Parents Death:</h5>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <select  name="mdReason" #name="ngModel"
+                                        [(ngModel)]="detailsService.selectedDetails.mdReason"
+                                        placeholder="Enter Reason for death" required>
+                                        <option value="default" selected="">Select Reason</option>
+                                        <option value="Heart Attack">Heart Attack</option>
+                                        <option value="Cancer">Cancer</option>
+                                        <option value="Accident">Accident</option>
+                                        <option value="Cardiac Arrest">Cardiac Arrest</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                    <label>Reason for Mother's Death:
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="number" name="mdAge" #name="ngModel"
+                                        [(ngModel)]="detailsService.selectedDetails.mdAge"
+                                        placeholder="Enter Age at mother's death" required>
+                                    <label>Age at death:
+                                    </label>
+                                </div>
+                            </div>
+                        
+                    
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button class="btn btn-custom right" type="button"
+                            (click)="resetForm(detailsForm)">Reset</button>
+                        <button class="btn btn-custom right" type="submit">Submit</button>
+                        <button class="btn btn-custom right" type="button"
+                            (click)="onEdit(detailsService.details[0])">Edit</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div> -->

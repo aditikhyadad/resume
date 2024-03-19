@@ -1,0 +1,173 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <div class="col s5">
+                        <h3>Childhood /adolescence(before the age of 15 years)</h3>
+                        <form [formGroup]="adolescenceform" (ngSubmit)="onSubmit()">
+                            <input type="hidden" formControlname="_id">
+                            <table border="1">
+                                <thead>
+                                    <th>Behaviour Problems identified</th>
+                                    <th>Present</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>A- Running Away from home</td>
+                                        <td>
+                                            <label>
+                                                <input type="checkbox" formControlName="checkbox1" />
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>B- Prequent pysical fights and violence</td>
+                                        <td>
+                                            <label>
+                                                <input type="checkbox" formControlName="checkbox2" />
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>C- Destruction of others property</td>
+                                        <td>
+                                            <label>
+                                                <input type="checkbox" formControlName="checkbox3" />
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>D- Stealing</td>
+                                        <td>
+                                            <label>
+                                                <input type="checkbox" formControlName="checkbox4" />
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>E- Scholastic backwardness</td>
+                                        <td>
+                                            <label>
+                                                <input type="checkbox" formControlName="checkbox5" />
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>F- Experimenting with drugs/alcohol</td>
+                                        <td>
+                                            <label>
+                                                <input type="checkbox" formControlName="checkbox6" />
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>G- Gambling</td>
+                                        <td>
+                                            <label>
+                                                <input type="checkbox" formControlName="checkbox7" />
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>H - Any other</td>
+                                        <td>
+                                            <label>
+                                                <input type="checkbox" formControlName="checkbox8" />
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+
+
+
+                                </tbody>
+                            </table>
+                            <br>
+                            <button type="button" class="btn btn-custom right" (click)="resetForm()">Reset</button>
+                            <button type="submit" class="btn btn-custom right">Submit</button>
+                        </form>
+                    </div>
+                    <br><br><br><br><br><br><br><br><br>
+                    <!-- <div class="col s6">
+                        <table class="responsive-table highlight">
+                            <thead>
+                                <tr>
+                                    <th>Behaviour Problems identified</th>
+                                    <th>Present</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A- Running Away from home</td>
+                                    <td>
+                                        <p *ngIf="adolss.checkbox1">Yes</p>
+                                        <p *ngIf="!adolss.checkbox1">No</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>B- Prequent pysical fights and violence</td>
+                                    <td>
+                                        <p *ngIf="adolss.checkbox2">Yes</p>
+                                        <p *ngIf="!adolss.checkbox2">No</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>C- Destruction of others property</td>
+                                    <td>
+                                        <p *ngIf="adolss.checkbox3">Yes</p>
+                                        <p *ngIf="!adolss.checkbox3">No</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>D- Stealing</td>
+                                    <td>
+                                        <p *ngIf="adolss.checkbox4">Yes</p>
+                                        <p *ngIf="!adolss.checkbox4">No</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>E- Scholastic backwardness</td>
+                                    <td>
+                                        <p *ngIf="adolss.checkbox5">Yes</p>
+                                        <p *ngIf="!adolss.checkbox5">No</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>F- Experimenting with drugs/alcohol</td>
+                                    <td>
+                                        <p *ngIf="adolss.checkbox6">Yes</p>
+                                        <p *ngIf="!adolss.checkbox6">No</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>G- Gambling</td>
+                                    <td>
+                                        <p *ngIf="adolss.checkbox7">Yes</p>
+                                        <p *ngIf="!adolss.checkbox7">No</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>H- Any other</td>
+                                    <td>
+                                        <p *ngIf="adolss.checkbox8">Yes</p>
+                                        <p *ngIf="!adolss.checkbox8">No</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    
+                          
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

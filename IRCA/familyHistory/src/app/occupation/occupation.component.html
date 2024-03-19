@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <h3>Occuational History</h3>
+                    <div class="col s6">
+<form [formGroup]="occupationForm" (ngSubmit)="onSubmit()">
+
+<table>
+    <tr>
+        <td>At what age did you start working?</td>
+        <td><input type="text" formControlName="age" ></td>
+    </tr>
+    <tr>
+        <td>How long have you been working?</td>
+        <td><input type="text" formControlName="duration"></td>
+    </tr>
+    <tr>
+        <td>Have you recieved any special award,recognition,merit certificates or promotions in the past?</td>
+        <td><input type="text" formControlName="special"></td>
+    </tr>
+    <tr>
+        <td>Did you change your job frequently due to addiction?</td>
+        <td><label>
+            <input type="checkbox" formControlName="check1" />
+            <span></span>
+        </label></td>
+    </tr>
+    <tr>
+        <td>
+            Did you have any periods of unemployment?
+        </td>
+        <td><label>
+            <input type="checkbox" formControlName="check2" />
+            <span></span>
+        </label></td>
+    </tr>
+    <tr>
+        <td>If yes for how long</td>
+        <td><input type="text" formControlName="reason"></td>
+    </tr>
+</table>
+<button type="submit" class="btn btn-custom right">Submit</button>
+<button type="button" class="btn btn-custom right" (click)="resetForm()">Reset</button>
+
+
+</form>
+                    </div></div></div></div></div></div>

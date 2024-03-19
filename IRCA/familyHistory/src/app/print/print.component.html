@@ -1,0 +1,1617 @@
+<!-- <header>
+    <p>Integrated Rehabilitation Center for Addicts Family History</p>
+</header> -->
+<h4>Integrated Rehabilitation Center for Addicts Family History</h4>
+<form #printForm="ngForm" (ngSubmit)="onSubmit(printForm)">
+    {{referralService.referrals[referralService.referrals.length-1].dateanddetails}}
+    <br><br>
+    <h5>Socio-Demographic Information</h5>
+
+    <div id="text1">
+        <div>
+            <label>Registration No: </label><span
+                id="rn">{{patientService.Patient[patientService.Patient.length-1].registrationno}}</span>
+        </div>
+        <div>
+            <label>Date of Registration: </label><span
+                id="rn">{{patientService.Patient[patientService.Patient.length-1].dateofregistration |
+                date:'shortDate'}}</span>
+
+        </div>
+        <div>
+            <label>1. Name: </label><span
+                id="rn">{{patientService.Patient[patientService.Patient.length-1].name}}</span>
+
+        </div>
+        <div>
+            <label>2. Address: </label><span
+                id="rn">{{patientService.Patient[patientService.Patient.length-1].address}}</span>
+
+        </div>
+
+        <div id="st">
+            <div>
+                <label>State: </label><span
+                    id="rn">{{patientService.Patient[patientService.Patient.length-1].state}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            </div>
+            <div>
+                <label>District: </label><span
+                    id="rn">{{patientService.Patient[patientService.Patient.length-1].district}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            </div>
+            <div>
+                <label>Taluk: </label><span
+                    id="rn">{{patientService.Patient[patientService.Patient.length-1].taluk}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            </div>
+        </div>
+        <div id="st">
+            <div>
+                <label>Home Phone: </label><span
+                    id="rn">{{patientService.Patient[patientService.Patient.length-1].homephone}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            </div>
+            <div>
+                <label>Telephone: </label><span
+                    id="rn">{{patientService.Patient[patientService.Patient.length-1].telephone}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            </div>
+        </div>
+        <div id="siblingTable">
+            <label>3.</label>
+            <table class="responsive-table highlight">
+                <thead>
+                    <tr>
+                        <th>Sex</th>
+                        <th>Age</th>
+                        <th>Date of Birth</th>
+                        <th>Religion</th>
+                        <th>Community</th>
+
+                    </tr>
+                </thead>
+                <tr>
+                    <td>{{ patientService.Patient[patientService.Patient.length-1].sex}}</td>
+                    <td>{{ patientService.Patient[patientService.Patient.length-1].age}}</td>
+                    <td>{{ patientService.Patient[patientService.Patient.length-1].dateofbirth}}</td>
+                    <td>{{ patientService.Patient[patientService.Patient.length-1].religion}}</td>
+                    <td>{{ patientService.Patient[patientService.Patient.length-1].community}}</td>
+
+
+                </tr>
+            </table>
+        </div>
+
+        <div id="siblingTable">
+            <table class="responsive-table highlight">
+                <tr>
+                    <td>Educational Qualification</td>
+                    <td>{{patientService.Patient[patientService.Patient.length-1].educationqualification}}</td>
+                </tr>
+            </table>
+        </div>
+        <div id="siblingTable">
+            <table class="responsive-table highlight">
+                <thead>
+                    <tr>
+                        <th>Occupation</th>
+                        <th>Income</th>
+                        <th>Marital Status</th>
+
+
+                    </tr>
+                </thead>
+                <tr>
+                    <td>{{ patientService.Patient[patientService.Patient.length-1].occupation}}</td>
+                    <td>{{ patientService.Patient[patientService.Patient.length-1].income}}</td>
+                    <td>{{ patientService.Patient[patientService.Patient.length-1].maritalstatus}}</td>
+
+
+
+                </tr>
+            </table>
+        </div>
+        <div id="siblingTable">
+            <h6>6. Living Arrangements:</h6>
+            <table class="responsive-table highlight">
+                <tr>
+                    <td style="width: 50%;">Living with family</td>
+                    <td style="width: 50%;">
+                        <span
+                            *ngIf="patientService.Patient[patientService.Patient.length - 1].livingarrangements === 'family'">&#10004;</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Living with friends or distant relatives</td>
+                    <td>
+                        <span
+                            *ngIf="patientService.Patient[patientService.Patient.length - 1].livingarrangements === 'friends'">&#10004;</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lives alone</td>
+                    <td>
+                        <span
+                            *ngIf="patientService.Patient[patientService.Patient.length - 1].livingarrangements === 'alone'">&#10004;</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>On the street</td>
+                    <td>
+                        <span
+                            *ngIf="patientService.Patient[patientService.Patient.length - 1].livingarrangements === 'street'">&#10004;</span>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <br>
+        <br>
+        <div id="siblingTable">
+            <table class="responsive-table highlight">
+                <tr>
+                    <td>Name of Family Member/Specify</td>
+                    <td>{{patientService.Patient[patientService.Patient.length-1].nameoffamilymem}}</td>
+                </tr>
+                <tr>
+                    <td>Name of Support Person</td>
+                    <td>{{patientService.Patient[patientService.Patient.length-1].nameofsupperson}}</td>
+                </tr>
+                <tr>
+                    <td>Address - Accompanied the Person</td>
+                    <td>{{patientService.Patient[patientService.Patient.length-1].suppersonaddress}}</td>
+                </tr>
+                <tr>
+                    <td>Telephone No of Support Person</td>
+                    <td>{{patientService.Patient[patientService.Patient.length-1].suppersonteleno}}</td>
+                </tr>
+            </table>
+        </div>
+        <div id="siblingTable">
+            <h6>8. Referral:</h6>
+            <table class="responsive-table highlight">
+                <tr>
+                    <td style="width: 25%;">Self</td>
+                    <td style="width: 25%;">
+                        <span
+                            *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Self'">&#10004;</span>
+                    </td>
+                    <td style="width: 30%;">Recovered Addict</td>
+                    <td style="width: 20%;">
+                        <span
+                            *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Recovered addict'">&#10004;</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Friends</td>
+                    <td>
+                        <span
+                            *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Friends'">&#10004;</span>
+                    </td>
+                    <td>Employer</td>
+                    <td>
+                        <span
+                            *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Employer'">&#10004;</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Family</td>
+                    <td>
+                        <span
+                            *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Family'">&#10004;</span>
+                    </td>
+                    <td>Media</td>
+                    <td>
+                        <span
+                            *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Media'">&#10004;</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Social Worker</td>
+                    <td>
+                        <span
+                            *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Social worker'">&#10004;</span>
+                    </td>
+                    <td>Through awareness programme</td>
+                    <td>
+                        <span
+                            *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Through awareness programme'">&#10004;</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Physicians</td>
+                    <td>
+                        <span
+                            *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Physicians'">&#10004;</span>
+                    </td>
+                    <td>Anyother</td>
+                    <td>
+                        <span
+                            *ngIf="patientService.Patient[patientService.Patient.length-1].referral === 'Any other'">&#10004;</span>
+                    </td>
+                </tr>
+
+
+            </table>
+        </div>
+
+
+    </div>
+
+    <br><br>
+
+    <div class="family-info">
+        <div id="father_details" class="details">
+            <h5>Family History-Details regarding parents and siblings</h5>
+            <ul>
+                <li><label>A. Father's Name: </label><span id="fname">{{detailsService.details[0].fname}}</span></li>
+                <li><label>Age: </label><span id="fAge"></span>{{detailsService.details[0].fage}}</li>
+                <li><label>Occupation: </label><span id="fOccupation">{{detailsService.details[0].foccupation}}</span>
+                </li>
+                <li><label>Income: </label><span id="fIncome"></span>{{detailsService.details[0].fincome}}</li>
+            </ul>
+        </div>
+
+        <div id="mother_details" class="details">
+            <ul>
+                <li><label>B. Mother's Name: </label><span id="mname">{{detailsService.details[0].mname}}</span></li>
+                <li><label>Age: </label><span id="mAge"></span>{{detailsService.details[0].mage}}</li>
+                <li><label>Occupation: </label><span id="mOccupation">{{detailsService.details[0].moccupation}}</span>
+                </li>
+                <li><label>Income: </label><span id="mIncome">{{detailsService.details[0].mincome}}</span></li>
+            </ul>
+        </div>
+
+        <div id="Parents death">
+            <br>
+            <label>In case of Parent's Death:</label>
+            <ul>
+                <div>
+                    <li><label class="death">C. Reason for Death</label></li>
+                </div>
+                <li><label>Father: </label>
+                    <span id="fdreason">{{detailsService.details[0].fdReason}}</span>
+                </li>
+                <li><label>Mother: </label>
+                    <span id="mdreason">{{detailsService.details[0].mdReason}}</span>
+                </li>
+            </ul>
+            <ul>
+                <li><label>D. How old were you at that time?</label></li>
+                <li><label>Father's Death: </label><span id="fdage">{{detailsService.details[0].fdAge}}</span></li>
+                <li><label>Mother's Death: </label><span id="mdage">{{detailsService.details[0].mdAge}}</span></li>
+            </ul>
+
+            <h5>E. About Siblings</h5>
+            <div id="siblingTable">
+                <table class="responsive-table highlight">
+                    <thead>
+                        <tr>
+                            <th>Relationship</th>
+                            <th>Age</th>
+                            <th>Education</th>
+                            <th>Occupation</th>
+
+                        </tr>
+                    </thead>
+                    <tr *ngFor="let sib of siblingService.sibling">
+                        <td>{{sib.relationship}}</td>
+                        <td>{{sib.age}}</td>
+                        <td>{{sib.education}}</td>
+                        <td>{{sib.occupation}}</td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+    
+
+        <div id="adol" class="break">
+            <h5>Childhood /adolescence(before the age of 15 years)</h5>
+        </div>
+        <br>
+
+
+        <table class="responsive-table highlight">
+            <thead>
+                <tr>
+                    <th>Behaviour Problems identified</th>
+                    <th>Present</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A- Running Away from home</td>
+                    <td>
+                        <p *ngIf="adolss[adolss.length-1].checkbox1">&#10004;</p>
+                        <p *ngIf="!adolss[adolss.length-1].checkbox1">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>B- Prequent pysical fights and violence</td>
+                    <td>
+                        <p *ngIf="adolss[adolss.length-1].checkbox2">&#10004;</p>
+                        <p *ngIf="!adolss[adolss.length-1].checkbox2">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>C- Destruction of others property</td>
+                    <td>
+                        <p *ngIf="adolss[adolss.length-1].checkbox3">&#10004;</p>
+                        <p *ngIf="!adolss[adolss.length-1].checkbox3">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>D- Stealing</td>
+                    <td>
+                        <p *ngIf="adolss[adolss.length-1].checkbox4">&#10004;</p>
+                        <p *ngIf="!adolss[adolss.length-1].checkbox4">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>E- Scholastic backwardness</td>
+                    <td>
+                        <p *ngIf="adolss[adolss.length-1].checkbox5">&#10004;</p>
+                        <p *ngIf="!adolss[adolss.length-1].checkbox5">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>F- Experimenting with drugs/alcohol</td>
+                    <td>
+                        <p *ngIf="adolss[adolss.length-1].checkbox6">&#10004;</p>
+                        <p *ngIf="!adolss[adolss.length-1].checkbox6">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>G- Gambling</td>
+                    <td>
+                        <p *ngIf="adolss[adolss.length-1].checkbox7">&#10004;</p>
+                        <p *ngIf="!adolss[adolss.length-1].checkbox7">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>H- Any other</td>
+                    <td>
+                        <p *ngIf="adolss[adolss.length-1].checkbox8">&#10004;</p>
+                        <p *ngIf="!adolss[adolss.length-1].checkbox8">&cross;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+        <h5>Did you experience the following before the age of 15 years?</h5>
+        <table class="responsive-table highlight">
+            <thead>
+                <tr>
+                    <th>Situations</th>
+                    <th>Present</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A-Poverty/severe debts of parents</td>
+                    <td>
+                        <p *ngIf="exp[exp.length-1].checkbox9">&#10004;</p>
+                        <p *ngIf="!exp[exp.length-1].checkbox9">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>B-Early parental loss</td>
+                    <td>
+                        <p *ngIf="exp[exp.length-1].checkbox10">&#10004;</p>
+                        <p *ngIf="!exp[exp.length-1].checkbox10">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>C - Extra marital affairs of parents</td>
+                    <td>
+                        <p *ngIf="exp[exp.length-1].checkbox11">&#10004;</p>
+                        <p *ngIf="!exp[exp.length-1].checkbox11">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>D - Broken home/single parenting</td>
+                    <td>
+                        <p *ngIf="exp[exp.length-1].checkbox12">&#10004;</p>
+                        <p *ngIf="!exp[exp.length-1].checkbox12">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>E - Violence</td>
+                    <td>
+                        <p *ngIf="exp[exp.length-1].checkbox13">&#10004;</p>
+                        <p *ngIf="!exp[exp.length-1].checkbox13">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>F - Sexuality abused by others</td>
+                    <td>
+                        <p *ngIf="exp[exp.length-1].checkbox14">&#10004;</p>
+                        <p *ngIf="!exp[exp.length-1].checkbox14">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>G - None</td>
+                    <td>
+                        <p *ngIf="exp[exp.length-1].checkbox15">&#10004;</p>
+                        <p *ngIf="!exp[exp.length-1].checkbox15">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>H- Any other</td>
+                    <td>
+                        <p *ngIf="exp[exp.length-1].checkbox16">&#10004;</p>
+                        <p *ngIf="!exp[exp.length-1].checkbox16">&cross;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <h5 class="break">Marital History</h5>
+        <h5>A. Details regarding spouse</h5>
+        <table class="responsive-table highlight">
+
+            <tr>
+                <td>Name</td>
+                <td>{{marital2Service.marital2[marital2Service.marital2.length-1].name}}</td>
+
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>{{marital2Service.marital2[marital2Service.marital2.length-1].age}}</td>
+            </tr>
+            <tr>
+                <td>religion</td>
+                <td>{{marital2Service.marital2[marital2Service.marital2.length-1].religion}}</td>
+            </tr>
+            <tr>
+                <td>Education</td>
+                <td>{{marital2Service.marital2[marital2Service.marital2.length-1].education}}</td>
+            </tr>
+            <tr>
+
+                <td>Occupation/td>
+                <td>{{marital2Service.marital2[marital2Service.marital2.length-1].occupation}}</td>
+            </tr>
+            <tr>
+                <td>Income</td>
+                <td>{{marital2Service.marital2[marital2Service.marital2.length-1].income}}</td>
+            </tr>
+
+
+        </table>
+
+        <h5>Other details about spouse (history of addiction in her family. Her addiction history if any,
+            any other significant event in her life and attitude towards addiction) </h5>
+        <table class="responsive-table:">
+            <tr>
+                <td>
+                    B . Number of years of marriage :
+                </td>
+                <td> {{marital2Service.marital2[marital2Service.marital2.length-1].no_years}}</td>
+            </tr>
+            <tr>
+                <td>
+
+                    C . ls this marriage arranged by choice ?
+                    if by choice, accepted by family (present status)
+
+                </td>
+                <td>{{marital2Service.marital2[marital2Service.marital2.length-1].choice}}</td>
+            </tr>
+            <tr>
+                <td>D . Details regarding preveious or subsequent marriages if any</td>
+                <td>
+                    {{marital2Service.marital2[marital2Service.marital2.length-1].previous_mar}}
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+
+                    E . Have you been separated from your spouse due to your addiction?
+                    If yes, period of longest separation
+                </td>
+                <td>
+
+                    <p *ngIf="marital2Service.marital2[marital2Service.marital2.length-1].separated1">&#10004;</p>
+                    <p *ngIf="!marital2Service.marital2[marital2Service.marital2.length-1].separated1">&cross;</p>
+
+
+                    {{marital2Service.marital2[marital2Service.marital2.length-1].separated2}}
+                </td>
+            </tr>
+            <tr>
+                <td>F . Is Patient suspicious of wife ?</td>
+                <td>
+                    <p *ngIf="marital2Service.marital2[marital2Service.marital2.length-1].wife">&#10004;</p>
+                    <p *ngIf="!marital2Service.marital2[marital2Service.marital2.length-1].wife">&cross;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>G . Any instance of family violence ? If yes, give details</td>
+                <td>
+                    <p *ngIf="marital2Service.marital2[marital2Service.marital2.length-1].violence">&#10004;</p>
+                    <p *ngIf="!marital2Service.marital2[marital2Service.marital2.length-1].violence">&cross;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>a . Physical violence directed towards family members</td>
+                <td>
+                    <p *ngIf="marital2Service.marital2[marital2Service.marital2.length-1].violence1">&#10004;</p>
+                    <p *ngIf="!marital2Service.marital2[marital2Service.marital2.length-1].violence1">&cross;</p>
+                </td>
+            </tr>
+            <tr>
+                <td> b . Verbally abusive</td>
+
+                <td>
+                    <p *ngIf="marital2Service.marital2[marital2Service.marital2.length-1].violence2">&#10004;</p>
+                    <p *ngIf="!marital2Service.marital2[marital2Service.marital2.length-1].violence2">&cross;</p>
+                </td>
+
+            </tr>
+            <tr>
+                <td>c . Violent incidents with neighbours and outsiders</td>
+                <td>
+                    <p *ngIf="marital2Service.marital2[marital2Service.marital2.length-1].violence3">&#10004;</p>
+                    <p *ngIf="!marital2Service.marital2[marital2Service.marital2.length-1].violence3">&cross;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>d . Breaking articles at home</td>
+                <td>
+                    <p *ngIf="marital2Service.marital2[marital2Service.marital2.length-1].violence4">&#10004;</p>
+                    <p *ngIf="!marital2Service.marital2[marital2Service.marital2.length-1].violence4">&cross;</p>
+                </td>
+            </tr>
+            <tr rowspan="2">
+                <td>H . Details regarding No. of children</td>
+                <td>Male : {{marital2Service.marital2[marital2Service.marital2.length-1].child_m}}
+                    Female : {{marital2Service.marital2[marital2Service.marital2.length-1].child_f}}</td>
+
+            </tr>
+
+
+
+        </table>
+        <h5 class="break">Health Status of Family</h5>
+        <h5>Has there been anyone in your family who has suffered from any of these problems?</h5>
+
+
+        <table border="2">
+            <tr>
+                <th>Problems</th>
+                <th colspan="4">Relationship (Parents/Siblings/Wife/Children)</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Yes</td>
+                <td>Relationship</td>
+                <td>No</td>
+                <td>Don't know</td>
+            </tr>
+            <tr>
+                <td>Major Depression</td>
+                <td>
+                    <p *ngIf="problemsService.problems[problemsService.problems.length-1].d2">Yes</p>
+                    <p *ngIf="!problemsService.problems[problemsService.problems.length-1].d2">No</p>
+                </td>
+                <td>{{problemsService.problems[problemsService.problems.length-1].depression}}
+                </td>
+                <td>
+                    <p *ngIf="problemsService.problems[problemsService.problems.length-1].d3">Yes</p>
+                    <p *ngIf="!problemsService.problems[problemsService.problems.length-1].d3">No</p>
+                </td>
+                <td>
+                    <p *ngIf="problemsService.problems[problemsService.problems.length-1].d4">Yes</p>
+                    <p *ngIf="!problemsService.problems[problemsService.problems.length-1].d4">No</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Suicide/Attempted Suicide</td>
+                <td>
+                    <p *ngIf="problemsService.problems[problemsService.problems.length-1].s2">Yes</p>
+                    <p *ngIf="!problemsService.problems[problemsService.problems.length-1].s2">No</p>
+                </td>
+                <td>{{problemsService.problems[problemsService.problems.length-1].suicide}}
+                <td>
+                    <p *ngIf="problemsService.problems[problemsService.problems.length-1].s3">Yes</p>
+                    <p *ngIf="!problemsService.problems[problemsService.problems.length-1].s3">No</p>
+                </td>
+                <td>
+                    <p *ngIf="problemsService.problems[problemsService.problems.length-1].s4">Yes</p>
+                    <p *ngIf="!problemsService.problems[problemsService.problems.length-1].s4">No</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Psychiatric Illness</td>
+                <td>
+                    <p *ngIf="problemsService.problems[problemsService.problems.length-1].p2">Yes</p>
+                    <p *ngIf="!problemsService.problems[problemsService.problems.length-1].p2">No</p>
+                </td>
+                <td>{{problemsService.problems[problemsService.problems.length-1].psychiatric}}
+                <td>
+                    <p *ngIf="problemsService.problems[problemsService.problems.length-1].p3">Yes</p>
+                    <p *ngIf="!problemsService.problems[problemsService.problems.length-1].p3">No</p>
+                </td>
+                <td>
+                    <p *ngIf="problemsService.problems[problemsService.problems.length-1].p4">Yes</p>
+                    <p *ngIf="!problemsService.problems[problemsService.problems.length-1].p4">No</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Alcohol Dependence</td>
+                <td>
+                    <p *ngIf="problemsService.problems[problemsService.problems.length-1].a2">Yes</p>
+                    <p *ngIf="!problemsService.problems[problemsService.problems.length-1].a2">No</p>
+                </td>
+                <td>{{problemsService.problems[problemsService.problems.length-1].alcohol}}
+                </td>
+                <td>
+                    <p *ngIf="problemsService.problems[problemsService.problems.length-1].a3">Yes</p>
+                    <p *ngIf="!problemsService.problems[problemsService.problems.length-1].a3">No</p>
+                </td>
+                <td>
+                    <p *ngIf="problemsService.problems[problemsService.problems.length-1].a4">Yes</p>
+                    <p *ngIf="!problemsService.problems[problemsService.problems.length-1].a4">No</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Drug Dependence</td>
+                <td>
+                    <p *ngIf="problemsService.problems[problemsService.problems.length-1].dr2">Yes</p>
+                    <p *ngIf="!problemsService.problems[problemsService.problems.length-1].dr2">No</p>
+                </td>
+                <td>{{problemsService.problems[problemsService.problems.length-1].drug}}</td>
+                <td>
+                    <p *ngIf="problemsService.problems[problemsService.problems.length-1].dr3">Yes</p>
+                    <p *ngIf="!problemsService.problems[problemsService.problems.length-1].dr3">No</p>
+                </td>
+                <td>
+                    <p *ngIf="problemsService.problems[problemsService.problems.length-1].dr4">Yes</p>
+                    <p *ngIf="!problemsService.problems[problemsService.problems.length-1].dr4">No</p>
+                </td>
+            </tr>
+        </table>
+
+        <h5>Adjustment patterns</h5>
+        <table class="responsive-table highlight">
+            <thead>
+                <tr>
+                    <th>Relationship with family members</th>
+                    <th>Parents</th>
+                    <th>Siblings</th>
+                    <th>Spouse</th>
+                    <th>Children</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>No family(Dead)</td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].family[0].f1">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].family[0].f1">&cross;</p>
+                    </td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].family[0].f2">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].family[0].f2">&cross;</p>
+                    </td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].family[0].f3">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].family[0].f3">&cross;</p>
+                    </td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].family[0].f4">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].family[0].f4">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Disowned by family/mutual rejection</td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].disowned[0].d1">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].disowned[0].d1">&cross;</p>
+                    </td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].disowned[0].d2">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].disowned[0].d2">&cross;</p>
+                    </td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].disowned[0].d3">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].disowned[0].d3">&cross;</p>
+                    </td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].disowned[0].d4">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].disowned[0].d4">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mixed of indifferent feelings</td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].mixed[0].m1">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].mixed[0].m1">&cross;</p>
+                    </td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].mixed[0].m2">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].mixed[0].m2">&cross;</p>
+                    </td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].mixed[0].m3">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].mixed[0].m3">&cross;</p>
+                    </td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].mixed[0].m4">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].mixed[0].m4">&cross;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usually friendly miner conflicts</td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].conflict[0].c1">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].conflict[0].c1">&cross;</p>
+                    </td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].conflict[0].c2">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].conflict[0].c2">&cross;</p>
+                    </td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].conflict[0].c3">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].conflict[0].c3">&cross;</p>
+                    </td>
+                    <td>
+                        <p *ngIf="patternService.pattern[0].conflict[0].c4">&#10004;</p>
+                        <p *ngIf="!patternService.pattern[0].conflict[0].c4">&cross;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        <h5>Prior Treatment for Addiction:</h5>
+        <div id="treatmentTable">
+            <table class="responsive-table highlight">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>place</th>
+                        <th>period</th>
+                        <th>sobriety</th>
+                        <th>Reason for sobriety</th>
+                        <th>Reason for relapse</th>
+                    </tr>
+                </thead>
+                <tr *ngFor="let treat of treatmentService.Treatment">
+                    <td>{{treat.year}}</td>
+                    <td>{{treat.place}}</td>
+                    <td>{{treat.period}}</td>
+                    <td>{{treat.sobriety}}</td>
+                    <td>{{treat.reason}}</td>
+                    <td>{{treat.relapse}}</td>
+
+                </tr>
+            </table>
+        </div>
+
+        <h5 class="break">Occupational History</h5>
+        <table>
+            <tr>
+                <td>At what age did you start working?</td>
+                <td>{{occ[occ.length-1].age}}</td>
+            </tr>
+            <tr>
+                <td>How long have you been working?</td>
+                <td>{{occ[occ.length-1].duration}}</td>
+            </tr>
+            <tr>
+                <td>Have you recieved any special award,recognition,merit certificates or promotions in the past?</td>
+                <td>{{occ[occ.length-1].special}}</td>
+            </tr>
+            <tr>
+                <td>Did you change your job frequently due to addiction?</td>
+                <td>
+                    <p *ngIf="occ[occ.length-1].check1">&#10004;</p>
+                    <p *ngIf="!occ[occ.length-1].check1">&cross;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Did you have any periods of unemployment?
+                <td>
+                    <p *ngIf="occ[occ.length-1].check2">&#10004;</p>
+                    <p *ngIf="!occ[occ.length-1].check2">&cross;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>If yes for how long</td>
+                <td>{{occ[occ.length-1].reason}}</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>Absentism</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Warning/ Memos</td>
+                <td>
+                    <p *ngIf="occ1[occ1.length-1].checkbox1">&#10004;</p>
+                    <p *ngIf="!occ1[occ1.length-1].checkbox1">&cross;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Suspension Order</td>
+                <td>
+                    <p *ngIf="occ1[occ1.length-1].checkbox2">&#10004;</p>
+                    <p *ngIf="!occ1[occ1.length-1].checkbox2">&cross;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Dismissal Order</td>
+                <td>
+                    <p *ngIf="occ1[occ1.length-1].checkbox3">&#10004;</p>
+                    <p *ngIf="!occ1[occ1.length-1].checkbox3">&cross;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Transfer Order</td>
+                <td>
+                    <p *ngIf="occ1[occ1.length-1].checkbox4">&#10004;</p>
+                    <p *ngIf="!occ1[occ1.length-1].checkbox4">&cross;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Accidents on the job</td>
+                <td>
+                    <p *ngIf="occ1[occ1.length-1].checkbox5">&#10004;</p>
+                    <p *ngIf="!occ1[occ1.length-1].checkbox5">&cross;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Attend work under the influence of alcohol /drugs</td>
+                <td>
+                    <p *ngIf="occ1[occ1.length-1].checkbox6">&#10004;</p>
+                    <p *ngIf="!occ1[occ1.length-1].checkbox6">&cross;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Unauthorised absent</td>
+                <td>
+                    <p *ngIf="occ1[occ1.length-1].checkbox7">&#10004;</p>
+                    <p *ngIf="!occ1[occ1.length-1].checkbox7">&cross;</p>
+                </td>
+            </tr>
+            <tr>
+                <td>If yes for how long</td>
+                <td>{{occ1[occ1.length-1].time}}</td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col s7">
+            <h5>19. Financial History</h5>
+            <table class="responsive-table highlight">
+
+                <thead>
+                    <th>Details of the debts to be cleared</th>
+                    <th id> Amount </th>
+                </thead>
+                <tr>
+                    <td>Money borrowed from family and friends</td>
+                    <td>{{finhistoryService.FinHistory[finhistoryService.FinHistory.length-1].family_friends}}</td>
+                </tr>
+                <tr>
+                    <td>Loans from banks</td>
+                    <td>{{finhistoryService.FinHistory[finhistoryService.FinHistory.length-1].banks}}</td>
+                </tr>
+                <tr>
+                    <td>Loans from place of work </td>
+                    <td>{{finhistoryService.FinHistory[finhistoryService.FinHistory.length-1].workplace}}</td>
+                </tr>
+                <tr>
+                    <td>Money borrowed from money lenders</td>
+                    <td>{{finhistoryService.FinHistory[finhistoryService.FinHistory.length-1].lenders}}</td>
+                </tr>
+                <tr>
+                    <td>Money for redeeming articles from pawn shops</td>
+                    <td>{{finhistoryService.FinHistory[finhistoryService.FinHistory.length-1].pawnshops}}</td>
+                </tr>
+                <tr>
+                    <td>Outstanding debts at various shops None</td>
+                    <td>{{finhistoryService.FinHistory[finhistoryService.FinHistory.length-1].othershops}}</td>
+                </tr>
+
+
+            </table>
+
+            <h5>Financial damages as perceived by counsellor:</h5>
+            <div>
+                <div>
+                    <label>Mild: </label><span
+                        id="rn">{{finhistoryService.FinHistory[finhistoryService.FinHistory.length-1].mild}}</span>
+                </div>
+                <div>
+                    <label>Moderate: </label><span
+                        id="rn">{{finhistoryService.FinHistory[finhistoryService.FinHistory.length-1].moderate}}</span>
+                </div>
+                <div>
+                    <label>Severe: </label><span
+                        id="rn">{{finhistoryService.FinHistory[finhistoryService.FinHistory.length-1].severe}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="break" class="col s7">
+            <h5 class="break">20. Legal History</h5>
+            <table class="responsive-table highlight">
+
+                <thead>
+                    <th>Details of the debts to be cleared</th>
+                    <th id> Amount </th>
+                </thead>
+                <tr>
+                    <td>Have you been arrested for sale of drug?</td>
+                    <td>{{legalhistoryService.Legalhistory[legalhistoryService.Legalhistory.length-1].saleofdrugs}}</td>
+                </tr>
+                <tr>
+                    <td>Have you been arrested for possession of drug?</td>
+                    <td>{{legalhistoryService.Legalhistory[legalhistoryService.Legalhistory.length-1].possessionofdrugs}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>If you got into trouble with law for the following</td>
+                    <td>No. of times</td>
+                </tr>
+                <tr>
+                    <td>Arrested for drunken/drug influenced behaviour </td>
+                    <td>{{legalhistoryService.Legalhistory[legalhistoryService.Legalhistory.length-1].arrestedfordrunkenbehaviour}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fined for drunken driving</td>
+                    <td>{{legalhistoryService.Legalhistory[legalhistoryService.Legalhistory.length-1].finedfordrunkendriving}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Had an accident (even minor) while driving under the influence of alcohol/drugs</td>
+                    <td>{{legalhistoryService.Legalhistory[legalhistoryService.Legalhistory.length-1].accindentunderinfluence}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Assault</td>
+                    <td>{{legalhistoryService.Legalhistory[legalhistoryService.Legalhistory.length-1].assault}}</td>
+                </tr>
+                <tr>
+                    <td>Anyother</td>
+                    <td>{{legalhistoryService.Legalhistory[legalhistoryService.Legalhistory.length-1].anyother}}</td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="conatiner">
+            <h5>21.Leisure time activities</h5>
+
+
+            <table border="1">
+
+                <th>Activities</th>
+                <th>Before Addiction</th>
+                <th>Last One Year</th>
+
+
+                <tr>
+                    <td>Playing games, Physical exercises</td>
+                    <td>
+                        <p *ngIf="activityService.activities[activityService.activities.length-1].checkbox1">&#10004;
+                        </p>
+                        <p *ngIf="!activityService.activities[activityService.activities.length-1].checkbox1">&cross;
+                        </p>
+                    </td>
+                    <td>
+                        <p *ngIf="activityService.activities[activityService.activities.length-1].checkbox2">&#10004;
+                        </p>
+                        <p *ngIf="!activityService.activities[activityService.activities.length-1].checkbox2">&cross;
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Going to movies, dramas</td>
+                    <td>
+                        <p *ngIf="activityService.activities[activityService.activities.length-1].checkbox3">&#10004;
+                        </p>
+                        <p *ngIf="!activityService.activities[activityService.activities.length-1].checkbox3">&cross;
+                        </p>
+                    </td>
+                    <td>
+                        <p *ngIf="activityService.activities[activityService.activities.length-1].checkbox4">&#10004;
+                        </p>
+                        <p *ngIf="!activityService.activities[activityService.activities.length-1].checkbox4">&cross;
+                        </p>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>Watching TV / Video, listening to music</td>
+                    <td>
+                        <p *ngIf="activityService.activities[activityService.activities.length-1].checkbox5">&#10004;
+                        </p>
+                        <p *ngIf="!activityService.activities[activityService.activities.length-1].checkbox5">&cross;
+                        </p>
+                    </td>
+                    <td>
+                        <p *ngIf="activityService.activities[activityService.activities.length-1].checkbox6">&#10004;
+                        </p>
+                        <p *ngIf="!activityService.activities[activityService.activities.length-1].checkbox6">&cross;
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reading</td>
+                    <td>
+                        <p *ngIf="activityService.activities[activityService.activities.length-1].checkbox25">&#10004;
+                        </p>
+                        <p *ngIf="!activityService.activities[activityService.activities.length-1].checkbox25">&cross;
+                        </p>
+                    </td>
+                    <td>
+                        <p *ngIf="activityService.activities[activityService.activities.length-1].checkbox26">&#10004;
+                        </p>
+                        <p *ngIf="!activityService.activities[activityService.activities.length-1].checkbox26">&cross;
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Visiting relatives / friends</td>
+                    <td>
+                        <p *ngIf="activityService.activities[activityService.activities.length-1].checkbox27">&#10004;
+                        </p>
+                        <p *ngIf="!activityService.activities[activityService.activities.length-1].checkbox27">&cross;
+                        </p>
+                    </td>
+                    <td>
+                        <p *ngIf="activityService.activities[activityService.activities.length-1].checkbox28">&#10004;
+                        </p>
+                        <p *ngIf="!activityService.activities[activityService.activities.length-1].checkbox28">&cross;
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Other Hobbies / talents</td>
+                    <td>
+                        <p *ngIf="activityService.activities[activityService.activities.length-1].checkbox29">&#10004;
+                        </p>
+                        <p *ngIf="!activityService.activities[activityService.activities.length-1].checkbox29">&cross;
+                        </p>
+                    </td>
+                    <td>
+                        <p *ngIf="activityService.activities[activityService.activities.length-1].checkbox30">&#10004;
+                        </p>
+                        <p *ngIf="!activityService.activities[activityService.activities.length-1].checkbox30">&cross;
+                        </p>
+                    </td>
+                </tr>
+
+
+
+            </table>
+        </div>
+
+        <div class="container">
+            <h5>22. Leisure time activities</h5>
+
+
+            <table border="1">
+                <thead>
+                    <th>Are you a</th>
+                    <th>yes</th>
+                    <th>No</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Believer</td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox7">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox7">&cross;</p>
+                        </td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox8">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox8">&cross;</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Non Believer</td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox9">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox9">&cross;</p>
+                        </td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox10">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox10">&cross;</p>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Indiffrent</td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox11">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox11">&cross;</p>
+                        </td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox12">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox12">&cross;</p>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <br>
+            <table border="1">
+                <thead>
+                    <th>Do you</th>
+                    <th>Always</th>
+                    <th>Sometimes</th>
+                    <th>Never</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pray at home</td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox13">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox13">&cross;</p>
+                        </td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox14">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox14">&cross;</p>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox15">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox15">&cross;</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Visit Temple regularly</td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox16">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox16">&cross;</p>
+                        </td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox17">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox17">&cross;</p>
+                        </td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox18">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox18">&cross;</p>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Go on piligrimages</td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox19">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox19">&cross;</p>
+                        </td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox20">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox20">&cross;</p>
+                        </td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox21">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox21">&cross;</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Celebrate festivals</td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox22">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox22">&cross;</p>
+                        </td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox23">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox23">&cross;</p>
+                        </td>
+                        <td>
+                            <p *ngIf="areService.ares[areService.ares.length-1].checkbox24">&#10004;</p>
+                            <p *ngIf="!areService.ares[areService.ares.length-1].checkbox24">&cross;</p>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+
+
+
+        <h5 class="break">23. Referral-medical as well as other referrals</h5>
+        <div>
+            <table class="responsive table highlight">
+                <tr>
+                    <td>Date and details of visits</td>
+                    <td>{{referralService.referrals[referralService.referrals.length-1].dateanddetails}}</td>
+                </tr>
+                <tr>
+                    <td>Action taken</td>
+                    <td>{{referralService.referrals[referralService.referrals.length-1].actiontaken}}</td>
+                </tr>
+                <tr>
+                    <td>Referral to</td>
+                    <td>{{referralService.referrals[referralService.referrals.length-1].referredto}}</td>
+                </tr>
+                <tr>
+                    <td>if referred name of organization</td>
+                    <td>{{referralService.referrals[referralService.referrals.length-1].organisation}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <h5>24. Individual counselling Notes</h5>
+        <table>
+            <tr>
+                <th>Session No</th>
+                <th>Date</th>
+                <th>Issues Dealt with</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].date}}</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].issues}}</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].date1}}</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].issues1}}</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].date2}}</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].issues2}}</td>
+            </tr>
+        </table>
+
+
+        <table class="break">
+            <tr>
+                <th>Session No</th>
+                <td>Date</td>
+                <td>Issues dealt with</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].date3}}</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].issues3}}</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].date4}}</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].issues}}</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].date5}}</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].issues5}}</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].date6}}</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].issues6}}</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].date7}}</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].issues7}}</td>
+            </tr>
+        </table>
+
+        <table class="break">
+            <tr>
+                <th>Session No</th>
+                <th>Date</th>
+                <th>Issues Dealt with</th>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].date8}}</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].issues8}}</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].date9}}</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].issues9}}</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].date10}}</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].issues10}}</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].date11}}</td>
+                <td>{{individualService.individuals[individualService.individuals.length-1].issues11}}</td>
+            </tr>
+        </table>
+
+
+        <h5 class="break">Family Counselling Notes</h5>
+
+        <table>
+            <tr>
+                <th>Session No</th>
+                <th>Date</th>
+                <th>Issues Dealt with</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].date}}</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].issues}}</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].date}}</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].issues}}</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].date}}</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].issues}}</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].date3}}</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].issues3}}</td>
+            </tr>
+        </table>
+
+
+        <table class="break">
+            <tr>
+                <th>Session No</th>
+                <th>Date</th>
+                <th>Issues Dealt with</th>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].date4}}</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].issues4}}</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].date5}}</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].issues5}}</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].date6}}</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].issues6}}</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].date7}}</td>
+                <td>{{counsellorService.counsellor[counsellorService.counsellor.length-1].issues7}}</td>
+            </tr>
+        </table>
+
+
+        <h5 class="break">26. Treatment Plan</h5>
+        <table>
+            <tr>
+                <td>Goals-Short Term And Long-Term</td>
+                <td>Specific Activities to be undertaken</td>
+                <td>Time frame</td>
+            </tr>
+            <tr>
+                <td>Abstaining from alcohol and drugs</td>
+                <td>{{planService.plan[planService.plan.length-1].sa}}</td>
+                <td>{{planService.plan[planService.plan.length-1].tf}}</td>
+            </tr>
+            <tr>
+                <td>Getting back to a routine life</td>
+                <td>{{planService.plan[planService.plan.length-1].sa1}}</td>
+                <td>{{planService.plan[planService.plan.length-1].tf1}}</td>
+            </tr>
+            <tr>
+                <td>Improvement in work life</td>
+                <td>{{planService.plan[planService.plan.length-1].sa2}}</td>
+                <td>{{planService.plan[planService.plan.length-1].tf2}}</td>
+            </tr>
+            <tr>
+                <td>Managing financed</td>
+                <td>{{planService.plan[planService.plan.length-1].sa3}}</td>
+                <td>{{planService.plan[planService.plan.length-1].tf3}}</td>
+            </tr>
+            <tr>
+                <td>Dealing with defects of character</td>
+                <td>{{planService.plan[planService.plan.length-1].sa4}}</td>
+                <td>{{planService.plan[planService.plan.length-1].tf4}}</td>
+            </tr>
+            <tr>
+                <td>Improving relationship with family</td>
+                <td>{{planService.plan[planService.plan.length-1].sa5}}</td>
+                <td>{{planService.plan[planService.plan.length-1].tf5}}</td>
+            </tr>
+            <tr>
+                <td>Involvement in health recreational activities</td>
+                <td>{{planService.plan[planService.plan.length-1].sa6}}</td>
+                <td>{{planService.plan[planService.plan.length-1].tf6}}</td>
+            </tr>
+            <tr>
+                <td>Follow-Up measures</td>
+                <td>{{planService.plan[planService.plan.length-1].sa7}}</td>
+                <td>{{planService.plan[planService.plan.length-1].tf7}}</td>
+            </tr>
+            <tr>
+                <td>Dealing with relapses if any</td>
+                <td>{{planService.plan[planService.plan.length-1].sa8}}</td>
+                <td>{{planService.plan[planService.plan.length-1].tf8}}</td>
+            </tr>
+        </table>
+
+        <h5>In case of drop or extension of stay</h5>
+        <table>
+            <tr>
+                <td colspan="2">In case of Drop Out  if yes
+                    date:</td>
+            </tr>
+            <tr>
+                <td>Reasons for drop out (if yes please specify)</td>
+                <td>{{planService.plan[planService.plan.length-1].dropout}}</td>
+            </tr>
+            <tr>
+                <td>Lack of motivation</td>
+                <td>{{planService.plan[planService.plan.length-1].lackofmotivation}}</td>
+            </tr>
+            <tr>
+                <td>Lack of family support</td>
+                <td>{{planService.plan[planService.plan.length-1].lackoffamilysupport}}</td>
+            </tr>
+            <tr>
+                <td>Poverty, hence not able to stay</td>
+                <td>{{planService.plan[planService.plan.length-1].poverty}}</td>
+            </tr>
+            <tr>
+                <td>Legal problem</td>
+                <td>{{planService.plan[planService.plan.length-1].legalproblem}}</td>
+            </tr>
+            <tr>
+                <td>Unable to cope with treatment</td>
+                <td>{{planService.plan[planService.plan.length-1].unabletocope}}</td>
+            </tr>
+            <tr>
+                <td>Inadequate facilities</td>
+                <td>{{planService.plan[planService.plan.length-1].inadequatefacilities}}</td>
+            </tr>
+            <tr>
+                <td>Any other</td>
+                <td>{{planService.plan[planService.plan.length-1].anyother}}</td>
+            </tr>
+            <tr>
+                <td>B. In case of extension,</td>
+                <td>Days:{{planService.plan[planService.plan.length-1].days}} months:{{planService.plan[planService.plan.length-1].months}}</td>
+            </tr>
+            <tr>
+                <td>Reasons for extension</td>
+                <td>{{planService.plan[planService.plan.length-1].reasons}}</td>
+            </tr>
+        </table>
+
+        <h5 class="break">MEDICAL FORM</h5>
+        <p>Reg.no {{medicalService.medicals[medicalService.medicals.length-1].regno}}</p>
+        <p>Name {{medicalService.medicals[medicalService.medicals.length-1].name1}}...........Age{{medicalService.medicals[medicalService.medicals.length-1].Ageofperson}}..Date for registartion:28-10-2003</p>
+        <h5>Drinking/Drug History</h5>
+        <p>Details of alcohol/drug abused</p>
+        <table>
+            <tr>
+            <th>Drugs</th>
+            <th>Age of first use</th>
+            <th>Years of use</th>
+            <th>Years of excessive use</th>
+            <th>Specific type of drugs</th>
+            <th>Route of administration</th>
+            <th>Frequency of use in last 30 days</th>
+            <th>Quantity used in last 30 days</th>
+            <th>Past use if any</th>
+        </tr>
+        <tr>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].drugs}}</td>
+            <td>13</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].years}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].excessive}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].specifictype}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].route}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].frequency}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].quantity}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].pastuseifany}}</td>
+        </tr>
+        <tr>
+            <td>Heroin</td>
+            <td>13</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].years1}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].excessive1}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].specifictype1}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].route1}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].frequency1}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].quantity1}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].pastuseifany1}}</td>
+        </tr>
+        <tr>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].drugs2}}</td>
+            <td>13</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].years2}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].excessive2}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].specifictype2}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].route2}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].frequency2}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].quantity2}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].pastuseifany2}}</td>
+        </tr>
+        <tr>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].drugs3}}</td>
+            <td>13</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].years3}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].excessive3}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].specifictype3}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].route3}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].frequency3}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].quantity3}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].pastuseifany3}}</td>
+        </tr>
+        <tr>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].drugs4}}</td>
+            <td>13</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].years4}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].excessive4}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].specifictype4}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].route4}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].frequency4}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].quantity4}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].pastuseifany4}}</td>
+        </tr>
+        <tr>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].drugs5}}</td>
+            <td>13</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].years5}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].excessive5}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].specifictype5}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].route5}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].frequency5}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].quantity5}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].pastuseifany5}}</td>
+        </tr>
+        <tr>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].drugs5}}</td>
+            <td>13</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].years6}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].excessive6}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].specifictype6}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].route6}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].frequency6}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].quantity6}}</td>
+            <td>{{medicalService.medicals[medicalService.medicals.length-1].pastuseifany6}}</td>
+        </tr>
+
+        </table>
+        <button class="btn btn-custom right" type="submit" id="print"> Print </button>
+       
+</form>

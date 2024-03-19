@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Add your head content here if needed -->
+    <title>Notes Page</title>
+    <link rel="stylesheet" href="style-cse.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <!-- Your existing sidebar content -->
+        </div>
+        <div class="card">
+            <h1><b>Notes for Subject</b></h1>
+            <div id="sidebar-toggle" onclick="openSidebar()">&#9776;</div>
+        </div>
+    </div>
+
+    <div class="notes-container">
+        <!-- Display notes here using JavaScript -->
+    </div>
+
+    <script>
+        // Add your existing script content here
+        // Modify the script to fetch the selected subject from localStorage
+        const selectedSubject = localStorage.getItem('selectedSubject');
+        loadNotes(selectedSubject);
+    </script>
+</body>
+
+</html>

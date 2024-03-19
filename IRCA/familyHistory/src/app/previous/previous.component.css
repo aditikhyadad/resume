@@ -1,0 +1,16 @@
+body,th,h1{
+    color: black;
+  }
+  label{
+    color: black;
+  }
+  .tables-container {
+    margin-left: auto; 
+    margin-right: 0;   
+  }
+  .checkbox-table {
+  width: 100%; 
+}
+.checkbox-cell {
+  width: 50px; 
+}
