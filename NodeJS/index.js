@@ -1,0 +1,62 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+ 
+const { mongoose } = require('./db.js');
+var siblingController = require('./controllers/siblingControllers.js');
+var treatmentController = require('./controllers/treatmentControllers.js');
+var detailsController = require('./controllers/detailsControllers.js');
+var adolescenceController = require('./controllers/adolescenceController.js');
+var experienceController = require('./controllers/experienceControllers.js');
+var problemsController = require('./controllers/problemsControllers.js');
+var commentController = require('./controllers/commentController.js');
+var patternController = require('./controllers/patternController.js');
+var patientController = require('./controllers/patientControllers.js');
+var occController = require('./controllers/occupational.js');
+var occController1 = require('./controllers/occupational1.js');
+var marital2Controller = require('./controllers/marital2Controller.js');
+var planController = require('./controllers/planControllers.js');
+var counsellorController = require('./controllers/counselorController.js');
+var referralController = require('./controllers/referralController.js');
+var individualController = require('./controllers/individualController.js');
+var patientController = require('./controllers/patientControllers.js');
+var FinHistoryController = require('./controllers/FinHistoryControllers.js');
+var LegalHistoryController = require('./controllers/LegalHistoryControllers.js');
+var shistoryController = require('./controllers/shistoryController.js');
+var groupController = require('./controllers/groupController.js');
+var activityController = require('./controllers/activityController.js');
+var areController = require('./controllers/areController.js');
+var previousController = require('./controllers/previousControllers.js');
+var medicalController=require('./controllers/medicalController.js')
+
+
+var app = express();
+app.use(bodyParser.json());
+app.use(cors({ origin: 'http://localhost:4200' }));
+app.listen(3000, () => console.log('Server started at port :3000'));
+
+app.use('/siblings', siblingController);
+app.use('/treatment', treatmentController);
+app.use('/details', detailsController);
+app.use('/adols', adolescenceController);
+app.use('/experiences', experienceController);
+app.use('/problems', problemsController);
+app.use('/comments', commentController);
+app.use('/patterns', patternController);
+app.use('/patients', patientController);
+app.use('/occs', occController);
+app.use('/occupations', occController1);
+app.use('/marital2', marital2Controller);
+app.use('/plans', planController);
+app.use('/counsellors', counsellorController);
+app.use('/referrals', referralController);
+app.use('/individuals', individualController);
+app.use('/patients', patientController);
+app.use('/FinHistory', FinHistoryController);
+app.use('/LegalHistory', LegalHistoryController);
+app.use('/shistory', shistoryController);
+app.use('/group', groupController);
+app.use('/activity', activityController);
+app.use('/are', areController);
+app.use('/previous', previousController);
+app.use('/medicals',medicalController);
