@@ -7,32 +7,15 @@ The code can be run on any python platforms.
 
 ## Design:
 
-### 1. error_handler:
-   This code has some error handling for HTTP requests. Whenever there is an error in the spelling entered or if there is no Wikipedia page available with the keyword entered, then it throws an error.
-   
-### 2. download_page:
-   Downloads a web page using the requests library.
-   
-### 3. url_parse:
-   Parses and normalizes URLs.
-   
-### 4. open_search_results:
-   Opens Wikipedia search results in a web browser.
-   
-### 5. extract_title, extract_introduction, extract_links:
-   Extract information (title, introduction, links) from the raw HTML content of a page.
-   
-### 6. remove_html_tags:
-   Removes HTML tags from text.
-   
-### 7. extension_scan:
-   Checks if a URL has certain file extensions (e.g., image files) to skip them during crawling.
-   
-### 8. web_crawl:
-   The main web crawling function that explores Wikipedia pages, extracts information, and stores it in a dictionary.
-   
-### 9. main:
-   The code enters a main loop where you can input a search query or press Enter to crawl the default Wikipedia page. It also allows you to view details of extracted pages by entering a link number.
+1. error_handler: This code has some error handling for HTTP requests. Whenever there is an error in the spelling entered or if there is no Wikipedia page available with the keyword entered, then it throws an error.
+2. download_page: Downloads a web page using the requests library.
+3. url_parse: Parses and normalizes URLs.
+4. open_search_results: Opens Wikipedia search results in a web browser.
+5. extract_title, extract_introduction, extract_links: Extract information (title, introduction, links) from the raw HTML content of a page.
+6. remove_html_tags: Removes HTML tags from text.
+7. extension_scan: Checks if a URL has certain file extensions (e.g., image files) to skip them during crawling.
+8. web_crawl: The main web crawling function that explores Wikipedia pages, extracts information, and stores it in a dictionary.
+9. main: The code enters a main loop where you can input a search query or press Enter to crawl the default Wikipedia page. It also allows you to view details of extracted pages by entering a link number.
 
 ## How does Execution occur?
 
