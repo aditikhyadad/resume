@@ -1,4 +1,4 @@
-# Seach Engine :
+# **Seach Engine** :
 ## Wikipedia crawler on Ancient Indian Science data
 The current python script allows us to search and crawl the Wikipedia page of any given keyword (provided the Wikipedia page exists). The user can either crawl in the displayed links or can enter a new keyword to browse and crawl.
 The code can be run on any python platforms.
